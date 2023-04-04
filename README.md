@@ -45,7 +45,9 @@ $ ./deposit.sh new-mnemonic
 
 Then follow the instructions from there, copy them over to the validator and import into lighthouse AS THE NODE USER (not the 'ubuntu' user on ec2)
 
+Something like this should work
 ```
+$ sudo -u node bash
 $ lighthouse account validator import --directory ~/validator_keys --network=pulsechain_testnet_v3
 ```
 
@@ -63,5 +65,13 @@ If you want to look at lighthouse debug logs (similar to geth)
 $ journalctl -u lighthouse-beacon.service (with -f to get the latest logs OR without the get the beginning)
 $ journalctl -u lighthouse-validator.service
 ```
+
+# Reset Validator Script
+This helper script deletes all your validator data so you can try the setup again if you want a fresh install or feel like you made an error.
+
+Be careful! It deletes and resets things, so read the code and make sure you understand what it does before using it.
+
+# AWS EC2 Helper Script
+Just some nice-to-haves if you're using the AWS Cloud for your validator server.
 
 Now let's get validating! @rhmaximalist
