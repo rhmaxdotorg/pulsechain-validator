@@ -1,5 +1,7 @@
 # PulseChain Testnet Validator Node Setup Helper Scripts for Ubuntu Linux
 
+![pls-testnet-validator-htop](https://user-images.githubusercontent.com/100790377/229965674-75593b5a-3fa6-44fe-8f47-fc25e9d3ce21.png)
+
 Read ALL the instructions as they will explain and tell you how to run these scripts and the caveats. When you download the script, you may need to `chmod +x pulsechain-validator-setup.sh` to make the script executable and able to run on the system.
 
 # Description
@@ -94,3 +96,14 @@ Just some nice-to-haves if you're using the AWS Cloud for your validator server.
 * https://www.hexpulse.info/docs/node-setup.html
 * https://togosh.medium.com/pulsechain-validator-setup-guide-70edae00b344
 * https://github.com/tdslaine/install_pulse_node
+
+# FAQ
+
+* What server specs do you need to be a validator?
+
+Specs and preferences vary between who you talk to, but at least 32gb ram and a beefy i7 or server-based processor and 2TB SSD hard disk. In the cloud, this roughly translates into a M2.2XLarge EC2 instance + 2TB disk.
+
+* How long does it take to sync the blockchain clients?
+
+It depends on your bandwidth, server specs and the state of the network, but you should expect anywhere from 24 - 96hrs for a validator node to sync.
+
