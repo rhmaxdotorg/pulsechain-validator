@@ -83,5 +83,14 @@ Just some nice-to-haves if you're using the AWS Cloud for your validator server.
 
 * [Validator Key Generation and Management](https://docs.google.com/document/d/1tl_nql6-Bqyo5yqFDJ2aqjAQoBAK0FtcCYSKpGXg0hw/edit)
 
-# Detailed Notes on all PulseChain clients (/w Ethereum Testnet notes)
+# Details for all PulseChain clients (/w Ethereum Testnet notes)
 * [Geth, Erigon, Prysm and Lighthouse](https://docs.google.com/document/d/1RkAWt0Q_DmYpnykHFM4Qf5ItDLPLi-kaj1PDG74Mftg/edit)
+
+# Setting up monitoring with Prometheus and Grafana
+* TBD
+
+# Community Guides and Scripts
+* https://gitlab.com/davidfeder/validatorscript/-/blob/5fa11c7f81d8292779774b8dff9144ec3e44d26a/PulseChain_V3_Script.txt
+* https://www.hexpulse.info/docs/node-setup.html
+* https://togosh.medium.com/pulsechain-validator-setup-guide-70edae00b344
+* https://github.com/tdslaine/install_pulse_node
