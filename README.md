@@ -4,7 +4,7 @@ Read ALL the instructions as they will explain and tell you how to run these scr
 
 # Description
 
-The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean Ubuntu OS for getting a PulseChain Testnet (V3) Validator Node setup and running.
+The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean Ubuntu OS for getting a PulseChain Testnet (V3) Validator Node setup and running with **Geth (go-pulse)** and **Lighthouse** clients.
 
 There are other helper scripts that do various things, check the notes for each one specifically for more info.
 
@@ -66,6 +66,8 @@ $ journalctl -u lighthouse-beacon.service (with -f to get the latest logs OR wit
 $ journalctl -u lighthouse-validator.service
 ```
 
+Now let's get validating! @rhmaximalist
+
 # Reset Validator Script
 This helper script deletes all your validator data so you can try the setup again if you want a fresh install or feel like you made an error.
 
@@ -74,4 +76,12 @@ Be careful! It deletes and resets things, so read the code and make sure you und
 # AWS EC2 Helper Script
 Just some nice-to-haves if you're using the AWS Cloud for your validator server.
 
-Now let's get validating! @rhmaximalist
+# AWS Cloud Setup
+* [How to run a cloud server on AWS](https://docs.google.com/document/d/1eW0SDT8IvZrla7gywK32Rl3QaQtVoiOu5OaVhUKIDg8/edit)
+
+# Staking Deposit Client Walkthrough
+
+* [Validator Key Generation and Management](https://docs.google.com/document/d/1tl_nql6-Bqyo5yqFDJ2aqjAQoBAK0FtcCYSKpGXg0hw/edit)
+
+# Detailed Notes on all PulseChain clients (/w Ethereum Testnet notes)
+* [Geth, Erigon, Prysm and Lighthouse](https://docs.google.com/document/d/1RkAWt0Q_DmYpnykHFM4Qf5ItDLPLi-kaj1PDG74Mftg/edit)
