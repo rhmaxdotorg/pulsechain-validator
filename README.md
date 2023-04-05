@@ -1,4 +1,4 @@
-# PulseChain Testnet Validator Node Setup Helper Scripts for Ubuntu Linux
+# PulseChain Testnet Validator Node Setup Helper Scripts
 
 ![pls-testnet-validator-htop](https://user-images.githubusercontent.com/100790377/229965674-75593b5a-3fa6-44fe-8f47-fc25e9d3ce21.png)
 
@@ -29,7 +29,7 @@ Note: you may get prompted throughout the process to hit [Enter] for OK and cont
 For example when running Ubuntu on AWS EC2 cloud service, you can expect to hit OK on kernel upgrade notice, [Enter] or "1" to continue Rust install process and so on
 
 # Environment
-Tested on Ubuntu 22.04 (on Amazon AWS EC2 /w M2.2xlarge VM) running as a non-root user (ubuntu) with sudo privileges
+Tested on **Ubuntu 22.04** (on Amazon AWS EC2 /w M2.2Xlarge VM) running as a non-root user (ubuntu) with sudo privileges
 
 
 **IMPORTANT things to do AFTER RUNNING THIS SCRIPT to complete the node setup**
