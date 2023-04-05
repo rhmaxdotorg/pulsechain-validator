@@ -1,6 +1,6 @@
 # PulseChain Testnet Validator Node Setup Helper Scripts for Ubuntu Linux
 
-Read ALL the instructions as they will explain and tell you how to run these scripts
+Read ALL the instructions as they will explain and tell you how to run these scripts and the caveats. When you download the script, you may need to `chmod +x pulsechain-validator-setup.sh` to make the script executable and able to run on the system.
 
 # Description
 
@@ -13,7 +13,7 @@ Note: the pulsechain validator setup script currently DOES NOT install monitorin
 # Usage
 
 ```
-$ ./pulsechain-testnet-validator-setup.sh [0x...YOUR ETHEREUM FEE ADDRESS] [12.89...YOUR SERVER IP ADDRESS]
+$ ./pulsechain-validator-setup.sh [0x...YOUR ETHEREUM FEE ADDRESS] [12.89...YOUR SERVER IP ADDRESS]
 ```
 
 **Command line options**
