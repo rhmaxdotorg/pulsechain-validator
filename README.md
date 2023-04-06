@@ -69,9 +69,11 @@ $ journalctl -u lighthouse-validator.service
 
 Now let's get validating! @rhmaximalist
 
-# Check on Blockchain Sync Progress
+# Debugging
 
-## Geth
+## Check the Blockchain Sync Progress
+
+### Geth
 ```
 $ curl -s http://localhost:8545 -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":67}' | jq
 
@@ -96,7 +98,7 @@ $ curl -s http://localhost:8545 -H "Content-Type: application/json" --data "{\"j
   "result": false
 }
 ```
-## Lighthouse
+### Lighthouse
 ```
 $ curl -s http://localhost:5052/lighthouse/ui/health | jq
 {
@@ -130,7 +132,37 @@ $ curl -s http://localhost:5052/lighthouse/syncing | jq
   "data": "Synced"
 }
 ```
+## Look at Client Service Status
 
+```
+$ sudo systemctl status geth lighthouse-beacon lighthouse-validator
+
+● geth.service - Geth (Go-Pulse)
+     Loaded: loaded (/etc/systemd/system/geth.service; enabled; vendor preset: enabled)
+     [some output truncated for brevity]
+
+Apr 00 19:30:20 server geth[126828]: INFO Unindexed transactions blocks=1 txs=56   tail=14,439,524 elapsed=2.966ms
+Apr 00 19:30:30 server geth[126828]: INFO Imported new potential chain segment blocks=1 txs=35   mgas=1.577  elapsed=21.435ms     mgasps=73.569  number=16,789,524 hash=xxxxd7..xxx>
+Apr 00 19:30:30 server geth[126828]: INFO Chain head was updated                   number=16,789,xxx hash=xxxxd7..cdxxxx root=xxxx9c..03xxxx elapsed=1.345514ms
+Apr 00 19:30:30 server geth[126828]: INFO Unindexed transactions blocks=1 txs=96   tail=14,439,xxx elapsed=4.618ms
+
+● lighthouse-beacon.service - Lighthouse Beacon
+     Loaded: loaded (/etc/systemd/system/lighthouse-beacon.service; enabled; vendor preset: enabled)
+     [some output truncated for brevity]
+
+Apr 00 19:30:05 server lighthouse[126782]: INFO Synced slot: 300xxx, block: 0x8355…xxxx, epoch: 93xx, finalized_epoch: 93xx, finalized_root: 0x667f…707b, exec_>
+
+Apr 00 19:30:10 server lighthouse[126782]: INFO New block received root: 0xxxxxxxxxf5e1364e34de345ab72bf1632e814915eb3fdc888e5b83aaxxxxxxxx, slot: 300061
+
+Apr 00 19:30:15 server lighthouse[126782]: INFO Synced slot: 300xxx, block: 0x681e…xxxx, epoch: 93xx, finalized_epoch: 93xx, finalized_root: 0x667f…707b, exec_>
+
+● lighthouse-validator.service - Lighthouse Validator
+     Loaded: loaded (/etc/systemd/system/lighthouse-validator.service; enabled; vendor preset: enabled)
+     [some output truncated for brevity]
+
+Apr 00 19:30:05 server lighthouse[126779]: Apr 06 19:30:05.000 INFO Connected to beacon node(s)             synced: X, available: X, total: X, service: notifier
+Apr 00 19:30:05 server lighthouse[126779]: INFO All validators active slot: 300xxx, epoch: 93xx, total_validators: X, active_validators: X, current_epoch_proposers: 0, servic>
+```
 
 # Reset Validator Script
 This helper script deletes all your validator data so you can try the setup again if you want a fresh install or feel like you made an error.
