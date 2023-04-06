@@ -171,6 +171,12 @@ Specs and preferences vary between who you talk to, but at least 32gb ram and a 
 It depends on your bandwidth, server specs and the state of the network, but you should expect anywhere from 24 - 96hrs for a validator node to sync.
 
 # Additional Resources and References
+- https://gitlab.com/pulsechaincom
+- https://gammadevops.substack.com/p/part-1-introduction-to-validator
+- https://gitlab.com/davidfeder/validatorscript/-/blob/5fa11c7f81d8292779774b8dff9144ec3e44d26a/PulseChain_V3_Script.txt
+- https://www.hexpulse.info/docs/node-setup.html
+- https://togosh.medium.com/pulsechain-validator-setup-guide-70edae00b344
+- https://github.com/tdslaine/install_pulse_node
 - https://lighthouse-book.sigmaprime.io/api-lighthouse.html
 - https://lighthouse-book.sigmaprime.io/key-management.html
 - https://docs.gnosischain.com/node/guide/validator/run/lighthouse
@@ -196,9 +202,3 @@ It depends on your bandwidth, server specs and the state of the network, but you
 - https://medium.com/@mshmulevich/running-ethereum-nodes-in-high-availability-cluster-on-aws-aefd08d4d81
 - https://chasewright.com/getting-started-with-turbo-geth-on-ubuntu/
 - https://someresat.medium.com/guide-to-staking-on-ethereum-ubuntu-prysm-581fb1969460
-- https://gammadevops.substack.com/p/part-1-introduction-to-validator
-- https://gitlab.com/davidfeder/validatorscript/-/blob/5fa11c7f81d8292779774b8dff9144ec3e44d26a/PulseChain_V3_Script.txt
-- https://www.hexpulse.info/docs/node-setup.html
-- https://togosh.medium.com/pulsechain-validator-setup-guide-70edae00b344
-- https://github.com/tdslaine/install_pulse_node
-- https://gitlab.com/pulsechaincom
