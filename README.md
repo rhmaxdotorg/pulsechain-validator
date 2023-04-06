@@ -201,3 +201,4 @@ It depends on your bandwidth, server specs and the state of the network, but you
 - https://medium.com/@mshmulevich/running-ethereum-nodes-in-high-availability-cluster-on-aws-aefd08d4d81
 - https://chasewright.com/getting-started-with-turbo-geth-on-ubuntu/
 - https://someresat.medium.com/guide-to-staking-on-ethereum-ubuntu-prysm-581fb1969460
+- https://www.blocknative.com/blog/ethereum-validator-lighthouse-geth
