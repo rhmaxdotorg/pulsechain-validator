@@ -170,3 +170,35 @@ Specs and preferences vary between who you talk to, but at least 32gb ram and a 
 
 It depends on your bandwidth, server specs and the state of the network, but you should expect anywhere from 24 - 96hrs for a validator node to sync.
 
+# Additional Resources and References
+- https://lighthouse-book.sigmaprime.io/api-lighthouse.html
+- https://lighthouse-book.sigmaprime.io/key-management.html
+- https://docs.gnosischain.com/node/guide/validator/run/lighthouse
+- https://ethereum.stackexchange.com/questions/394/how-can-i-find-out-what-the-highest-block-is
+- https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/monitoring-your-validator-with-grafana-and-prometheus
+- https://schh.medium.com/port-forwarding-via-ssh-ba8df700f34d
+- https://www.youtube.com/watch?v=lbUnlIL_yLs&ab_channel=Oooly
+- https://www.reddit.com/r/ethstaker/comments/txj5vh/technical_overview_of_validator_need_some_help/
+- https://docs.prylabs.network/docs/troubleshooting/issues-errors
+- https://pawelurbanek.com/ethereum-node-aws
+- https://chasewright.com/getting-started-with-turbo-geth-on-ubuntu/
+- https://docs.prylabs.network/docs/prysm-usage/p2p-host-ip
+- https://www.blocknative.com/blog/an-ethereum-stakers-guide-to-slashing-other-penalties
+- https://goerli.launchpad.ethstaker.cc/en/faq
+- https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/guide-or-security-best-practices-for-a-eth2-validator-beaconchain-node
+- https://ethereum.stackexchange.com/questions/3887/how-to-reduce-the-chances-of-your-ethereum-wallet-getting-hacked
+- https://docs.prylabs.network/docs/install/install-with-script
+- https://7goldfish.com/Eth_Staking_Testnet_on_AWS.html
+- https://mirror.xyz/steinkirch.eth/F5PI4eqShKTGlx0GzL0Lq0-vHQ6b14OoV4ylE2FMsAc
+- https://consensys.net/blog/developers/my-journey-to-being-a-validator-on-ethereum-2-0-part-5/
+- https://www.monkeyvault.net/secure-aws-infrastructure-with-vpc-a-terraform-guide/ (VPCs guide too)
+- https://hackmd.io/@prysmaticlabs/HkSSMpDtt
+- https://medium.com/@mshmulevich/running-ethereum-nodes-in-high-availability-cluster-on-aws-aefd08d4d81
+- https://chasewright.com/getting-started-with-turbo-geth-on-ubuntu/
+- https://someresat.medium.com/guide-to-staking-on-ethereum-ubuntu-prysm-581fb1969460
+- https://gammadevops.substack.com/p/part-1-introduction-to-validator
+- https://gitlab.com/davidfeder/validatorscript/-/blob/5fa11c7f81d8292779774b8dff9144ec3e44d26a/PulseChain_V3_Script.txt
+- https://www.hexpulse.info/docs/node-setup.html
+- https://togosh.medium.com/pulsechain-validator-setup-guide-70edae00b344
+- https://github.com/tdslaine/install_pulse_node
+- https://gitlab.com/pulsechaincom
