@@ -18,11 +18,11 @@ Note: the pulsechain validator setup script currently DOES NOT install monitorin
 $ ./pulsechain-validator-setup.sh [0x...YOUR ETHEREUM FEE ADDRESS] [12.89...YOUR SERVER IP ADDRESS]
 ```
 
-**Command line options**
+## Command line options
 
-- ETHEREUM FEE ADDRESS is the FEE_RECIPIENT value for --suggested-fee-recipient to a wallet address you want to recieve priority fees from users whenever your validator proposes a new block (else it goes to the burn address)
+- **ETHEREUM FEE ADDRESS** is the FEE_RECIPIENT value for --suggested-fee-recipient to a wallet address you want to recieve priority fees from users whenever your validator proposes a new block (else it goes to the burn address)
 
-- SERVER_IP_ADDRESS to your validator server's IP address
+- **SERVER_IP_ADDRESS** to your validator server's IP address
 
 Note: you may get prompted throughout the process to hit [Enter] for OK and continue the process
 
@@ -30,7 +30,6 @@ For example when running Ubuntu on AWS EC2 cloud service, you can expect to hit 
 
 # Environment
 Tested on **Ubuntu 22.04** (on Amazon AWS EC2 /w M2.2Xlarge VM) running as a non-root user (ubuntu) with sudo privileges
-
 
 **IMPORTANT things to do AFTER RUNNING THIS SCRIPT to complete the node setup**
 
