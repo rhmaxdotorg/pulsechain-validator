@@ -70,6 +70,69 @@ $ journalctl -u lighthouse-validator.service
 
 Now let's get validating! @rhmaximalist
 
+# Check on Blockchain Sync Progress
+
+## Geth
+```
+$ curl -s http://localhost:8545 -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":67}' | jq
+
+{
+  "jsonrpc": "2.0",
+  "id": 67,
+  "result": {
+  "currentBlock": "0xffe4e3", // THIS IS WHERE YOU ARE
+  "highestBlock": "0xffe8fa", // THIS IS WHERE YOU’RE GOING
+  [full output was truncated for brevity]
+  }
+}
+```
+
+So you can compare the current with the highest to see how far you are from being fully sync’d. Or is result=false, you are sync'd.
+
+```
+$ curl -s http://localhost:8545 -H "Content-Type: application/json" --data "{\"jsonrpc\":\"2.0\",\"method\":\"eth_syncing\",\"params\":[],\"id\":67}" | jq
+{
+  "jsonrpc": "2.0",
+  "id": 67,
+  "result": false
+}
+```
+## Lighthouse
+```
+$ curl -s http://localhost:5052/lighthouse/ui/health | jq
+{
+  "data": {
+	"total_memory": XXXX,
+	"free_memory": XXXX,
+	"used_memory": XXXX,
+	"os_version": "Linux XXXX",
+	"host_name": "XXXX",
+	"network_name": "XXXX",
+	"network_bytes_total_received": XXXX,
+	"network_bytes_total_transmit": XXXX,
+	"nat_open": true,
+	"connected_peers": 0, // PROBLEM
+	"sync_state": "Synced"
+  [full output was truncated for brevity]
+  }
+}
+```
+
+Use use boot nodes in your Lighthouse beacon node cmdline to help with increasing your peer connections (can take it from 0 to 30 real fast).
+
+```
+--boot-nodes enr:-L64QNIt1R1_ou9Aw5ci8gLAsV1TrK2MtWiPNGy21YsTW0HpA86hGowakgk3IVEZNjBOTVdqtXObXyErbEfxEi8Y8Z-CARSHYXR0bmV0c4j__________4RldGgykFuckgYAAAlE__________-CaWSCdjSCaXCEA--2T4lzZWNwMjU2azGhArzEiK-HUz_pnQBn_F8g7sCRKLU4GUocVeq_TX6UlFXIiHN5bmNuZXRzD4N0Y3CCIyiDdWRwgiMo
+
+```
+
+```
+$ curl -s http://localhost:5052/lighthouse/syncing | jq
+{
+  "data": "Synced"
+}
+```
+
+
 # Reset Validator Script
 This helper script deletes all your validator data so you can try the setup again if you want a fresh install or feel like you made an error.
 
