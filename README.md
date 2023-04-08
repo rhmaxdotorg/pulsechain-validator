@@ -208,6 +208,7 @@ It depends on your bandwidth, server specs and the state of the network, but you
 - https://www.hexpulse.info/docs/node-setup.html
 - https://togosh.medium.com/pulsechain-validator-setup-guide-70edae00b344
 - https://github.com/tdslaine/install_pulse_node
+- https://gitlab.com/Gamesys10/pulsechain-node-guide
 - https://lighthouse-book.sigmaprime.io/api-lighthouse.html
 - https://lighthouse-book.sigmaprime.io/key-management.html
 - https://docs.gnosischain.com/node/guide/validator/run/lighthouse
