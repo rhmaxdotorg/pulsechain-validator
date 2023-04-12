@@ -2,7 +2,9 @@
 
 ![pls-testnet-validator-htop](https://user-images.githubusercontent.com/100790377/229965674-75593b5a-3fa6-44fe-8f47-fc25e9d3ce21.png)
 
-Read ALL the instructions as they will explain and tell you how to run these scripts and the caveats. When you download the script, you may need to `chmod +x pulsechain-validator-setup.sh` to make the script executable and able to run on the system.
+**Please read ALL the instructions as they will explain and tell you how to run these scripts and the caveats.**
+
+When you download the script, you may need to `chmod +x pulsechain-validator-setup.sh` to make the script executable and able to run on the system.
 
 # Description
 
