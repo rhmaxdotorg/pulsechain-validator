@@ -213,6 +213,10 @@ Specs and preferences vary between who you talk to, but at least 32gb ram and a 
 
 It depends on your bandwidth, server specs and the state of the network, but you should expect anywhere from 24 - 96hrs for a validator node to sync.
 
+* Where can I find additional help on PulseChain dev stuff and being a validator?
+
+https://t.me/PulseDev
+
 # Additional Resources and References
 - https://gitlab.com/pulsechaincom
 - https://gammadevops.substack.com/p/part-1-introduction-to-validator
