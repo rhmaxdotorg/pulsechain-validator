@@ -4,7 +4,7 @@
 #
 # Description
 # - Installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean Ubuntu OS
-# for getting a PulseChain Testnet (V3) Validator Node setup and running.
+# for getting a PulseChain Testnet (V4) Validator Node setup and running.
 #
 # Note: this script DOES NOT install monitoring/metrics packages such as Grafana or Prometheous
 #
@@ -53,8 +53,8 @@ SERVER_IP_ADDRESS=$2
 APT_PACKAGES="build-essential cmake clang git wget jq protobuf-compiler"
 
 # chain flags
-GETH_CHAIN="pulsechain-testnet-v3"
-LIGHTHOUSE_CHAIN="pulsechain_testnet_v3"
+GETH_CHAIN="pulsechain-testnet-v4"
+LIGHTHOUSE_CHAIN="pulsechain_testnet_v4"
 
 # geth config
 GETH_DIR="/opt/geth"
@@ -75,7 +75,7 @@ LIGHTHOUSE_REPO="https://gitlab.com/pulsechaincom/lighthouse-pulse.git"
 LIGHTHOUSE_REPO_NAME="lighthouse-pulse"
 
 LIGHTHOUSE_PORT=9000
-LIGHTHOUSE_CHECKPOINT_URL="https://checkpoint.v3.testnet.pulsechain.com"
+LIGHTHOUSE_CHECKPOINT_URL="https://checkpoint.v4.testnet.pulsechain.com"
 
 ################################################################
 
@@ -87,7 +87,7 @@ function sigint() {
     exit 1
 }
 
-echo -e "PulseChain TESTNET V3 Validator Setup - HELPER SCRIPT (still needs some steps completed manually, see notes)\n"
+echo -e "PulseChain TESTNET V4 Validator Setup - HELPER SCRIPT (still needs some steps completed manually, see notes)\n"
 echo -e "Note: this is a HELPER SCRIPT (some steps still need completed manually, see notes after script is finished)\n"
 echo -e "* it could take around 30 minutes to complete -- depending mostly on bandwidth and server specs *\n"
 
@@ -264,8 +264,8 @@ sudo ufw allow 9000/udp
 echo -e "\nAlmost done! Follow these next steps (as described in the notes) to finish setup and be the best validator you can be :)\n"
 
 echo -e "- Generate validator keys with deposit tool ON A SECURE, DIFFERENT MACHINE\n"
-echo -e "- Import them into lighthouse via 'lighthouse account validator import --directory ~/validator_keys --network=pulsechain_testnet_v3' AS THE NODE USER\n"
-echo -e "- Make your 32m tPLS deposit on the launchpad @ https://launchpad.v3.testnet.pulsechain.com\n"
+echo -e "- Import them into lighthouse via 'lighthouse account validator import --directory ~/validator_keys --network=pulsechain_testnet_v4' AS THE NODE USER\n"
 echo -e "- Start the beacon and validator clients via 'sudo systemctl start lighthouse-beacon lighthouse-validator'\n"
+echo -e "- WAIT UNTIL YOUR CLIENTS ARE SYNCED and then make your 32m tPLS deposit on the launchpad @ https://launchpad.v4.testnet.pulsechain.com\n"
 
 echo -e "See any errors? Check permissions, missing packages or debug client failures with 'journalctl -u [service name].service' (eg. lighthouse-beacon.service)\n"
