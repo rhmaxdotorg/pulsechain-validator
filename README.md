@@ -12,7 +12,7 @@ The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and light
 
 There are other helper scripts that do various things, check the notes for each one specifically for more info.
 
-Note: the pulsechain validator setup script currently DOES NOT install monitoring/metrics packages such as Grafana or Prometheous, that may be done in a separate monitoring setup script
+Note: the pulsechain validator setup script currently DOES NOT install monitoring/metrics packages such as Grafana or Prometheous, that may be done in a separate monitoring setup script or guides as referenced [below](https://github.com/rhmaxdotorg/pulsechain-validator#setting-up-monitoring-with-prometheus-and-grafana).
 
 # Usage
 
@@ -185,7 +185,17 @@ Just some nice-to-haves if you're using the AWS Cloud for your validator server.
 * [Geth, Erigon, Prysm and Lighthouse](https://docs.google.com/document/d/1RkAWt0Q_DmYpnykHFM4Qf5ItDLPLi-kaj1PDG74Mftg/edit)
 
 # Setting up monitoring with Prometheus and Grafana
-* TBD
+See the guides below for help getting them setup
+* https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/monitoring-your-validator-with-grafana-and-prometheus
+* https://schh.medium.com/port-forwarding-via-ssh-ba8df700f34d
+
+You can setup grafana for secure access externally as opposed to the less secure way of forwarding port 3000 on the firewall and open it up to the world, which could put your server at risk next time Grafana has a security bug that anyone interested enough can exploit.
+
+```
+ssh -i key.pem -N ubuntu@validator-server-IP -L 8080:localhost:3000
+```
+
+Then open a browser window on your computer and login to grafana yourself without exposing it externally to the world. Magic, huh!
 
 # Community Guides and Scripts
 * https://gitlab.com/davidfeder/validatorscript/-/blob/5fa11c7f81d8292779774b8dff9144ec3e44d26a/PulseChain_V3_Script.txt
