@@ -121,12 +121,6 @@ $ curl -s http://localhost:5052/lighthouse/ui/health | jq
 }
 ```
 
-Use use boot nodes in your Lighthouse beacon node cmdline to help with increasing your peer connections (can take it from 0 to 30 real fast).
-
-```
---boot-nodes enr:-L64QNIt1R1_ou9Aw5ci8gLAsV1TrK2MtWiPNGy21YsTW0HpA86hGowakgk3IVEZNjBOTVdqtXObXyErbEfxEi8Y8Z-CARSHYXR0bmV0c4j__________4RldGgykFuckgYAAAlE__________-CaWSCdjSCaXCEA--2T4lzZWNwMjU2azGhArzEiK-HUz_pnQBn_F8g7sCRKLU4GUocVeq_TX6UlFXIiHN5bmNuZXRzD4N0Y3CCIyiDdWRwgiMo
-
-```
 
 ```
 $ curl -s http://localhost:5052/lighthouse/syncing | jq
