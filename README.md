@@ -43,7 +43,7 @@ Note: generate your keys on a different, secure machine (NOT on the validator se
 $ sudo apt install -y python3-pip
 $ git clone https://gitlab.com/pulsechaincom/staking-deposit-cli.git
 $ cd staking-deposit-cli && pip3 install -r requirements.txt && sudo python3 setup.py install
-$ ./deposit.sh new-mnemonic
+$ ./deposit.sh new-mnemonic --chain=pulsechain-testnet-v4
 ```
 
 Then follow the instructions from there, copy them over to the validator and import into lighthouse AS THE NODE USER (not the 'ubuntu' user on ec2).
