@@ -23,16 +23,19 @@
 # [Enter] or "1" to continue Rust install process and so on
 #
 # Environment
-# - Tested on Ubuntu 22.04 (on Amazon AWS EC2 /w M2.2xlarge VM) running as a non-root user (ubuntu) with sudo privileges
+# - Tested on Ubuntu 22.04 (on Amazon AWS EC2 /w M2.2Xlarge VM) running as a non-root user (ubuntu) with sudo privileges
 #
 # Notes
 # *IMPORTANT* things to do AFTER RUNNING THIS SCRIPT to complete the node setup
 #
-# 1) Generate validator keys with deposit tool, import them into lighthouse and make your 32m tPLS deposit on the launchpad
+# 1) Generate validator keys with deposit tool and import them into lighthouse
 #
 # Make sure to generate your keys on a different, secure machine (NOT on the validator server) and transfer them over for import
 #
 # 2) Start the beacon and validator clients
+#
+# 3) Once the blockchain clients are synced, you can make your 32m tPLS deposit (per validator, can have multiple on one machine)
+# at the launchpad and get your validator activated and participating on the network.
 #
 # (see README for more detailed info)
 #
