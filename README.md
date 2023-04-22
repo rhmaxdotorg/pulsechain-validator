@@ -35,7 +35,7 @@ Tested on **Ubuntu 22.04** (on Amazon AWS EC2 /w M2.2Xlarge VM) running as a non
 
 **IMPORTANT things to do AFTER RUNNING THIS SCRIPT to complete the node setup**
 
-1) Generate validator keys with deposit tool, import them into lighthouse and make your 32m tPLS deposit on the launchpad
+1) Generate validator keys with deposit tool and import them into lighthouse
 
 Note: generate your keys on a different, secure machine (NOT on the validator server) and transfer them over for import
 
@@ -46,12 +46,19 @@ $ cd staking-deposit-cli && pip3 install -r requirements.txt && sudo python3 set
 $ ./deposit.sh new-mnemonic
 ```
 
-Then follow the instructions from there, copy them over to the validator and import into lighthouse AS THE NODE USER (not the 'ubuntu' user on ec2)
+Then follow the instructions from there, copy them over to the validator and import into lighthouse AS THE NODE USER (not the 'ubuntu' user on ec2).
 
-Something like this should work
 ```
+$ sudo cp -R validator_keys /home/node
+$ sudo chown -R node:node /home/node/validator_keys
 $ sudo -u node bash
-$ lighthouse account validator import --directory ~/validator_keys --network=pulsechain_testnet_v3
+
+(as node user)
+$ /opt/lighthouse/lighthouse/lh account validator import --directory ~/validator_keys --network=pulsechain_testnet_v4
+
+enter password to import validator(s)
+
+(exit and back as ubuntu user)
 ```
 
 2) Start the beacon and validator clients
@@ -68,6 +75,10 @@ If you want to look at lighthouse debug logs (similar to geth)
 $ journalctl -u lighthouse-beacon.service (with -f to get the latest logs OR without the get the beginning)
 $ journalctl -u lighthouse-validator.service
 ```
+
+3) Once the blockchain clients are synced, you can make your 32m tPLS deposit (per validator, can have multiple on one machine) @ https://launchpad.v4.testnet.pulsechain.com and get your validator activated and participating on the network.
+
+If you do the deposit before the clients are fully synced and ready to go, then you risk getting slashed as your validator would join the network, but due to not being synced, unable to participate in validator duties (until it's fully synced).
 
 Now let's get validating! @rhmaximalist
 
