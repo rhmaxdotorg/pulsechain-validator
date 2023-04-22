@@ -224,6 +224,10 @@ Specs and preferences vary between who you talk to, but at least 32gb ram and a 
 
 It depends on your bandwidth, server specs and the state of the network, but you should expect anywhere from 24 - 96hrs for a validator node to sync.
 
+* How can I see the stats on my validator(s)?
+
+Look at your deposit JSON file to get the list of your validator(s) public keys, then check https://beacon.v4.testnet.pulsechain.com/validator/[your validator's public key] which each one that you want to check the stats on.
+
 * Where can I find additional help on PulseChain dev stuff and being a validator?
 
 https://t.me/PulseDev
