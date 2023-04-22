@@ -226,7 +226,9 @@ It depends on your bandwidth, server specs and the state of the network, but you
 
 * How can I see the stats on my validator(s)?
 
-Look at your deposit JSON file to get the list of your validator(s) public keys, then check https://beacon.v4.testnet.pulsechain.com/validator/[your validator's public key] which each one that you want to check the stats on.
+Look at your deposit JSON file to get the list of your validator(s) public keys, then check https://beacon.v4.testnet.pulsechain.com/validator/ + your validator's public key which each one that you want to check the stats on.
+
+For example this validator's stats: https://beacon.v4.testnet.pulsechain.com/validator/8001503cd43190b01aaa444d966a41ddb95c140e4910bb00ad638a4c020bc3a070612f318e3372109f33e40e7c268b0b
 
 * Where can I find additional help on PulseChain dev stuff and being a validator?
 
