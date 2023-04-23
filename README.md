@@ -263,6 +263,10 @@ What is your status on the beacon explorer? Active, Pending, Exited or something
 
 Are your clients fully synced? They must be synced, talking to each other and talking to the network for the validator to work properly.
 
+* How much does it cost to be a validator?
+
+Depends on if you're using your own hardware or the cloud. For example, you could build or buy your own hardware for initial cost of around $2k and then pay for electricity it uses from running 24/7 each month. Or you can rent a server in the Amazon AWS cloud for an estimated $300-$500 per month. Both ways have advantages and disadvantages.
+
 * Where can I find additional help on PulseChain dev stuff and being a validator?
 
 https://t.me/PulseDev
