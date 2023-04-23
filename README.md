@@ -34,9 +34,7 @@ Note: you may get prompted throughout the process to hit [Enter] for OK and cont
 
 For example when running Ubuntu on AWS EC2 cloud service, you can expect to hit OK on kernel upgrade notice, [Enter] or "1" to continue Rust install process and so on.
 
-**Important Note**
-
-If you encounter errors running the script, it's best to [Reset the Validator](https://github.com/rhmaxdotorg/pulsechain-validator/blob/main/README.md#reset-validator-script) before running it again and again. Just make sure you know what you're doing and manually edit the reset script to bypass the "I don't know what I'm doing" check. It's very straightforward, just read the code, acknowledge you know what the script it doing and change I_KNOW_WHAT_I_AM_DOING=false to true to get it to run.
+** If you encounter errors running the script**, it's best to [Reset the Validator](https://github.com/rhmaxdotorg/pulsechain-validator/blob/main/README.md#reset-validator-script) before running it over and over again. Just make sure you know what you're doing and manually edit the reset script to bypass the "I don't know what I'm doing" check. It's very straightforward, just read the code, acknowledge you know what the script it doing and change I_KNOW_WHAT_I_AM_DOING=false to true to get it to run.
 
 # Environment
 Tested on **Ubuntu 22.04** (on Amazon AWS EC2 /w M2.2Xlarge VM) running as a non-root user (ubuntu) with sudo privileges
@@ -45,9 +43,9 @@ Tested on **Ubuntu 22.04** (on Amazon AWS EC2 /w M2.2Xlarge VM) running as a non
 
 1) Generate validator keys with deposit tool and import them into lighthouse
 
-Note: generate your keys on a different, secure machine (NOT on the validator server) and transfer them over for import. You can use `scp` to copy them over the network OR base64 encode them for a copy and paste style solution.
+Note: generate your keys on a different, secure machine (NOT on the validator server) and transfer them over for import. You can use `scp` to copy them over the network OR base64 encode them for a copy and paste style solution such as the following.
 
-On disposable VM, live CD or otherwise emphemeral filesystem
+**On disposable VM, live CD or otherwise emphemeral filesystem**
 
 ```
 sudo apt install -y unzip zip
@@ -56,15 +54,15 @@ base64 -w0 validator_keys.zip > validator_keys.b64
 cat validator_keys.b64 (and copy the output)
 ```
 
-On your validator server
+**On your validator server**
 ```
 cat > validator_keys.b64 <<EOF
 Paste the output
 [Enter] + type “EOF” + [Enter]
 base64 -d validator_keys.b64 > validator_keys.zip
-
 ```
 
+**Run the staking deposit client**
 ```
 $ sudo apt install -y python3-pip
 $ git clone https://gitlab.com/pulsechaincom/staking-deposit-cli.git
