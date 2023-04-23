@@ -18,6 +18,11 @@ There are other helper scripts that do various things, check the notes for each 
 
 Note: the pulsechain validator setup script currently DOES NOT install monitoring/metrics packages such as Grafana or Prometheous, that may be done in a separate monitoring setup script or guides as referenced [below](https://github.com/rhmaxdotorg/pulsechain-validator#setting-up-monitoring-with-prometheus-and-grafana).
 
+# Video Walkthrough
+Check out these videos for further explanations and code walkthroughs.
+- https://www.youtube.com/watch?v=X0TnkLt4E3w
+- https://www.youtube.com/watch?v=9Yibmetppcs
+
 # Usage
 
 ```
