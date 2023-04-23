@@ -2,9 +2,13 @@
 
 ![pls-testnet-validator-htop](https://user-images.githubusercontent.com/100790377/229965674-75593b5a-3fa6-44fe-8f47-fc25e9d3ce21.png)
 
+This will help you setup [PulseChain](www.pulsechain.com) Testnet v4 and plans are to update it to support [PulseChain](www.pulsechain.com) Mainnet as well after it launches.
+
 **Please read ALL the instructions as they will explain and tell you how to run these scripts and the caveats.**
 
-When you download the script, you may need to `chmod +x pulsechain-validator-setup.sh` to make the script executable and able to run on the system.
+To download these scripts on your server, you can `git clone https://github.com/rhmaxdotorg/pulsechain-validator.git`.
+
+After you download the script, you may need to `chmod +x pulsechain-validator-setup.sh` to make the script executable and able to run on the system.
 
 # Description
 
@@ -37,7 +41,25 @@ Tested on **Ubuntu 22.04** (on Amazon AWS EC2 /w M2.2Xlarge VM) running as a non
 
 1) Generate validator keys with deposit tool and import them into lighthouse
 
-Note: generate your keys on a different, secure machine (NOT on the validator server) and transfer them over for import
+Note: generate your keys on a different, secure machine (NOT on the validator server) and transfer them over for import. You can use `scp` to copy them over the network OR base64 encode them for a copy and paste style solution.
+
+On disposable VM, live CD or otherwise emphemeral filesystem
+
+```
+sudo apt install -y unzip zip
+zip -r validator_keys.zip validator_keys
+base64 -w0 validator_keys.zip > validator_keys.b64
+cat validator_keys.b64 (and copy the output)
+```
+
+On your validator server
+```
+cat > validator_keys.b64 <<EOF
+Paste the output
+[Enter] + type “EOF” + [Enter]
+base64 -d validator_keys.b64 > validator_keys.zip
+
+```
 
 ```
 $ sudo apt install -y python3-pip
@@ -214,6 +236,9 @@ Then open a browser window on your computer and login to grafana yourself withou
 * https://togosh.medium.com/pulsechain-validator-setup-guide-70edae00b344
 * https://github.com/tdslaine/install_pulse_node
 
+# Security
+* https://www.youtube.com/watch?v=hHtvCGlPz-o
+
 # FAQ
 
 * What server specs do you need to be a validator?
@@ -229,6 +254,16 @@ It depends on your bandwidth, server specs and the state of the network, but you
 Look at your deposit JSON file to get the list of your validator(s) public keys, then check https://beacon.v4.testnet.pulsechain.com/validator/ + your validator's public key which each one that you want to check the stats on.
 
 For example this validator's stats: https://beacon.v4.testnet.pulsechain.com/validator/8001503cd43190b01aaa444d966a41ddb95c140e4910bb00ad638a4c020bc3a070612f318e3372109f33e40e7c268b0b
+
+* What if my validator stops working?
+
+Did your server's IP address change? If so, update lighthouse beacon service file @ /etc/systemd/system/lighthouse-beacon.service.
+
+Did your network/firewall role change? Make sure the required client ports are accessible.
+
+What is your status on the beacon explorer? Active, Pending, Exited or something else? If not active, it may be a client issue which you can debug with the steps discussed in the Debugging section.
+
+Are your clients fully synced? They must be synced, talking to each other and talking to the network for the validator to work properly.
 
 * Where can I find additional help on PulseChain dev stuff and being a validator?
 
@@ -268,3 +303,4 @@ https://t.me/PulseDev
 - https://chasewright.com/getting-started-with-turbo-geth-on-ubuntu/
 - https://someresat.medium.com/guide-to-staking-on-ethereum-ubuntu-prysm-581fb1969460
 - https://www.blocknative.com/blog/ethereum-validator-lighthouse-geth
+- https://www.youtube.com/watch?v=hHtvCGlPz-o
