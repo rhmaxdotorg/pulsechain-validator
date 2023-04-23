@@ -17,11 +17,6 @@
 #
 # - SERVER_IP_ADDRESS to your validator server's IP address
 #
-# Note: you may get prompted throughout the process to hit [Enter] for OK and continue the process
-#
-# For example when running Ubuntu on AWS EC2 cloud service, you can expect to hit OK on kernel upgrade notice,
-# [Enter] or "1" to continue Rust install process and so on
-#
 # Environment
 # - Tested on Ubuntu 22.04 (on Amazon AWS EC2 /w M2.2Xlarge VM) running as a non-root user (ubuntu) with sudo privileges
 #
@@ -32,7 +27,7 @@
 #
 # Make sure to generate your keys on a different, secure machine (NOT on the validator server) and transfer them over for import
 #
-# 2) Start the beacon and validator clients
+# 2) Start the validator client
 #
 # 3) Once the blockchain clients are synced, you can make your 32m tPLS deposit (per validator, can have multiple on one machine)
 # at the launchpad and get your validator activated and participating on the network.
@@ -90,7 +85,7 @@ function sigint() {
     exit 1
 }
 
-echo -e "PulseChain TESTNET V4 Validator Setup - HELPER SCRIPT (still needs some steps completed manually, see notes)\n"
+echo -e "PulseChain TESTNET V4 Validator Setup\n"
 echo -e "Note: this is a HELPER SCRIPT (some steps still need completed manually, see notes after script is finished)\n"
 echo -e "* it could take around 30 minutes to complete -- depending mostly on bandwidth and server specs *\n"
 
@@ -108,8 +103,8 @@ sudo snap install --classic go
 
 echo "export PATH=$PATH:/snap/bin" >> ~/.bashrc
 
-# straight from rustup.rs website
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# straight from rustup.rs website /w auto accept default option "-y"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source "$HOME/.cargo/env"
 
 echo -e "\nstep 2: adding node user and generate client secrets"
@@ -212,7 +207,6 @@ ExecStart=$LIGHTHOUSE_DIR/lighthouse/lh bn \
 --enr-address=$SERVER_IP_ADDRESS \
 --enr-tcp-port=$LIGHTHOUSE_PORT \
 --enr-udp-port=$LIGHTHOUSE_PORT \
---boot-nodes=enr:-L64QNIt1R1_ou9Aw5ci8gLAsV1TrK2MtWiPNGy21YsTW0HpA86hGowakgk3IVEZNjBOTVdqtXObXyErbEfxEi8Y8Z-CARSHYXR0bmV0c4j__________4RldGgykFuckgYAAAlE__________-CaWSCdjSCaXCEA--2T4lzZWNwMjU2azGhArzEiK-HUz_pnQBn_F8g7sCRKLU4GUocVeq_TX6UlFXIiHN5bmNuZXRzD4N0Y3CCIyiDdWRwgiMo \
 --suggested-fee-recipient=$FEE_RECIPIENT \
 --checkpoint-sync-url=$LIGHTHOUSE_CHECKPOINT_URL \
 --http
@@ -223,7 +217,7 @@ EOT
 
 sudo systemctl daemon-reload
 sudo systemctl enable lighthouse-beacon
-#sudo systemctl start lighthouse-beacon
+sudo systemctl start lighthouse-beacon
 #sudo systemctl status lighthouse-beacon
 
 sudo tee -a /etc/systemd/system/lighthouse-validator.service > /dev/null <<EOT
@@ -268,7 +262,7 @@ echo -e "\nAlmost done! Follow these next steps (as described in the notes) to f
 
 echo -e "- Generate validator keys with deposit tool ON A SECURE, DIFFERENT MACHINE\n"
 echo -e "- Import them into lighthouse via 'lighthouse account validator import --directory ~/validator_keys --network=pulsechain_testnet_v4' AS THE NODE USER\n"
-echo -e "- Start the beacon and validator clients via 'sudo systemctl start lighthouse-beacon lighthouse-validator'\n"
+echo -e "- Start the validator client via 'sudo systemctl start lighthouse-validator'\n"
 echo -e "- WAIT UNTIL YOUR CLIENTS ARE SYNCED and then make your 32m tPLS deposit on the launchpad @ https://launchpad.v4.testnet.pulsechain.com\n"
 
 echo -e "See any errors? Check permissions, missing packages or debug client failures with 'journalctl -u [service name].service' (eg. lighthouse-beacon.service)\n"
