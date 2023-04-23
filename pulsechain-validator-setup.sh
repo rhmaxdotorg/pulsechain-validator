@@ -6,8 +6,6 @@
 # - Installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean Ubuntu OS
 # for getting a PulseChain Testnet (V4) Validator Node setup and running.
 #
-# Note: this script DOES NOT install monitoring/metrics packages such as Grafana or Prometheous
-#
 # Usage
 # $ ./pulsechain-testnet-validator-setup.sh [0x...YOUR ETHEREUM FEE ADDRESS] [12.89...YOUR SERVER IP ADDRESS]
 #
@@ -134,7 +132,7 @@ export PATH=$PATH:$GETH_DIR/build/bin
 mkdir -p $GETH_DATA
 sudo chown -R $NODE_USER:$NODE_USER $GETH_DIR
 
-sudo tee -a /etc/systemd/system/geth.service > /dev/null <<EOT
+sudo tee /etc/systemd/system/geth.service > /dev/null <<EOT
 [Unit]
 Description=Geth (Go-Pulse)
 After=network.target
@@ -187,7 +185,7 @@ sudo chown -R $NODE_USER:$NODE_USER $LIGHTHOUSE_DIR
 # make symbolic link to lighthouse (make service binary in ExecStart nicer)
 sudo -u $NODE_USER ln -s /home/$NODE_USER/.cargo/bin/lighthouse /opt/lighthouse/lighthouse/lh
 
-sudo tee -a /etc/systemd/system/lighthouse-beacon.service > /dev/null <<EOT
+sudo tee /etc/systemd/system/lighthouse-beacon.service > /dev/null <<EOT
 [Unit]
 Description=Lighthouse Beacon
 After=network.target
@@ -220,7 +218,7 @@ sudo systemctl enable lighthouse-beacon
 sudo systemctl start lighthouse-beacon
 #sudo systemctl status lighthouse-beacon
 
-sudo tee -a /etc/systemd/system/lighthouse-validator.service > /dev/null <<EOT
+sudo tee /etc/systemd/system/lighthouse-validator.service > /dev/null <<EOT
 [Unit]
 Description=Lighthouse Validator
 After=network.target
