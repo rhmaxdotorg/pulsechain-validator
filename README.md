@@ -47,26 +47,7 @@ The script automates a roughly estimated ~85% of what it takes to get the valida
 
 **Generate validator keys with deposit tool and import them into Lighthouse**
 
-Note: generate your keys on a different, secure machine (NOT on the validator server) and transfer them over for import. You can use `scp` to copy them over the network OR base64 encode them for a copy and paste style solution such as the following.
-
-**On disposable VM, live CD or otherwise emphemeral filesystem**
-
-```
-sudo apt install -y unzip zip
-zip -r validator_keys.zip validator_keys
-base64 -w0 validator_keys.zip > validator_keys.b64
-cat validator_keys.b64 (and copy the output)
-```
-
-**On your validator server**
-```
-cat > validator_keys.b64 <<EOF
-Paste the output
-[Enter] + type “EOF” + [Enter]
-base64 -d validator_keys.b64 > validator_keys.zip
-```
-
-**Run the staking deposit client**
+**Run the staking deposit client (ON A DIFFERENT MACHINE, see notes below for details)**
 ```
 $ sudo apt install -y python3-pip
 $ git clone https://gitlab.com/pulsechaincom/staking-deposit-cli.git
@@ -86,6 +67,25 @@ $ /opt/lighthouse/lighthouse/lh account validator import --directory ~/validator
 enter password to import validator(s)
 
 (exit and back as ubuntu user)
+```
+
+Note: generate your keys on a different, secure machine (NOT on the validator server) and transfer them over for import. You can use `scp` to copy them over the network OR base64 encode them for a copy and paste style solution such as the following.
+
+**On disposable VM, live CD or otherwise emphemeral filesystem**
+
+```
+sudo apt install -y unzip zip
+zip -r validator_keys.zip validator_keys
+base64 -w0 validator_keys.zip > validator_keys.b64
+cat validator_keys.b64 (and copy the output)
+```
+
+**On your validator server**
+```
+cat > validator_keys.b64 <<EOF
+Paste the output
+[Enter] + type “EOF” + [Enter]
+base64 -d validator_keys.b64 > validator_keys.zip
 ```
 
 **Start the beacon and validator clients**
