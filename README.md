@@ -34,7 +34,7 @@ Note: you may get prompted throughout the process to hit [Enter] for OK and cont
 
 For example when running Ubuntu on AWS EC2 cloud service, you can expect to hit OK on kernel upgrade notice, [Enter] or "1" to continue Rust install process and so on.
 
-** If you encounter errors running the script**, it's best to [Reset the Validator](https://github.com/rhmaxdotorg/pulsechain-validator/blob/main/README.md#reset-validator-script) before running it over and over again. Just make sure you know what you're doing and manually edit the reset script to bypass the "I don't know what I'm doing" check. It's very straightforward, just read the code, acknowledge you know what the script it doing and change I_KNOW_WHAT_I_AM_DOING=false to true to get it to run.
+**If you encounter errors running the script**, it's best to [Reset the Validator](https://github.com/rhmaxdotorg/pulsechain-validator/blob/main/README.md#reset-validator-script) before running it over and over again. Just make sure you know what you're doing and manually edit the reset script to bypass the "I don't know what I'm doing" check. It's very straightforward, just read the code, acknowledge you know what the script it doing and change I_KNOW_WHAT_I_AM_DOING=false to true to get it to run.
 
 # Environment
 Tested on **Ubuntu 22.04** (on Amazon AWS EC2 /w M2.2Xlarge VM) running as a non-root user (ubuntu) with sudo privileges.
