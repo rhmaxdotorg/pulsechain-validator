@@ -43,7 +43,7 @@ For example when running Ubuntu on AWS EC2 cloud service, you can expect to hit 
 
 **If you encounter errors running the script and want to run the script again, use the [Reset the Validator](https://github.com/rhmaxdotorg/pulsechain-validator/blob/main/README.md#reset-validator-script) BEFORE running it over and over again.**
 
-Just make sure you know what you're doing and manually edit the reset script to bypass the "I don't know what I'm doing" check. It's very straightforward, just read the code, acknowledge you know what the script it doing and change I_KNOW_WHAT_I_AM_DOING=false to true to get it to run.
+Just make sure you know what you're doing and manually edit the reset script to bypass the "I don't know what I'm doing" check. It's very straightforward, just read the code, acknowledge you know what the script it doing and **change I_KNOW_WHAT_I_AM_DOING=false to true to get it to run**.
 
 # Environment
 Tested on **Ubuntu 22.04** (on Amazon AWS EC2 /w M2.2Xlarge VM) running as a non-root user (ubuntu) with sudo privileges.
