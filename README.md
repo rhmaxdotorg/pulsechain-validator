@@ -219,6 +219,8 @@ Just some nice-to-haves if you're using the AWS Cloud for your validator server.
 # AWS Cloud Setup
 * [How to run a cloud server on AWS](https://docs.google.com/document/d/1eW0SDT8IvZrla7gywK32Rl3QaQtVoiOu5OaVhUKIDg8/edit)
 
+AWS offers a [free tier](https://aws.amazon.com/free/free-tier-faqs/) option that allows you to spin up Linux VMs for free for a certain period of time, so you could use that for quick and easy tiny VMs running Ubuntu Linux. They are not beefy enough to be a validator, so that's not an option, but they are fine for small tasks and learning. You just need to sign up for an account and follow the instructions in the above document, except choose Free Tier options instead of the validator hardware configuration as described.
+
 # Staking Deposit Client Walkthrough
 
 * [Validator Key Generation and Management](https://docs.google.com/document/d/1tl_nql6-Bqyo5yqFDJ2aqjAQoBAK0FtcCYSKpGXg0hw/edit)
