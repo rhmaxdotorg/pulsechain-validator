@@ -12,7 +12,7 @@ After you download the script, you may need to `chmod +x pulsechain-validator-se
 
 # Description
 
-The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean Ubuntu OS for getting a PulseChain Testnet (V3) Validator Node setup and running with **Geth (go-pulse)** and **Lighthouse** clients.
+The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean Ubuntu OS for getting a PulseChain Testnet (V4) Validator Node setup and running with **Geth (go-pulse)** and **Lighthouse** clients.
 
 There are other helper scripts that do various things, check the notes for each one specifically for more info.
 
