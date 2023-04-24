@@ -21,6 +21,7 @@ Note: the pulsechain validator setup script currently DOES NOT install monitorin
 # Video Walkthrough
 Check out these videos for further explanations and code walkthroughs.
 - https://www.youtube.com/watch?v=X0TnkLt4E3w
+- https://www.youtube.com/watch?v=QqcDs8llyyw
 - https://www.youtube.com/watch?v=9Yibmetppcs
 
 # Usage
