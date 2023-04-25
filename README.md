@@ -230,11 +230,15 @@ AWS also offers a [free tier](https://aws.amazon.com/free/free-tier-faqs/) optio
 
 # Setting up monitoring with Prometheus and Grafana
 
-The **monitoring-setup.sh** and **reset-monitoring.sh** automate most of the setup for grafana and prometheus as well as let you reset (or remove) the monitoring, respectively. You need to run the validator setup script FIRST and then use the monitoring setup script to *upgrade* the install with monitoring.
+The **monitoring-setup.sh** and **reset-monitoring.sh** automate most of the setup for grafana and prometheus as well as let you reset (or remove) the monitoring, respectively.
 
-Also see the guides below for additional help (scripts were mostly based on those instructions)
-* https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/monitoring-your-validator-with-grafana-and-prometheus
-* https://schh.medium.com/port-forwarding-via-ssh-ba8df700f34d
+**You need to run the validator setup script FIRST and then use the monitoring setup script to "upgrade" the install with monitoring.**
+
+## Web UI setup
+
+After running the monitoring setup script, you must finish the configuration at the Grafana portal and import the dashboards.
+
+The standard config assumes you are not sharing the validator server with other people (local user accounts). Otherwise, it’s recommended for security reasons to set up further authentication on the monitoring services. TL;DR you should be the only one with remote access to your validator server, so ensure your keys and passwords are safe and do not share them with anyone for any reason.
 
 You can setup grafana for secure access externally as opposed to the less secure way of forwarding port 3000 on the firewall and open it up to the world, which could put your server at risk next time Grafana has a security bug that anyone interested enough can exploit.
 
@@ -243,6 +247,44 @@ ssh -i key.pem -N ubuntu@validator-server-IP -L 8080:localhost:3000
 ```
 
 Then open a browser window on your computer and login to grafana yourself without exposing it externally to the world. Magic, huh!
+
+Go to http://localhost:8080 and login with admin/admin (as the initial username/password). It will then ask you to set a new password, make it a good one.
+
+In the lower left bar area, click the gear box -> Data Sources -> Add Data Source.
+- Select Prometheus
+- URL: http://localhost:9090
+- Click Save & Test
+- It should say “Datasource is working” in green
+
+Use your mouse cursor to hover over the Dashboards icon (upper left bar area, 4 squares icon).
+- Select Import
+- Upload each JSON dashboard
+
+Geth
+- Download it @ https://gist.githubusercontent.com/karalabe/e7ca79abdec54755ceae09c08bd090cd/raw/3a400ab90f9402f2233280afd086cb9d6aac2111/dashboard.json to import
+- Name: Geth
+- Datasource: Prometheus (default)
+- Click Import
+- Click Save button (and confirm Save) in upper right toolbar
+- Repeat for next dashboard
+
+Lighthouse VC
+- Download it @ https://raw.githubusercontent.com/sigp/lighthouse-metrics/master/dashboards/ValidatorClient.json to import
+- Name: Lighthouse VC
+- Datasource: Prometheus (default)
+(same steps as previous)
+
+Lighthouse Beacon
+- Download it @ https://raw.githubusercontent.com/sigp/lighthouse-metrics/master/dashboards/Summary.json to import
+- Name: Lighthouse Beacon
+- Datasource: Prometheus (default)
+(same steps as previous)
+
+Now you can browse Dashboards and see various stats and data!
+
+Also see the guides below for additional help (scripts were mostly based on those instructions)
+* https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/monitoring-your-validator-with-grafana-and-prometheus
+* https://schh.medium.com/port-forwarding-via-ssh-ba8df700f34d
 
 # Community Guides and Scripts
 * https://gitlab.com/davidfeder/validatorscript/-/blob/5fa11c7f81d8292779774b8dff9144ec3e44d26a/PulseChain_V3_Script.txt
