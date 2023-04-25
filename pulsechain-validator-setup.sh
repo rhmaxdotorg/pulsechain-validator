@@ -149,7 +149,8 @@ ExecStart=$GETH_DIR/build/bin/geth \
 --datadir=$GETH_DATA \
 --http \
 --http.api=engine,eth,net,admin,debug \
---authrpc.jwtsecret=$JWT_SECRET_DIR/secret \
+--authrpc.jwtsecret=$JWT_SECRET_DIR/secret\
+
 
 [Install]
 WantedBy=default.target
