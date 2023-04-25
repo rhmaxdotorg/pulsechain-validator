@@ -249,6 +249,7 @@ Then open a browser window on your computer and login to grafana yourself withou
 
 # Security
 * https://www.youtube.com/watch?v=hHtvCGlPz-o
+* https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/guide-or-security-best-practices-for-a-eth2-validator-beaconchain-node
 
 # FAQ
 
