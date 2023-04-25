@@ -16,7 +16,7 @@ The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and light
 
 There are other helper scripts that do various things, check the notes for each one specifically for more info.
 
-Note: the pulsechain validator setup script currently DOES NOT install monitoring/metrics packages such as Grafana or Prometheous, that may be done in a separate monitoring setup script or guides as referenced [below](https://github.com/rhmaxdotorg/pulsechain-validator#setting-up-monitoring-with-prometheus-and-grafana).
+Note: the pulsechain validator setup script DOES NOT install monitoring/metrics packages such as Grafana or Prometheus, you would need to run it AND THEN run the monitoring-setup.sh script provided. See details [below](https://github.com/rhmaxdotorg/pulsechain-validator#setting-up-monitoring-with-prometheus-and-grafana).
 
 # Video Walkthrough
 Check out these videos for further explanations and code walkthroughs.
@@ -229,7 +229,10 @@ AWS also offers a [free tier](https://aws.amazon.com/free/free-tier-faqs/) optio
 * [Geth, Erigon, Prysm and Lighthouse](https://docs.google.com/document/d/1RkAWt0Q_DmYpnykHFM4Qf5ItDLPLi-kaj1PDG74Mftg/edit)
 
 # Setting up monitoring with Prometheus and Grafana
-See the guides below for help getting them setup
+
+The **monitoring-setup.sh** and **reset-monitoring.sh** automate most of the setup for grafana and prometheus as well as let you reset (or remove) the monitoring, respectively. You need to run the validator setup script FIRST and then use the monitoring setup script to *upgrade* the install with monitoring.
+
+Also see the guides below for additional help (scripts were mostly based on those instructions)
 * https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/monitoring-your-validator-with-grafana-and-prometheus
 * https://schh.medium.com/port-forwarding-via-ssh-ba8df700f34d
 
