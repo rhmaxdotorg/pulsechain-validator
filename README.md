@@ -8,7 +8,7 @@ This will help you setup [PulseChain](www.pulsechain.com) Testnet v4 and plans a
 
 To download these scripts on your server, you can `git clone https://github.com/rhmaxdotorg/pulsechain-validator.git`.
 
-After you download the script, you may need to `chmod +x pulsechain-validator-setup.sh` to make the script executable and able to run on the system.
+After you download the code, you may need to `chmod +x *.sh` to make all the scripts executable and able to run on the system.
 
 # Description
 
@@ -16,7 +16,9 @@ The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and light
 
 There are other helper scripts that do various things, check the notes for each one specifically for more info.
 
-Note: the pulsechain validator setup script DOES NOT install monitoring/metrics packages such as Grafana or Prometheus, you would need to run it AND THEN run the monitoring-setup.sh script provided. See details [below](https://github.com/rhmaxdotorg/pulsechain-validator#setting-up-monitoring-with-prometheus-and-grafana).
+You can run **pulsechain-validator-setup.sh** to setup your validator clients and **monitoring-setup.sh** afterwards to install the graphs and monitoring software.
+
+Note: the pulsechain validator setup script DOES NOT install monitoring/metrics packages such as Grafana or Prometheus, you would need to run it AND THEN run the monitoring-setup.sh script provided. Do not run the monitoring script before installing your validator clients. See details [below](https://github.com/rhmaxdotorg/pulsechain-validator#setting-up-monitoring-with-prometheus-and-grafana).
 
 # Video Walkthrough
 Check out these videos for further explanations and code walkthroughs.
@@ -115,7 +117,7 @@ $ journalctl -u lighthouse-validator.service
 
 You can have multiple on one machine. The deposit is made @ https://launchpad.v4.testnet.pulsechain.com to get your validator activated and participating on the network.
 
-If you do the deposit before the clients are fully synced and ready to go, then you risk getting slashed as your validator would join the network, but due to not being synced, unable to participate in validator duties (until it's fully synced).
+If you do the deposit before the clients are fully synced and ready to go, then you risk penalities as your validator would join the network, but due to not being synced, unable to participate in validator duties (until it's fully synced).
 
 Now let's get validating! @rhmaximalist
 
