@@ -80,7 +80,7 @@ enter password to import validator(s)
 
 Note: generate your keys on a different, secure machine (NOT on the validator server) and transfer them over for import. **See the Security section for more references on why this is important.** AWS even offers a [free tier](https://aws.amazon.com/free/free-tier-faqs/) option that allows you to spin up and use VMs basically for free for a certain period of time, so you could use that for quick and easy tiny VMs running Ubuntu Linux (not beefy enough to be a validator, but fine for small tasks and learning).
 
-You can use the `scp` command to copy validator keys over the network (encrypted) OR base64 encode them for a copy and paste style solution such as the following.
+You can use the `scp` command to copy validator keys over the network (encrypted), USB stick (if hardware is local, not vps/cloud) OR use this base64 encoding trick for a copy and paste style solution such as the following. Note: this is advanced and you need to pay attention to be successful with it. If you're not confident you can do it, **better to use scp or USB methods**.
 
 **On disposable VM, live CD or otherwise emphemeral filesystem**
 
