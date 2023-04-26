@@ -50,6 +50,11 @@ Just make sure you know what you're doing and manually edit the reset script to 
 # Environment
 Tested on **Ubuntu 22.04** (on Amazon AWS EC2 /w M2.2Xlarge VM) running as a non-root user (ubuntu) with sudo privileges.
 
+# Hardware
+The consensus on the minimum requirements to run a validator seem to be 32gb RAM, 2TB disk and plenty of processing power (quadcore, xeon/ryzen, 4-8 vCPUs and such). These can come in the form of buying or building your own server and paying an upfront cost, utilities and maintenance OR renting a server from a VPS/cloud provider such as Amazon AWS and paying monthly to use their platform and resources.
+
+Both have advantages and disadvantages as well as varying time, monetary and management costs.
+
 # After running the script
 
 The script automates a roughly estimated ~85% of what it takes to get the validator configured, but there's still a few manual steps you need to do to complete the setup and get the validator on the network.
