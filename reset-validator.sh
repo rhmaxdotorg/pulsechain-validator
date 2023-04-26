@@ -28,5 +28,6 @@ sudo rm -rf /opt/*
 
 # remove the user
 sudo userdel -r node &>/dev/null
+sudo rm -rf /home/node
 
 echo -e "\nProcess is complete"
