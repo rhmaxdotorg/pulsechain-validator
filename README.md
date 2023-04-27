@@ -14,11 +14,13 @@ After you download the code, you may need to `chmod +x *.sh` to make all the scr
 
 The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean Ubuntu OS for getting a PulseChain Testnet (V4) Validator Node setup and running with **Geth (go-pulse)** and **Lighthouse** clients.
 
+Clients are running on the same machine and not in docker containers (such as the method other scripts use). There are advantages and disadvantages to containerizing the clients vs running them on the host OS. You can also automate deployments with Terraform on AWS, however the scripts are meant to make it pretty easy to spin up and tear down new validator machines once you have the hardware up with access to a fresh install of Ubuntu Linux.
+
 There are other helper scripts that do various things, check the notes for each one specifically for more info.
 
 You can run **pulsechain-validator-setup.sh** to setup your validator clients and **monitoring-setup.sh** afterwards to install the graphs and monitoring software.
 
-Note: the pulsechain validator setup script DOES NOT install monitoring/metrics packages such as Grafana or Prometheus, you would need to run it AND THEN run the monitoring-setup.sh script provided. Do not run the monitoring script before installing your validator clients. See details [below](https://github.com/rhmaxdotorg/pulsechain-validator#setting-up-monitoring-with-prometheus-and-grafana).
+Note: the pulsechain validator setup script doesn't install monitoring/metrics packages, however a script to do that is provided. It would need to run the validator setup script AND THEN run the monitoring-setup.sh script provided. Do not run the monitoring script before installing your validator clients. See details in the [Grafana or Prometheus](https://github.com/rhmaxdotorg/pulsechain-validator#setting-up-monitoring-with-prometheus-and-grafana) section.
 
 # Video Walkthrough
 Check out these videos for further explanations and code walkthroughs.
