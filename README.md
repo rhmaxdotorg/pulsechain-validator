@@ -2,7 +2,7 @@
 
 ![pls-testnet-validator-htop](https://user-images.githubusercontent.com/100790377/229965674-75593b5a-3fa6-44fe-8f47-fc25e9d3ce21.png)
 
-This will help you setup [PulseChain](www.pulsechain.com) Testnet v4 and plans are to update it to support [PulseChain](www.pulsechain.com) Mainnet as well after it launches.
+This will help you setup [PulseChain](www.pulsechain.com) Testnet v4 and plans are to update it to support [PulseChain](www.pulsechain.com) Mainnet as well after it launches. Since it is a fork of ETH 2.0, all the same methods and scripts can be modified to work fine and automate Ethereum node setup as well.
 
 **Please read ALL the instructions as they will explain and tell you how to run these scripts and the caveats.**
 
@@ -26,6 +26,7 @@ Check out these videos for further explanations and code walkthroughs.
 - https://www.youtube.com/watch?v=QqcDs8llyyw
 - https://www.youtube.com/watch?v=YFOxf4B27Zs
 - https://www.youtube.com/watch?v=9Yibmetppcs
+- https://www.youtube.com/results?search_query=rhmax+validator+ama
 
 # Usage
 
