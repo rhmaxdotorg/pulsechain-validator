@@ -340,6 +340,7 @@ https://t.me/PulseDev
 # Additional Resources and References
 - https://gitlab.com/pulsechaincom
 - https://gammadevops.substack.com/p/part-1-introduction-to-validator
+- https://gitlab.com/davidfeder/validatorscript/-/blob/64f37685908a78c5337f8d3dc951f7f01f251697/PulseChain_V4_Script.txt
 - https://gitlab.com/davidfeder/validatorscript/-/blob/5fa11c7f81d8292779774b8dff9144ec3e44d26a/PulseChain_V3_Script.txt
 - https://www.hexpulse.info/docs/node-setup.html
 - https://togosh.medium.com/pulsechain-validator-setup-guide-70edae00b344
