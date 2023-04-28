@@ -105,6 +105,7 @@ cat > validator_keys.b64 <<EOF
 Paste the output
 [Enter] + type “EOF” + [Enter]
 base64 -d validator_keys.b64 > validator_keys.zip
+unzip validator_keys.zip
 ```
 
 **Start the beacon and validator clients**
@@ -225,6 +226,12 @@ Be careful! It deletes and resets things, so read the code and make sure you und
 
 # AWS EC2 Helper Script
 Just some nice-to-haves if you're using the AWS Cloud for your validator server.
+
+# Client Update Script
+
+It stops the client services, pulls updates from Gitlab, rebuilds the clients and starts the services back again. Only supports Geth and Lighthouse.
+
+Note: **validator will be offline for likely 1 hour while the updates are taking place**, so before you run this script, make sure you understand and are OK with that.
 
 # AWS Cloud Setup
 * [How to run a cloud server on AWS](https://docs.google.com/document/d/1eW0SDT8IvZrla7gywK32Rl3QaQtVoiOu5OaVhUKIDg8/edit)
