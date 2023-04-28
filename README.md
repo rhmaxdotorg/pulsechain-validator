@@ -12,6 +12,13 @@ After you download the code, you may need to `chmod +x *.sh` to make all the scr
 
 # Description
 
+Scripts and guidance available include...
+- PulseChain Validator setup (~85% entire process automated)
+- Use the staking deposit client
+- Grafana and Prometheus monitoring setup
+- Updating your clients
+- Enabling local RPC for Metamask
+
 The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean Ubuntu OS for getting a PulseChain Testnet (V4) Validator Node setup and running with **Geth (go-pulse)** and **Lighthouse** clients.
 
 Clients are running on the same machine and not in docker containers (such as the method other scripts use). There are advantages and disadvantages to containerizing the clients vs running them on the host OS. You can also automate deployments with Terraform on AWS, however the scripts are meant to make it pretty easy to spin up and tear down new validator machines once you have the hardware up with access to a fresh install of Ubuntu Linux.
@@ -107,6 +114,8 @@ Paste the output
 base64 -d validator_keys.b64 > validator_keys.zip
 unzip validator_keys.zip
 ```
+
+Also see [Validator Key Generation and Management](https://docs.google.com/document/d/1tl_nql6-Bqyo5yqFDJ2aqjAQoBAK0FtcCYSKpGXg0hw/edit) for more guidance.
 
 **Start the beacon and validator clients**
 ```
@@ -232,6 +241,30 @@ Just some nice-to-haves if you're using the AWS Cloud for your validator server.
 It stops the client services, pulls updates from Gitlab, rebuilds the clients and starts the services back again. Only supports Geth and Lighthouse.
 
 Note: **validator will be offline for likely 1 hour while the updates are taking place**, so before you run this script, make sure you understand and are OK with that.
+
+# RPC Interface Script
+
+Enables the RPC interface so you can use your own node in Metamask (support for Firefox only). Running your own node and using it can be used for testing purposes, not relying on public servers or bypassing slow, rate limited services by "doing it yourself".
+
+**Do not expose your RPC publicly unless you know what you're doing.** This script helps you more securely expose it to your own local environment for your own use.
+
+If your RPC is...
+- On the same machine as Metamask, you can point it at 127.0.0.1
+- On VPS/cloud server, you can use SSH port forwarding and then point it at 127.0.0.1
+- On a different machine on your local network, open the port on the local firewall and point it at that local IP address
+
+**Add your server to Metamask**
+
+Click the Network drop-down, then Add Network and Add a Network Manaully.
+
+- Network name: Local PLS
+- New RPC URL: http://local-network-server-IP:8564 OR http://127.0.0.1:8546 (running same machine OR port forwarded)
+- Chain ID: 943 (for testnet v4)
+- Currency symbol: tPLS
+- Block explorer URL: https://scan.v4.testnet.pulsechain.com
+- Save
+
+Now you can use your own node for transactions on the network that your validator is participating in.
 
 # AWS Cloud Setup
 * [How to run a cloud server on AWS](https://docs.google.com/document/d/1eW0SDT8IvZrla7gywK32Rl3QaQtVoiOu5OaVhUKIDg8/edit)
