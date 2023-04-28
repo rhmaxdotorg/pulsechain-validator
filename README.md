@@ -1,4 +1,4 @@
-# PulseChain Testnet Validator Node Setup Helper Scripts
+# PulseChain Testnet Validator Node Setup Scripts
 
 ![pls-testnet-validator-htop](https://user-images.githubusercontent.com/100790377/229965674-75593b5a-3fa6-44fe-8f47-fc25e9d3ce21.png)
 
@@ -304,7 +304,7 @@ Also see the guides below for additional help (scripts were mostly based on thos
 * https://schh.medium.com/port-forwarding-via-ssh-ba8df700f34d
 
 # Community Guides and Scripts
-* https://gitlab.com/davidfeder/validatorscript/-/blob/5fa11c7f81d8292779774b8dff9144ec3e44d26a/PulseChain_V3_Script.txt
+* https://gitlab.com/davidfeder/validatorscript/-/blob/64f37685908a78c5337f8d3dc951f7f01f251697/PulseChain_V4_Script.txt
 * https://www.hexpulse.info/docs/node-setup.html
 * https://togosh.medium.com/pulsechain-validator-setup-guide-70edae00b344
 * https://github.com/tdslaine/install_pulse_node
