@@ -330,9 +330,15 @@ Lighthouse Beacon
 - Datasource: Prometheus (default)
 (same steps as previous)
 
-You can also try this new forked Dashboard for PulseChain @ https://github.com/raskitoma/pulse-staking-dashboard
+There's also this ETH forked Dashboard for PulseChain @ https://github.com/raskitoma/pulse-staking-dashboard which has really good stats!
 
-Now you can browse Dashboards and see various stats and data!
+Staking Dashboard
+- Download it @ https://raw.githubusercontent.com/raskitoma/pulse-staking-dashboard/main/Yoldark_ETH_staking_dashboard.json to import
+- Name: Staking Dashboard
+- Datasource: Prometheus (default)
+(same steps as previous)
+
+Now you can browse the Dashboards and see various stats and data!
 
 Also see the guides below for additional help (scripts were mostly based on those instructions)
 * https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/monitoring-your-validator-with-grafana-and-prometheus
