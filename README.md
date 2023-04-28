@@ -330,17 +330,21 @@ Lighthouse Beacon
 - Datasource: Prometheus (default)
 (same steps as previous)
 
+You can also try this new forked Dashboard for PulseChain @ https://github.com/raskitoma/pulse-staking-dashboard
+
 Now you can browse Dashboards and see various stats and data!
 
 Also see the guides below for additional help (scripts were mostly based on those instructions)
 * https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/monitoring-your-validator-with-grafana-and-prometheus
 * https://schh.medium.com/port-forwarding-via-ssh-ba8df700f34d
+* https://github.com/raskitoma/pulse-staking-dashboard
 
-# Community Guides and Scripts
+# Community Guides, Scripts and Dashboards
 * https://gitlab.com/davidfeder/validatorscript/-/blob/64f37685908a78c5337f8d3dc951f7f01f251697/PulseChain_V4_Script.txt
 * https://www.hexpulse.info/docs/node-setup.html
 * https://togosh.medium.com/pulsechain-validator-setup-guide-70edae00b344
 * https://github.com/tdslaine/install_pulse_node
+* https://github.com/raskitoma/pulse-staking-dashboard
 
 # Security
 * https://www.youtube.com/watch?v=hHtvCGlPz-o
