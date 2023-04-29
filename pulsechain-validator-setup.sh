@@ -118,7 +118,7 @@ sudo chmod 400 $JWT_SECRET_DIR/secret
 
 echo -e "\nstep 3: setting up and running Go-Pulse (execution client) to start syncing data\n"
 
-# erigon setup
+# geth setup
 git clone $GETH_REPO
 sleep 0.5 # ugh, wait
 sudo mv $GETH_REPO_NAME $GETH_DIR
