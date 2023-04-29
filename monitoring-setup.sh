@@ -23,6 +23,7 @@
 # - https://gist.githubusercontent.com/karalabe/e7ca79abdec54755ceae09c08bd090cd/raw/3a400ab90f9402f2233280afd086cb9d6aac2111/dashboard.json (Geth)
 # - https://raw.githubusercontent.com/sigp/lighthouse-metrics/master/dashboards/Summary.json (Lighthouse)
 # - https://raw.githubusercontent.com/sigp/lighthouse-metrics/master/dashboards/ValidatorClient.json (Lighthouse)
+# - https://raw.githubusercontent.com/raskitoma/pulse-staking-dashboard/main/Yoldark_ETH_staking_dashboard.json (Lighthouse Staking Dashboard)
 #
 # Important Note
 #
