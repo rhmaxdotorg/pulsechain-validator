@@ -16,7 +16,9 @@ Scripts and guidance available include...
 - PulseChain Validator setup (~85% entire process automated)
 - Use the staking deposit client
 - Grafana and Prometheus monitoring setup
-- Updating your clients
+- Setting up an AWS cloud server
+- Updating your client versions to the latest
+- Updating your fee recipient and IP address
 - Enabling local RPC for Metamask
 
 The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean Ubuntu OS for getting a PulseChain Testnet (V4) Validator Node setup and running with **Geth (go-pulse)** and **Lighthouse** clients.
@@ -241,6 +243,10 @@ Just some nice-to-haves if you're using the AWS Cloud for your validator server.
 It stops the client services, pulls updates from Gitlab, rebuilds the clients and starts the services back again. Only supports Geth and Lighthouse.
 
 Note: **validator will be offline for likely 1 hour while the updates are taking place**, so before you run this script, make sure you understand and are OK with that.
+
+# Fee Recipient and IP Address Update Script
+
+This one allows you to update the network fee recipient and server IP address for Lighthouse. These were specified during the initial PulseChain validator setup, however both of them may change for you over time, so the script allows you to easily update them and restart the clients.
 
 # RPC Interface Script
 
