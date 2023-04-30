@@ -380,6 +380,12 @@ This depends on your router device and model, so you'll need to research how to 
 - For Prysm (or Lighthouse), we need to open up TCP ports 9000 and 13000 as well as UDP port 12000
 - All with Source=0.0.0.0/24 or Anywhere (unless you want to restrict SSH access to your specific IP range, but that's out of scope here)
 
+# Graffiti
+
+You can add graffiti flags for simple, one-line messages or ask Lighthouse to read from a file to express yourself in text for blocks your validator helps create. By default, the script does not set graffiti flags, but you can do this manually by editing the Lighthouse service files and adding in the flags and values that you want.
+
+Check out the Lighthouse manual page on [graffiti](https://lighthouse-book.sigmaprime.io/graffiti.html) for instructions on how it works.
+
 # FAQ
 
 * What server specs do you need to be a validator?
