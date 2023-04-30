@@ -65,7 +65,6 @@ JWT_SECRET_DIR="/var/lib/jwt"
 LIGHTHOUSE_DIR="/opt/lighthouse"
 LIGHTHOUSE_BEACON_DATA="/opt/lighthouse/data/beacon"
 LIGHTHOUSE_VALIDATOR_DATA="/opt/lighthouse/data/validator"
-LIGHTHOUSE_WALLET_DATA="/opt/lighthouse/wallet"
 
 LIGHTHOUSE_REPO="https://gitlab.com/pulsechaincom/lighthouse-pulse.git"
 LIGHTHOUSE_REPO_NAME="lighthouse-pulse"
@@ -179,7 +178,6 @@ make
 
 # setup lighthouse beacon data, validator data and wallet directories
 sudo mkdir -p $LIGHTHOUSE_VALIDATOR_DATA
-sudo mkdir -p $LIGHTHOUSE_WALLET_DATA
 
 sudo chown -R $NODE_USER:$NODE_USER $LIGHTHOUSE_DIR
 
