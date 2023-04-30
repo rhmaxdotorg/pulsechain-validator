@@ -78,12 +78,12 @@ Check out these videos for further explanations and code walkthroughs.
 # Usage
 
 ```
-$ ./pulsechain-validator-setup.sh [0x...YOUR ETHEREUM FEE ADDRESS] [12.89...YOUR SERVER IP ADDRESS]
+$ ./pulsechain-validator-setup.sh [0x...YOUR NETWORK FEE ADDRESS] [12.89...YOUR SERVER IP ADDRESS]
 ```
 
 ## Command line options
 
-- **ETHEREUM FEE ADDRESS** is the FEE_RECIPIENT value for --suggested-fee-recipient to a wallet address you want to recieve priority fees from users whenever your validator proposes a new block (else it goes to the burn address)
+- **NETWORK FEE ADDRESS** is the FEE_RECIPIENT value for --suggested-fee-recipient to a wallet address you want to recieve priority fees from users whenever your validator proposes a new block (else it goes to the burn address)
 
 - **SERVER_IP_ADDRESS** to your validator server's IP address
 
