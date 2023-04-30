@@ -31,7 +31,42 @@ You can run **pulsechain-validator-setup.sh** to setup your validator clients an
 
 Note: the pulsechain validator setup script doesn't install monitoring/metrics packages, however a script to do that is provided. It would need to run the validator setup script AND THEN run the monitoring-setup.sh script provided. Do not run the monitoring script before installing your validator clients. See details in the [Grafana or Prometheus](https://github.com/rhmaxdotorg/pulsechain-validator#setting-up-monitoring-with-prometheus-and-grafana) section.
 
-# Video Walkthrough
+# Table of Contents
+
+* [PulseChain Testnet Validator Node Setup Scripts](#pulsechain-testnet-validator-node-setup-scripts)
+* [Description](#description)
+* [Walkthrough](#walkthrough)
+* [Usage](#usage)
+   * [Command line options](#command-line-options)
+* [Environment](#environment)
+* [Hardware](#hardware)
+* [After running the script](#after-running-the-script)
+* [Debugging](#debugging)
+   * [Check the Blockchain Sync Progress](#check-the-blockchain-sync-progress)
+      * [Geth](#geth)
+      * [Lighthouse](#lighthouse)
+   * [Look at Client Service Status](#look-at-client-service-status)
+* [Reset Validator Script](#reset-validator-script)
+* [AWS EC2 Helper Script](#aws-ec2-helper-script)
+* [Client Update Script](#client-update-script)
+* [Fee Recipient and IP Address Update Script](#fee-recipient-and-ip-address-update-script)
+* [RPC Interface Script](#rpc-interface-script)
+* [AWS Cloud Setup](#aws-cloud-setup)
+* [Staking Deposit Client Walkthrough](#staking-deposit-client-walkthrough)
+* [Details for all PulseChain clients (/w Ethereum Testnet notes)](#details-for-all-pulsechain-clients-w-ethereum-testnet-notes)
+* [Setting up monitoring with Prometheus and Grafana](#setting-up-monitoring-with-prometheus-and-grafana)
+   * [Web UI setup](#web-ui-setup)
+* [Community Guides, Scripts and Dashboards](#community-guides-scripts-and-dashboards)
+* [Security](#security)
+* [Networking](#networking)
+   * [Server](#server)
+* [Home Router](#home-router)
+   * [AWS Cloud](#aws-cloud)
+* [Graffiti](#graffiti)
+* [FAQ](#faq)
+* [Additional Resources and References](#additional-resources-and-references)
+
+# Walkthrough
 Check out these videos for further explanations and code walkthroughs.
 - https://www.youtube.com/watch?v=X0TnkLt4E3w
 - https://www.youtube.com/watch?v=QqcDs8llyyw
