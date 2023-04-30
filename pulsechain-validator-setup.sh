@@ -37,8 +37,6 @@
 
 # general config
 NODE_USER="node"
-FEE_RECIPIENT=$1
-SERVER_IP_ADDRESS=$2
 
 APT_PACKAGES="build-essential cmake clang git wget jq protobuf-compiler"
 
@@ -79,6 +77,9 @@ if [ -z "$2" ]; then
     echo "* requires fee address and IP args, read the script notes and try again"
     exit 1
 fi
+
+FEE_RECIPIENT=$1
+SERVER_IP_ADDRESS=$2
 
 echo -e "PulseChain TESTNET V4 Validator Setup\n"
 echo -e "Note: this is a HELPER SCRIPT (some steps still need completed manually, see notes after script is finished)\n"
