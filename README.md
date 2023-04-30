@@ -356,6 +356,30 @@ Also see the guides below for additional help (scripts were mostly based on thos
 * https://www.youtube.com/watch?v=hHtvCGlPz-o
 * https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/guide-or-security-best-practices-for-a-eth2-validator-beaconchain-node
 
+# Networking
+There are ports that need to be exposed to the Internet for your validator to operate, specially for Geth and Lighthouse it's TCP/UDP ports 30303 and 9000 respectively. There are two common ways to control the firewall on your network: the Linux server and the network (such as your router or gateway to the Internet).
+
+## Server
+On the Linux server, you can open ports like this (as seen in the code).
+
+```
+# firewall rules to allow go-pulse and lighthouse services
+sudo ufw allow 30303/tcp
+sudo ufw allow 30303/udp
+sudo ufw allow 9000/tcp
+sudo ufw allow 9000/udp
+```
+
+# Home Router
+This depends on your router device and model, so you'll need to research how to open ports on your specific networking device.
+
+## AWS Cloud
+**Security groups** (firewall)
+- TCP port 22 (SSH) is your remote access to the server in the cloud (it’s enabled by default)
+- For Erigon (or Geth), we need to open up TCP ports 30303 and 42069
+- For Prysm (or Lighthouse), we need to open up TCP ports 9000 and 13000 as well as UDP port 12000
+- All with Source=0.0.0.0/24 or Anywhere (unless you want to restrict SSH access to your specific IP range, but that's out of scope here)
+
 # FAQ
 
 * What server specs do you need to be a validator?
