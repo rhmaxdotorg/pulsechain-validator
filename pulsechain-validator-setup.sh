@@ -35,12 +35,6 @@
 # Now let's get validating! @rhmaximalist
 #
 
-# initial check for script arguments (eth address and IP options)
-if [ -z "$2" ]; then
-    echo "* requires eth address and IP args, read the script notes and try again"
-    exit 1
-fi
-
 # general config
 NODE_USER="node"
 FEE_RECIPIENT=$1
@@ -74,7 +68,11 @@ LIGHTHOUSE_CHECKPOINT_URL="https://checkpoint.v4.testnet.pulsechain.com"
 
 ################################################################
 
-#set -e
+# initial check for script arguments (eth address and IP options)
+if [ -z "$2" ]; then
+    echo "* requires eth address and IP args, read the script notes and try again"
+    exit 1
+fi
 
 trap sigint INT
 
