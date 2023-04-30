@@ -68,6 +68,7 @@ Note: the pulsechain validator setup script doesn't install monitoring/metrics p
 
 # Walkthrough
 Check out these videos for further explanations and code walkthroughs.
+- https://www.youtube.com/watch?v=6-ePJXAUfdg
 - https://www.youtube.com/watch?v=X0TnkLt4E3w
 - https://www.youtube.com/watch?v=QqcDs8llyyw
 - https://www.youtube.com/watch?v=YFOxf4B27Zs
