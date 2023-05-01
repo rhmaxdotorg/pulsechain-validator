@@ -438,6 +438,12 @@ Specs and preferences vary between who you talk to, but at least 32gb ram and a 
 
 It depends on your bandwidth, server specs and the state of the network, but you should expect anywhere from 24 - 96hrs for a validator node to sync.
 
+* Can I run more than (1) validator on a single server?
+
+Yes, you can run as many validators as you want on your server. Only caveat being that if you plan to run 100+, you may want to double the specs (at least memory) on your hardware to account for any additional resource usage. If you plan on running 1 or 10 or even 50, the minimum recommended hardware specs will probably work.
+
+The setup script has no dependencies on the number of validators you run, it simply installs the clients and when you generate your validator keys with the staking deposit tool, there you choose the specific number you want to run. It could be 1, 5, 10 or 100. Then, when you import your keys to Lighthouse, you will import each key and it will configure the client to run that number of validators.
+
 * How can I see the stats on my validator(s)?
 
 Look at your deposit JSON file to get the list of your validator(s) public keys, then check https://beacon.v4.testnet.pulsechain.com/validator/ + your validator's public key which each one that you want to check the stats on.
