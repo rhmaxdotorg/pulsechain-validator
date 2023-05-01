@@ -63,6 +63,9 @@ Note: the pulsechain validator setup script doesn't install monitoring/metrics p
 * [Home Router](#home-router)
    * [AWS Cloud](#aws-cloud)
 * [Graffiti](#graffiti)
+* [Backups](#backups)
+   * [Home](#home)
+   * [Cloud](#cloud)
 * [FAQ](#faq)
 * [Additional Resources and References](#additional-resources-and-references)
 
@@ -383,20 +386,24 @@ Staking Dashboard
 Now you can browse the Dashboards and see various stats and data!
 
 Also see the guides below for additional help (scripts were mostly based on those instructions)
-* https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/monitoring-your-validator-with-grafana-and-prometheus
-* https://schh.medium.com/port-forwarding-via-ssh-ba8df700f34d
-* https://github.com/raskitoma/pulse-staking-dashboard
+- https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/monitoring-your-validator-with-grafana-and-prometheus
+- https://schh.medium.com/port-forwarding-via-ssh-ba8df700f34d
+- https://github.com/raskitoma/pulse-staking-dashboard
 
 # Community Guides, Scripts and Dashboards
-* https://gitlab.com/davidfeder/validatorscript/-/blob/64f37685908a78c5337f8d3dc951f7f01f251697/PulseChain_V4_Script.txt
-* https://www.hexpulse.info/docs/node-setup.html
-* https://togosh.medium.com/pulsechain-validator-setup-guide-70edae00b344
-* https://github.com/tdslaine/install_pulse_node
-* https://github.com/raskitoma/pulse-staking-dashboard
+- https://gitlab.com/davidfeder/validatorscript/-/blob/64f37685908a78c5337f8d3dc951f7f01f251697/PulseChain_V4_Script.txt
+- https://www.hexpulse.info/docs/node-setup.html
+- https://togosh.medium.com/pulsechain-validator-setup-guide-70edae00b344
+- https://github.com/tdslaine/install_pulse_node
+- https://github.com/raskitoma/pulse-staking-dashboard
 
 # Security
-* https://www.youtube.com/watch?v=hHtvCGlPz-o
-* https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/guide-or-security-best-practices-for-a-eth2-validator-beaconchain-node
+
+TODO: add validator security ama video here after live stream
+
+References
+- https://www.youtube.com/watch?v=hHtvCGlPz-o
+- https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/guide-or-security-best-practices-for-a-eth2-validator-beaconchain-node
 
 # Networking
 There are ports that need to be exposed to the Internet for your validator to operate, specially for Geth and Lighthouse it's TCP/UDP ports 30303 and 9000 respectively. There are two common ways to control the firewall on your network: the Linux server and the network (such as your router or gateway to the Internet).
@@ -439,6 +446,52 @@ add something like this to the ExecStart= command (line 12)
 $ sudo systemctl daemon-reload
 $ sudo systemctl restart lighthouse-beacon
 ```
+
+# Backups
+
+## Home
+You can use various tools on Linux to make scheduled backups to another disk OR another server.
+
+References
+- https://helpdeskgeek.com/linux-tips/5-ways-to-automate-a-file-backup-in-linux/
+- https://www.howtogeek.com/135533/how-to-use-rsync-to-backup-your-data-on-linux/
+- https://averagelinuxuser.com/automatically-backup-linux/
+- https://www.math.cmu.edu/~gautam/sj/blog/20200216-rsync-backups.html
+- https://www.simplified.guide/linux/automatic-backup
+
+## Cloud
+**Snapshots**
+- AWS Home
+- EC2 -> Instances -> (Select validator server’s Instance ID)
+- Storage tab (near bottom)
+- Click the Volume ID (to filter by it)
+- Click the Volume ID (again)
+- Actions -> Create Snapshot
+- Description: (current date, for example 5/5/55)
+- Create Snapshot
+
+You should see in green...
+- Successfully created snapshot snap-aaaabbbb from volume vol-xxxxyyyy.
+
+It will be in Pending status for a while before the process completes (could be a few hours).
+
+**Using a Snapshot**
+- EC2 -> Snapshots
+- Click on the Snapshot ID (see description to identify the right one, set Name as appropriate)
+- Now you can do things like create a volume from the snapshot (and use the snapshot)
+- Create a new volume from the snapshot
+- Go back to volumes and name it like pulsechain-testnet-v4-snapshot-050523
+- Spin up another server with the same hardware
+- Create a new server (instance)
+- Go to the new instance and detach the initially created volume
+- EC2 -> Volumes -> Select the volume created from the snapshot
+- Actions -> Attach volume
+- Select the new instance (just created)
+- Device name: /dev/sda1
+- Click Attach volume
+- Now start the new instance
+
+You now have a new server with a hard disk volume based on the snapshot of the other server, yay!
 
 # FAQ
 
