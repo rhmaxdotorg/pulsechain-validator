@@ -428,6 +428,18 @@ You can add graffiti flags for simple, one-line messages or ask Lighthouse to re
 
 Check out the Lighthouse manual page on [graffiti](https://lighthouse-book.sigmaprime.io/graffiti.html) for instructions on how it works.
 
+**Example**
+```
+$ sudo pico /etc/systemd/system/lighthouse-beacon.service
+
+add something like this to the ExecStart= command (line 12)
+
+ --graffiti "richard heart was right"
+
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart lighthouse-beacon
+```
+
 # FAQ
 
 * What server specs do you need to be a validator?
