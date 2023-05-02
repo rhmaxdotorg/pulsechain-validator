@@ -29,8 +29,8 @@ sudo systemctl daemon-reload
 
 # remove client data (leave blockchain by default)
 if [ "$REMOVE_BLOCKCHAIN_DATA" = false ]; then
-    sudo find $GETH_DIR -mindepth 1 -name data -prune -o -exec rm -rf {} +
-    sudo find $LIGHTHOUSE_DIR -mindepth 1 -name beacon -prune -o -exec rm -rf {} +
+    sudo find $GETH_DIR -mindepth 1 -name data -prune -o -exec rm -rf {} + &>/dev/null
+    sudo find $LIGHTHOUSE_DIR -mindepth 1 -name beacon -prune -o -exec rm -rf {} + &>/dev/null
 else
     sudo rm -rf $GETH_DIR
     sudo rm -rf $LIGHTHOUSE_DIR
