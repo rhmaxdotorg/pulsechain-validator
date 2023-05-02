@@ -3,16 +3,16 @@
 # PulseChain validator helper script stuff to "reset" things so you can try again
 #
 
-GETH_DIR="/opt/geth"
-LIGHTHOUSE_DIR="/opt/lighthouse"
-REMOVE_BLOCKCHAIN_DATA=false
-
 I_KNOW_WHAT_I_AM_DOING=false # CHANGE ME ONLY IF YOU TRULY UNDERSTAND
 
 if [ "$I_KNOW_WHAT_I_AM_DOING" = false ]; then
     echo "Make sure you understand what this script does, then flip I_KNOW_WHAT_I_AM_DOING to true if you want to run it"
     exit 1
 fi
+
+GETH_DIR="/opt/geth"
+LIGHTHOUSE_DIR="/opt/lighthouse"
+REMOVE_BLOCKCHAIN_DATA=false
 
 echo -e "ARE YOU SURE YOU WANT TO RESET AND DELETE CLIENT DATA ON THE VALIDATOR?\n"
 read -p "Press [Enter] to Continue"
