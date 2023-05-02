@@ -123,6 +123,7 @@ echo -e "\nstep 3: setting up and running Geth (execution client) to start synci
 # geth setup
 git clone $GETH_REPO
 sleep 0.5 # ugh, wait
+sudo -E -u $NODE_USER bash -c "mkdir -p $GETH_DIR"
 sudo mv $GETH_REPO_NAME/* $GETH_DIR
 rm -rf $GETH_REPO_NAME
 sudo chown -R $NODE_USER:$NODE_USER $GETH_DIR
@@ -177,6 +178,7 @@ popd
 cd ~
 git clone $LIGHTHOUSE_REPO
 sleep 0.5 # ugh, wait
+sudo -E -u $NODE_USER bash -c "mkdir -p $LIGHTHOUSE_DIR"
 sudo mv $LIGHTHOUSE_REPO_NAME/* $LIGHTHOUSE_DIR
 rm -rf $LIGHTHOUSE_REPO_NAME
 sudo chown -R $NODE_USER:$NODE_USER $LIGHTHOUSE_DIR
