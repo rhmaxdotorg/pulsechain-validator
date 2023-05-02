@@ -117,8 +117,10 @@ The script automates a roughly estimated ~85% of what it takes to get the valida
 $ sudo apt install -y python3-pip
 $ git clone https://gitlab.com/pulsechaincom/staking-deposit-cli.git
 $ cd staking-deposit-cli && pip3 install -r requirements.txt && sudo python3 setup.py install
-$ ./deposit.sh new-mnemonic --chain=pulsechain-testnet-v4
+$ ./deposit.sh new-mnemonic --chain=pulsechain-testnet-v4 --eth1_withdrawal_address=0x... (ENTER THE CORRECT WALLET ADDRESS TO WITHDRAWAL YOUR FUNDS)
 ```
+
+Note: it is **VERY IMPORTANT** that you use a withdrawal wallet address that you have access to and is SECURE for a long time. Otherwise you may lose all your deposit funds.
 
 **Then follow the instructions from there, copy them over to the validator and import into lighthouse AS THE NODE USER (not the 'ubuntu' user on ec2).**
 ```
