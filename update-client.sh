@@ -10,6 +10,8 @@ if [ "$I_KNOW_WHAT_I_AM_DOING" = false ]; then
     exit 1
 fi
 
+NODE_USER="node"
+
 trap sigint INT
 
 function sigint() {
@@ -31,23 +33,23 @@ echo -e "\nStep 1: Stop PulseChain clients (Geth and Lighthouse)"
 sudo systemctl stop geth lighthouse-beacon lighthouse-validator
 
 # update git config
-sudo -u node bash -c "cd \$HOME && git config --global user.name client"
-sudo -u node bash -c "cd \$HOME && git config --global user.email client@update.now"
-sudo -u node bash -c "cd \$HOME && git config --global pull.rebase true"
+sudo -u $NODE_USER bash -c "cd \$HOME && git config --global user.name client"
+sudo -u $NODE_USER bash -c "cd \$HOME && git config --global user.email client@update.now"
+sudo -u $NODE_USER bash -c "cd \$HOME && git config --global pull.rebase true"
 
 # fix perms and make sure rust is properly installed in the environment
 #sudo -u node bash -c "cd \$HOME && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
-sudo -u node bash -c "cd \$HOME && source \$HOME/.cargo/env && rustup install stable && rustup default stable"
-sudo chown -R node:node /home/node/.cargo
+sudo -u $NODE_USER $NODE_USER -c "cd \$HOME && source \$HOME/.cargo/env && rustup install stable && rustup default stable"
+sudo chown -R $NODE_USER:$NODE_USER /home/$NODE_USER/.cargo
 
 echo -e "\nStep 2: Pull updates and rebuild clients\n"
 
 # pull updates from official repos for geth
-sudo -u node bash -c "cd /opt/geth && git pull && make"
+sudo -u $NODE_USER bash -c "cd /opt/geth && git pull && make"
 
 # pull updates from official repos for lighthouse
-sudo -u node bash -c "cd \$HOME && source \$HOME/.cargo/env && rustup default stable"
-sudo -u node bash -c "cd \$HOME && source \$HOME/.cargo/env && cd /opt/lighthouse && git pull && make"
+sudo -u $NODE_USER bash -c "cd \$HOME && source \$HOME/.cargo/env && rustup default stable"
+sudo -u $NODE_USER bash -c "cd \$HOME && source \$HOME/.cargo/env && cd /opt/lighthouse && git pull && make"
 
 echo -e "\nStep 3: Starting PulseChain clients"
 
