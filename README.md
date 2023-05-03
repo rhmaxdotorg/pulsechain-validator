@@ -393,6 +393,7 @@ Also see the guides below for additional help (scripts were mostly based on thos
 - https://github.com/raskitoma/pulse-staking-dashboard
 
 # Community Guides, Scripts and Dashboards
+- https://www.gammadevops.com/p/validator-setup
 - https://gitlab.com/davidfeder/validatorscript/-/blob/64f37685908a78c5337f8d3dc951f7f01f251697/PulseChain_V4_Script.txt
 - https://www.hexpulse.info/docs/node-setup.html
 - https://togosh.medium.com/pulsechain-validator-setup-guide-70edae00b344
@@ -421,7 +422,7 @@ sudo ufw allow 9000/tcp
 sudo ufw allow 9000/udp
 ```
 
-# Home Router
+## Home Router
 This depends on your router device and model, so you'll need to research how to open ports on your specific networking device.
 
 ## AWS Cloud
@@ -448,6 +449,89 @@ add something like this to the ExecStart= command (line 12)
 $ sudo systemctl daemon-reload
 $ sudo systemctl restart lighthouse-beacon
 ```
+
+# Withdrawals
+**These instructions are not complete and only meant for use on Testnet, not Mainnet until further research and testing has completed.**
+
+**Be EXTRA CAREFUL as mistakes here can cost you funds and you must use these instructions at your own risk and hold yourself fully accountable for control and actions with your own funds, just like in the other parts of crypto.**
+
+## Overview
+
+**If you set a withdrawal address** when generating your validator keys... TBD
+
+**If you didn't set a withdrawal address** when generating your validator keys, you need to "upgrade your keys" (generate BLSToExecution JSON) using the staking deposit client and broadcast it via the Launchpad, **which as of now is unavailable**. Will update with further instructions as this feature to support the scenario becomes available. Then, you can exit your validator from the network.
+
+## Withdrawal Keys
+
+**TREAT THIS AS IF YOU ARE GENERATING YOUR VALIDATOR KEYS + SEED WORDS**
+
+**PERFORM IT ON A DIFFERENT, SECURE MACHINE (not your validator server)**
+
+Find the validator index for the specific validator you want to initiate an exit and withdrawal. Check on the beacon explorer with the validator’s public key (for example, 4369).
+
+Download the latest staking deposit
+
+```
+$ git clone https://gitlab.com/pulsechaincom/staking-deposit-cli.git
+
+$ ./deposit.sh generate-bls-to-execution-change
+
+English
+
+pulsechain-testnet-v4
+
+(Enter seed words)
+
+0
+
+(Enter each validator index as currently shown on the network)
+
+You can open your deposit JSON file and copy each validator’s public key into the beacon explorer one at a time to get each index, but they should be sequential, like 4369, 4370, 4371, etc OR just the launchpad as it will show you validator index and withdrawal_credentials.
+
+(Enter each withdrawal_credentials for each validator which is also in the deposit JSON file)
+
+(Enter your execution address, aka withdrawal address, the wallet you’ve securely, made sure you and only you have access to and want to send the deposited PLS from the network back into)
+
+DOUBLE CONFIRM YOU HAVE ACCESS TO THIS WALLET ADDRESS
+
+It cannot be changed and if you typo something here, TWICE, YOUR FUNDS WILL BE UNRECOVERABLE.
+
+Once you’ve double checked, enter the address again
+```
+
+Now your bls_to_execution_change JSON file is in the newly created **bls_to_execution_changes** folder.
+
+## Exiting
+
+You can broadcast the change using your Lighthouse client (for the specific validator you want to exit and initiate withdrawal).
+
+```
+$ sudo -u node bash
+
+$ /opt/lighthouse/lighthouse/lh account validator exit --network pulsechain_testnet_v4 --keystore ~/.lighthouse/pulsechain_testnet_v4/validators/0x…(the validator public key you want to exit)/keystore-(specific for your setup)...json
+
+Enter the keystore password
+
+Enter the exit phrase described @ https://lighthouse-book.sigmaprime.io/voluntary-exit.html
+
+“Successfully validated and published voluntary exit for validator 0x...” – and we can check it’s status on the beacon explorer
+
+https://beacon.v4.testnet.pulsechain.com/validator/0x...
+```
+
+And you can see it’s going from Active to Exit (pulsing green).
+
+References
+- https://lighthouse-book.sigmaprime.io/voluntary-exit.html
+- https://finematics.com/ethereum-staking-withdrawals-explained
+- https://blog.stake.fish/eth-withdrawals-for-validators-your-go-to-guide-after-shanghai/
+- https://docs.prylabs.network/docs/wallet/withdraw-validator
+- https://docs.prylabs.network/docs/wallet/exiting-a-validator
+- https://www.coincashew.com/coins/overview-eth/update-withdrawal-keys-for-ethereum-validator-bls-to-execution-change-or-0x00-to-0x01-with-ethdo
+- https://nimbus.guide/withdrawals.html
+- https://someresat.medium.com/guide-to-configuring-withdrawal-credentials-on-ethereum-812dce3193a
+- https://github.com/eth-educators/ethstaker-guides/blob/main/zhejiang.md#adding-a-withdrawal-address
+- https://www.youtube.com/watch?v=RwwU3P9n3uo
 
 # Backups
 
