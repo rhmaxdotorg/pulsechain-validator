@@ -31,10 +31,12 @@ You can run **pulsechain-validator-setup.sh** to setup your validator clients an
 
 Note: the pulsechain validator setup script doesn't install monitoring/metrics packages, however a script to do that is provided. It would need to run the validator setup script AND THEN run the monitoring-setup.sh script provided. Do not run the monitoring script before installing your validator clients. See details in the [Grafana or Prometheus](https://github.com/rhmaxdotorg/pulsechain-validator#setting-up-monitoring-with-prometheus-and-grafana) section.
 
-# Table of Contents
+Table of Contents
+=================
 
 * [PulseChain Testnet Validator Node Setup Scripts](#pulsechain-testnet-validator-node-setup-scripts)
 * [Description](#description)
+* [Table of Contents](#table-of-contents)
 * [Walkthrough](#walkthrough)
 * [Usage](#usage)
    * [Command line options](#command-line-options)
@@ -60,9 +62,13 @@ Note: the pulsechain validator setup script doesn't install monitoring/metrics p
 * [Security](#security)
 * [Networking](#networking)
    * [Server](#server)
-* [Home Router](#home-router)
+   * [Home Router](#home-router)
    * [AWS Cloud](#aws-cloud)
 * [Graffiti](#graffiti)
+* [Withdrawals](#withdrawals)
+   * [Overview](#overview)
+   * [Withdrawal Keys](#withdrawal-keys)
+   * [Exiting](#exiting)
 * [Backups](#backups)
    * [Home](#home)
    * [Cloud](#cloud)
