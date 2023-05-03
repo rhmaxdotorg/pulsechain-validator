@@ -461,6 +461,8 @@ $ sudo systemctl restart lighthouse-beacon
 
 **Be EXTRA CAREFUL as mistakes here can cost you funds and you must use these instructions at your own risk and hold yourself fully accountable for control and actions with your own funds, just like in the other parts of crypto.**
 
+There are **full withdrawals** and partial withdrawals. This section will focus on the full withdrawal and validator exit process.
+
 ## Overview
 
 **If you set a withdrawal address** when generating your validator keys... TBD
