@@ -176,7 +176,7 @@ $ sudo systemctl start lighthouse-beacon lighthouse-validator
 If you want to look at lighthouse debug logs (similar to geth)
 
 ```
-$ journalctl -u lighthouse-beacon.service (with -f to get the latest logs OR without the get the beginning)
+$ journalctl -u lighthouse-beacon.service (with -f to get the latest logs OR without it to get the beginning logs)
 $ journalctl -u lighthouse-validator.service
 ```
 
@@ -275,6 +275,16 @@ Apr 00 19:30:15 server lighthouse[126782]: INFO Synced slot: 300xxx, block: 0x68
 
 Apr 00 19:30:05 server lighthouse[126779]: Apr 06 19:30:05.000 INFO Connected to beacon node(s)             synced: X, available: X, total: X, service: notifier
 Apr 00 19:30:05 server lighthouse[126779]: INFO All validators active slot: 300xxx, epoch: 93xx, total_validators: X, active_validators: X, current_epoch_proposers: 0, servic>
+```
+
+## Look at client debug logs
+
+For example, `journalctl` will let you look at each client's debug logs. Recommend it with the `-f` option to get the latest logs.
+
+```
+$ journalctl -u geth.service
+$ journalctl -u lighthouse-beacon.service
+$ journalctl -u lighthouse-validator.service -f (with -f to get the latest logs OR without it get the beginning logs)
 ```
 
 # Reset Validator Script
@@ -408,7 +418,7 @@ Also see the guides below for additional help (scripts were mostly based on thos
 
 # Security
 
-TODO: add validator security ama video here after live stream
+- https://www.youtube.com/watch?v=o3V052VvI4o
 
 References
 - https://www.youtube.com/watch?v=hHtvCGlPz-o
