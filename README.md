@@ -467,7 +467,7 @@ $ sudo systemctl restart lighthouse-beacon
 ```
 
 # Withdrawals
-**These instructions are not complete and only meant for use on Testnet, not Mainnet until further research and testing has completed.**
+**These instructions are only meant for use on Testnet and have not been tested on Mainnet, so only use them on Testnet until further testing and confirmation.**
 
 **Be EXTRA CAREFUL as mistakes here can cost you funds and you must use these instructions at your own risk and hold yourself fully accountable for control and actions with your own funds, just like in the other parts of crypto.**
 
@@ -475,7 +475,7 @@ There are **full withdrawals** and partial withdrawals. This section will focus 
 
 ## Overview
 
-**If you set a withdrawal address** when generating your validator keys... TBD
+**If you set a withdrawal address** when generating your validator keys, you can check on the launchpad withdrawal page to verify withdrawals are enabled and then exit your validator (see process below).
 
 **If you didn't set a withdrawal address** when generating your validator keys, you need to "upgrade your keys" (generate BLSToExecution JSON) using the staking deposit client and broadcast it via the Launchpad, **which as of now is unavailable**. Will update with further instructions as this feature to support the scenario becomes available. Then, you can exit your validator from the network.
 
@@ -533,6 +533,10 @@ Enter the keystore password
 Enter the exit phrase described @ https://lighthouse-book.sigmaprime.io/voluntary-exit.html
 
 “Successfully validated and published voluntary exit for validator 0x...” – and we can check it’s status on the beacon explorer
+
+"Waiting for voluntary exit to be accepted into the beacon chain..."
+
+"Voluntary exit has been accepted into the beacon chain, but not yet finalized. Finalization may take several minutes or longer. Before finalization there is a low probability that the exit may be reverted."
 
 https://beacon.v4.testnet.pulsechain.com/validator/0x...
 ```
