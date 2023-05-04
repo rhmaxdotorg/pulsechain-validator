@@ -475,7 +475,7 @@ There are **full withdrawals** and partial withdrawals. This section will focus 
 
 ## Overview
 
-**If you set a withdrawal address** when generating your validator keys, you can check on the launchpad withdrawal page to verify withdrawals are enabled and then exit your validator (see process below).
+**If you set a withdrawal address** when generating your validator keys, you can check on the [launchpad withdrawal](https://launchpad.v4.testnet.pulsechain.com/en/withdrawals) page to verify withdrawals are enabled and then exit your validator (see process below).
 
 **If you didn't set a withdrawal address** when generating your validator keys, you need to "upgrade your keys" (generate BLSToExecution JSON) using the staking deposit client and broadcast it via the Launchpad, **which as of now is unavailable**. Will update with further instructions as this feature to support the scenario becomes available. Then, you can exit your validator from the network.
 
