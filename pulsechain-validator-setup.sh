@@ -110,7 +110,7 @@ echo -e "\nstep 2: adding node user, install rust and generate client secrets"
 sudo useradd -m -s /bin/false -d /home/$NODE_USER $NODE_USER
 
 # straight from rustup.rs website /w auto accept default option "-y"
-sudo -u node bash -c "cd \$HOME && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
+sudo -u $NODE_USER bash -c "cd \$HOME && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
 
 # generate execution and consensus client secret
 sudo mkdir -p $JWT_SECRET_DIR
