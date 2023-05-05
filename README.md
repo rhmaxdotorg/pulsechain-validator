@@ -543,6 +543,14 @@ https://beacon.v4.testnet.pulsechain.com/validator/0x...
 
 And you can see it’s going from Active to Exit (pulsing green).
 
+Once it's exited, you have to wait for Withdrawals to become available.
+
+```
+This validator has exited the system during epoch 5369 and is no longer validating.
+
+There is no need to keep the validator running anymore. Funds will be withdrawable after epoch 5555. 
+```
+
 References
 - https://lighthouse-book.sigmaprime.io/voluntary-exit.html
 - https://finematics.com/ethereum-staking-withdrawals-explained
