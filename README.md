@@ -49,7 +49,7 @@ Table of Contents
       * [Lighthouse](#lighthouse)
    * [Look at Client Service Status](#look-at-client-service-status)
 * [Reset Validator Script](#reset-validator-script)
-* [AWS EC2 Helper Script](#aws-ec2-helper-script)
+* [New Server Helper Script](#new-server-helper-script)
 * [Client Update Script](#client-update-script)
 * [Fee Recipient and IP Address Update Script](#fee-recipient-and-ip-address-update-script)
 * [RPC Interface Script](#rpc-interface-script)
@@ -292,7 +292,7 @@ This helper script deletes all your validator data so you can try the setup agai
 
 Be careful! It deletes and resets things, so read the code and make sure you understand what it does before using it.
 
-# AWS EC2 Helper Script
+# New Server Helper Script
 Just some nice-to-haves if you're using the AWS Cloud for your validator server.
 
 # Client Update Script
