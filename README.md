@@ -337,9 +337,11 @@ Takes a snapshot of blockchain data on a fully synced validator so it can be cop
 After running the script, copy the geth.tar.xz and lighthouse.tar.xz (compressed blockchain data, kinda like ZIP files) over to the new validator server (see scp demo below OR use a USB stick).
 
 ```
-$ scp geth.tar.xz ubuntu@new-validator-server-ip:/home/ubuntu
-$ scp lighthouse.tar.xz ubuntu@new-validator-server-ip:/home/ubuntu
+$ scp -i key.pem geth.tar.xz ubuntu@new-validator-server-ip:/home/ubuntu
+$ scp -i key.pem lighthouse.tar.xz ubuntu@new-validator-server-ip:/home/ubuntu
 ```
+
+Copying over the network could take anywhere from 1 hour to a few hours (depending on the bandwidth of your server's network).
 
 Then you can run the following commands ON THE NEW SERVER
 
@@ -348,8 +350,10 @@ $ tar -xJf geth.tar.xz
 $ tar -xJf lighthouse.tar.xz
 $ sudo chown -R node:node data beacon
 $ sudo mv data /opt/geth
-$ sudo mv /opt/lighthouse/data
+$ sudo mv beacon /opt/lighthouse/data
 ```
+
+The geth.tar.xz file is likely going to be > 100gb and the lighthouse compressed file probably smaller, but prepare for ~200gb of data total for the transfer.
 
 Note: this should work fine for Ethereum too as it's just copying the blockchain data directories for Geth and Lighthouse, but the scenario is technically untested. Also, this relies on the new validator setup (which you are copying the snapshot to) to be setup with this repo's setup script.
 
