@@ -53,6 +53,7 @@ Table of Contents
 * [Client Update Script](#client-update-script)
 * [Fee Recipient and IP Address Update Script](#fee-recipient-and-ip-address-update-script)
 * [RPC Interface Script](#rpc-interface-script)
+* [Snapshot Helper Script](#snapshot-helper-script)
 * [AWS Cloud Setup](#aws-cloud-setup)
 * [Staking Deposit Client Walkthrough](#staking-deposit-client-walkthrough)
 * [Details for all PulseChain clients (/w Ethereum Testnet notes)](#details-for-all-pulsechain-clients-w-ethereum-testnet-notes)
@@ -328,6 +329,29 @@ Click the Network drop-down, then Add Network and Add a Network Manaully.
 - Save
 
 Now you can use your own node for transactions on the network that your validator is participating in.
+
+# Snapshot Helper Script
+
+Takes a snapshot of blockchain data on a fully synced validator so it can be copied over and used to bootstrap a new validator. Clients must be stopped until the snapshot completes, afterwards they will be restarted so the validator can resume normal operation.
+
+After running the script, copy the geth.tar.xz and lighthouse.tar.xz (compressed blockchain data, kinda like ZIP files) over to the new validator server (see scp demo below OR use a USB stick).
+
+```
+$ scp geth.tar.xz ubuntu@new-validator-server-ip:/home/ubuntu
+$ scp lighthouse.tar.xz ubuntu@new-validator-server-ip:/home/ubuntu
+```
+
+Then you can run the following commands ON THE NEW SERVER
+
+```
+$ tar -xJf geth.tar.xz
+$ tar -xJf lighthouse.tar.xz
+$ sudo chown -R node:node data beacon
+$ sudo mv data /opt/geth
+$ sudo mv /opt/lighthouse/data
+```
+
+Note: this should work fine for Ethereum too as it's just copying the blockchain data directories for Geth and Lighthouse, but the scenario is technically untested. Also, this relies on the new validator setup (which you are copying the snapshot to) to be setup with this repo's setup script.
 
 # AWS Cloud Setup
 * [How to run a cloud server on AWS](https://docs.google.com/document/d/1eW0SDT8IvZrla7gywK32Rl3QaQtVoiOu5OaVhUKIDg8/edit)
