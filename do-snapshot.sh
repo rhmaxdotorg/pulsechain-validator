@@ -11,7 +11,7 @@
 # - Tested on Ubuntu 22.04 (validator server) running Geth and Lighthouse clients
 #
 # What to do after running this script
-# - Copy the geth.zip and lighthouse.zip over to the new validator server (see scp demo below OR use a USB stick)
+# - Copy the geth.tar.xz and lighthouse.tar.xz (compressed like ZIP files) over to the new validator server (see scp demo below OR use a USB stick)
 #
 # $ scp geth.tar.xz ubuntu@new-validator-server-ip:/home/ubuntu
 # $ scp lighthouse.tar.xz ubuntu@new-validator-server-ip:/home/ubuntu
