@@ -346,12 +346,11 @@ Copying over the network could take anywhere from 1 hour to a few hours (dependi
 Then you can run the following commands ON THE NEW SERVER
 
 ```
+$ sudo systemctl stop geth lighthouse-beacon lighthouse-validator
 $ tar -xJf geth.tar.xz
 $ tar -xJf lighthouse.tar.xz
-$ sudo chown -R node:node data beacon
-$ sudo systemctl stop geth lighthouse-beacon lighthouse-validator
-$ sudo mv data /opt/geth
-$ sudo mv beacon /opt/lighthouse/data
+$ sudo chown -R node:node opt
+$ sudo cp -Rf opt /
 $ sudo systemctl start geth lighthouse-beacon lighthouse-validator
 ```
 
