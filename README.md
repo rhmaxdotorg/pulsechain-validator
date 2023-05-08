@@ -355,7 +355,13 @@ $ sudo mv beacon /opt/lighthouse/data
 $ sudo systemctl start geth lighthouse-beacon lighthouse-validator
 ```
 
-The geth.tar.xz file is likely going to be > 100gb and the lighthouse compressed file probably smaller, but prepare for ~200gb of data total for the transfer.
+The geth.tar.xz file is likely going to be > 100gb and the lighthouse compressed file probably smaller, but prepare for ~200gb of data total for the transfer. It can take 4-6 hours to decompress these blockchain data files as well, for example...
+
+```
+$ date; tar -xJf geth.tar.xz; date
+03:32:56 UTC 2023
+07:50:01 UTC 2023
+```
 
 Note: this should work fine for Ethereum too as it's just copying the blockchain data directories for Geth and Lighthouse, but the scenario is technically untested. Also, this relies on the new validator setup (which you are copying the snapshot to) to be setup with this repo's setup script.
 
