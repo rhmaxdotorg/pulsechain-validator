@@ -677,7 +677,7 @@ For example this validator's stats: https://beacon.v4.testnet.pulsechain.com/val
 
 * What if my validator stops working?
 
-Did your server's IP address change? If so, update lighthouse beacon service file @ /etc/systemd/system/lighthouse-beacon.service.
+Did your server's IP address change? If so, update lighthouse beacon service file @ /etc/systemd/system/lighthouse-beacon.service or use the **update-fee-ip-addr.sh** script to update both the fee address + server IP address.
 
 Did your network/firewall role change? Make sure the required client ports are accessible.
 
