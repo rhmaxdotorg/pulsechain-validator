@@ -11,7 +11,8 @@
 # - Tested on Ubuntu 22.04 (validator server) running Geth and Lighthouse clients
 #
 # What to do after running this script
-# - Copy the geth.tar.xz and lighthouse.tar.xz (compressed like ZIP files) over to the new validator server (see scp demo below OR use a USB stick)
+# - Copy the geth.tar.xz and lighthouse.tar.xz (compressed like ZIP files) over to the new validator
+# server (see scp demo below OR use a USB stick)
 #
 # $ scp geth.tar.xz ubuntu@new-validator-server-ip:/home/ubuntu
 # $ scp lighthouse.tar.xz ubuntu@new-validator-server-ip:/home/ubuntu
@@ -21,8 +22,10 @@
 # $ tar -xJf geth.tar.xz
 # $ tar -xJf lighthouse.tar.xz
 # $ sudo chown -R node:node data beacon
+# $ sudo systemctl stop geth lighthouse-beacon lighthouse-validator
 # $ sudo mv data /opt/geth
 # $ sudo mv /opt/lighthouse/data
+# $ sudo systemctl start geth lighthouse-beacon lighthouse-validator
 #
 # Note: this should work fine for Ethereum too as it's just copying the blockchain data directories
 # for Geth and Lighthouse, but the scenario is technically untested; also, this relies on the new
