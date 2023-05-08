@@ -349,8 +349,10 @@ Then you can run the following commands ON THE NEW SERVER
 $ tar -xJf geth.tar.xz
 $ tar -xJf lighthouse.tar.xz
 $ sudo chown -R node:node data beacon
+$ sudo systemctl stop geth lighthouse-beacon lighthouse-validator
 $ sudo mv data /opt/geth
 $ sudo mv beacon /opt/lighthouse/data
+$ sudo systemctl start geth lighthouse-beacon lighthouse-validator
 ```
 
 The geth.tar.xz file is likely going to be > 100gb and the lighthouse compressed file probably smaller, but prepare for ~200gb of data total for the transfer.
