@@ -349,8 +349,8 @@ Then you can run the following commands ON THE NEW SERVER
 $ sudo systemctl stop geth lighthouse-beacon lighthouse-validator
 $ tar -xJf geth.tar.xz
 $ tar -xJf lighthouse.tar.xz
-$ sudo chown -R node:node opt
 $ sudo cp -Rf opt /
+$ sudo chown -R node:node /opt
 $ sudo systemctl start geth lighthouse-beacon lighthouse-validator
 ```
 
