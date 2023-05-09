@@ -10,6 +10,8 @@ To download these scripts on your server, you can `git clone https://github.com/
 
 After you download the code, you may need to `chmod +x *.sh` to make all the scripts executable and able to run on the system.
 
+**Once you’re finished running the setup script, go to [After running the script](#after-running-the-script) section to complete the process and get your validator on the network.**
+
 # Description
 
 Scripts and guidance available include...
@@ -115,7 +117,13 @@ Could you get by with an old PC under your desk with a $50 battery backup? Maybe
 
 # After running the script
 
-The script automates a roughly estimated ~85% of what it takes to get the validator configured, but there's still a few manual steps you need to do to complete the setup and get the validator on the network.
+The script automates a roughly estimated ~85% of what it takes to get the validator configured, but there's still a few manual steps you need to do to complete the setup: generate your keys in a secure environment, copy and import them on your validator server and once your clients are fully synced, make the deposit to activate your validator on the network.
+
+**Environment and hardware options for key generation**
+* LiveCD that you boot and use (all ephemeral, in-memory, disposable filesystem), recommended as a more secure option
+* Use another machine (spare laptop or device) with a **clean install** of Ubuntu Linux, not connected to the internet (only to download the staking client or use a USB stick to transfer staking over to it) – another fairly secure way of doing it
+* Virtual machine with clean install (less secure and make sure to delete it afterwards)
+* Spin up a free tier cloud image on a cloud provider (see AWS section, less secure, but fast, make sure to destroy it afterwards)
 
 **Generate validator keys with deposit tool and import them into Lighthouse**
 
