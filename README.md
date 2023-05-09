@@ -22,6 +22,8 @@ Scripts and guidance available include...
 - Updating your client versions to the latest
 - Updating your fee recipient and IP address
 - Enabling local RPC for Metamask
+- Withdrawals and exiting the network
+- Snapshot synced blockchain data and server backups
 
 The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean Ubuntu OS for getting a PulseChain Testnet (V4) Validator Node setup and running with **Geth (go-pulse)** and **Lighthouse** clients.
 
