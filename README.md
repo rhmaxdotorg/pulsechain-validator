@@ -2,7 +2,7 @@
 
 ![pls-testnet-validator-htop](https://user-images.githubusercontent.com/100790377/229965674-75593b5a-3fa6-44fe-8f47-fc25e9d3ce21.png)
 
-This will help you setup [PulseChain](www.pulsechain.com) Testnet v4 and plans are to update it to support [PulseChain](www.pulsechain.com) Mainnet as well after it launches. Since it is a fork of ETH 2.0, all the same methods and scripts can be modified to work fine and automate Ethereum node setup as well.
+This will help you setup [PulseChain](www.pulsechain.com) Testnet v4 and plans are to update it to support [PulseChain](www.pulsechain.com) Mainnet as well after it launches. Since it is a fork of ETH 2.0, all the same methods and scripts can be modified to work fine and automate Ethereum node setup as well. **This script works on both your own hardware as well as cloud servers.**
 
 **Please read ALL the instructions as they will explain and tell you how to run these scripts and the caveats.**
 
@@ -10,7 +10,7 @@ To download these scripts on your server, you can `git clone https://github.com/
 
 After you download the code, you may need to `chmod +x *.sh` to make all the scripts executable and able to run on the system.
 
-**Once you’re finished running the setup script, go to [After running the script](#after-running-the-script) section to complete the process and get your validator on the network.**
+**Once you’re finished running the setup script, go to [AFTER RUNNING THE SCRIPT](#after-running-the-script) section to complete the process and get your validator on the network.**
 
 # Description
 
@@ -122,10 +122,10 @@ Could you get by with an old PC under your desk with a $50 battery backup? Maybe
 The script automates a roughly estimated ~85% of what it takes to get the validator configured, but there's still a few manual steps you need to do to complete the setup: generate your keys in a secure environment, copy and import them on your validator server and once your clients are fully synced, make the deposit to activate your validator on the network.
 
 **Environment and hardware options for key generation**
-* LiveCD that you boot and use (all ephemeral, in-memory, disposable filesystem), recommended as a more secure option
-* Use another machine (spare laptop or device) with a **clean install** of Ubuntu Linux, not connected to the internet (only to download the staking client or use a USB stick to transfer staking over to it) – another fairly secure way of doing it
-* Virtual machine with clean install (less secure and make sure to delete it afterwards)
-* Spin up a free tier cloud image on a cloud provider (see AWS section, less secure, but fast, make sure to destroy it afterwards)
+* **Live CD** or **bootable USB** such as [Rufus](https://rufus.ie) that you boot and use (all ephemeral, in-memory, disposable filesystem), recommended as a more secure option
+* **Use another machine** (spare laptop or device) with a **clean install** of Ubuntu Linux, not connected to the internet (only to download the staking client or use a USB stick to transfer staking over to it) – another fairly secure way of doing it
+* **Virtual machine** with clean install (less secure and make sure to delete it afterwards)
+* **Spin up a free tier cloud instance** on a cloud provider (see AWS section, less secure, but fast, make sure to destroy it afterwards)
 
 **Generate validator keys with deposit tool and import them into Lighthouse**
 
@@ -440,7 +440,7 @@ Lighthouse Beacon
 
 There's also this ETH forked Dashboard for PulseChain @ https://github.com/raskitoma/pulse-staking-dashboard which has really good stats!
 
-Staking Dashboard
+**Staking Dashboard** (one of the best ones)
 - Download it @ https://raw.githubusercontent.com/raskitoma/pulse-staking-dashboard/main/Yoldark_ETH_staking_dashboard.json to import
 - Name: Staking Dashboard
 - Datasource: Prometheus (default)
