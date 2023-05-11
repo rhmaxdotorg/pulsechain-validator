@@ -5,6 +5,15 @@
 # Description
 # - Allows you to update your Network Fee Address and Server IP Address configured on the validator
 #
+# Usage
+# $ ./update-fee-ip-addr.sh 0x..(your fee address) 12.33..(your server IP address)
+#
+# For example
+#
+# $ ./update-fee-ip-addr.sh 0x3695555555555555555695555555555555555369 12.33.55.69
+#
+# and your fee address and IP address will be updated for the Lighthouse client
+#
 
 I_KNOW_WHAT_I_AM_DOING=false # CHANGE ME ONLY IF YOU TRULY UNDERSTAND
 
