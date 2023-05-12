@@ -38,7 +38,7 @@ Note: the pulsechain validator setup script doesn't install monitoring/metrics p
 Table of Contents
 =================
 
-* [PulseChain Testnet Validator Node Setup Scripts](#pulsechain-testnet-validator-node-setup-scripts)
+* [PulseChain Validator Node Setup Scripts](#pulsechain-validator-node-setup-scripts)
 * [Description](#description)
 * [Table of Contents](#table-of-contents)
 * [Walkthrough](#walkthrough)
@@ -336,9 +336,9 @@ Click the Network drop-down, then Add Network and Add a Network Manaully.
 
 - Network name: Local PLS
 - New RPC URL: http://local-network-server-IP:8564 OR http://127.0.0.1:8546 (running same machine OR port forwarded)
-- Chain ID: 943 (for testnet v4)
+- Chain ID: 369 (943 for testnet v4)
 - Currency symbol: tPLS
-- Block explorer URL: https://scan.v4.testnet.pulsechain.com
+- Block explorer URL: https://scan.pulsechain.com
 - Save
 
 Now you can use your own node for transactions on the network that your validator is participating in.
@@ -669,7 +669,7 @@ It will be in Pending status for a while before the process completes (could be 
 - Click on the Snapshot ID (see description to identify the right one, set Name as appropriate)
 - Now you can do things like create a volume from the snapshot (and use the snapshot)
 - Create a new volume from the snapshot
-- Go back to volumes and name it like pulsechain-testnet-v4-snapshot-050523
+- Go back to volumes and name it like pulsechain-snapshot-050523
 - Spin up another server with the same hardware
 - Create a new server (instance)
 - Go to the new instance and detach the initially created volume
