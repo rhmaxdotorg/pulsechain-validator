@@ -110,12 +110,14 @@ For example when running Ubuntu on AWS EC2 cloud service, you can expect to hit 
 Just make sure you know what you're doing and manually edit the reset script to bypass the "I don't know what I'm doing" check. It's very straightforward, just read the code, acknowledge you know what the script it doing and **change I_KNOW_WHAT_I_AM_DOING=false to true to get it to run**.
 
 # Environment
-Tested on **Ubuntu 22.04** (Amazon AWS EC2 /w M2.2Xlarge cloud server) running as a non-root user (ubuntu) with sudo privileges.
+Tested on **Ubuntu 22.04** Linux running as a non-root user with sudo privileges.
 
 # Hardware
 The consensus on the **minimum recommended requirements** to run a validator seem to be **32gb RAM, 2TB disk and plenty of processing power (quadcore, xeon/ryzen, 4-8 vCPUs and such)**. These can come in the form of buying or building your own server and paying an upfront cost, utilities and maintenance OR renting a server from a VPS/cloud provider such as **Amazon AWS (M2.2Xlarge server)** and paying monthly to use their platform and resources. Both have advantages and disadvantages as well as varying time, monetary and management costs.
 
 Could you get by with an old PC under your desk with a $50 battery backup? Maybe, but that would not be *recommended*. I'd rather not skimp on hardware for things that I would plan to run for years and pay for the peace of mind of not worrying about what I'm going to do if X fails one day, wishing I'd started with stronger foundations. If you try and do it right the first time, you might save a lot of time and headache.
+
+It's recommended you have new hardware that meets or exceeds the minimum recommended requirements to give yourself the chance to have the best experience being a validator. There's also the PulseChain validator hardware store you can check out for more ready-to-go options at https://www.validatorstore.com.
 
 # After running the script
 
