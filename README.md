@@ -1,4 +1,4 @@
-# PulseChain Testnet Validator Node Setup Scripts
+# PulseChain Validator Node Setup Scripts
 
 ![pls-testnet-validator-htop](https://user-images.githubusercontent.com/100790377/229965674-75593b5a-3fa6-44fe-8f47-fc25e9d3ce21.png)
 
@@ -58,6 +58,7 @@ Table of Contents
 * [Fee Recipient and IP Address Update Script](#fee-recipient-and-ip-address-update-script)
 * [RPC Interface Script](#rpc-interface-script)
 * [Snapshot Helper Script](#snapshot-helper-script)
+* [Prune Geth Helper Script](#prune-geth-helper-script)
 * [AWS Cloud Setup](#aws-cloud-setup)
 * [Staking Deposit Client Walkthrough](#staking-deposit-client-walkthrough)
 * [Details for all PulseChain clients (/w Ethereum Testnet notes)](#details-for-all-pulsechain-clients-w-ethereum-testnet-notes)
@@ -375,6 +376,17 @@ $ date; tar -xJf geth.tar.xz; date
 ```
 
 Note: this should work fine for Ethereum too as it's just copying the blockchain data directories for Geth and Lighthouse, but the scenario is technically untested. Also, this relies on the new validator setup (which you are copying the snapshot to) to be setup with this repo's setup script.
+
+# Prune Geth Helper Script
+
+Allows you to prune geth blockchain data to reduce disk space usage on the validator. Erigon does this automatically, but for maintenance pruning Geth regularly (quarterly or bi-yearly) is recommended to avoid the disk filling up.
+
+You can also setup a cron job to do this automatically every quarter or 6 months, otherwise if you don't do the maintence, depending on your disk size, it can fill up and cause your validator to stop working properly.
+
+References
+- https://geth.ethereum.org/docs/fundamentals/pruning
+- https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-ii-maintenance/pruning-the-execution-client-to-free-up-disk-space
+- https://tecadmin.net/crontab-in-linux-with-20-examples-of-cron-schedule/
 
 # AWS Cloud Setup
 * [How to run a cloud server on AWS](https://docs.google.com/document/d/1eW0SDT8IvZrla7gywK32Rl3QaQtVoiOu5OaVhUKIDg8/edit)
