@@ -2,7 +2,7 @@
 
 ![pls-testnet-validator-htop](https://user-images.githubusercontent.com/100790377/229965674-75593b5a-3fa6-44fe-8f47-fc25e9d3ce21.png)
 
-This will help you setup [PulseChain](www.pulsechain.com) Testnet v4 and plans are to update it to support [PulseChain](www.pulsechain.com) Mainnet as well after it launches. Since it is a fork of ETH 2.0, all the same methods and scripts can be modified to work fine and automate Ethereum node setup as well. **This script works on both your own hardware as well as cloud servers.**
+This will help automate your setup of a validator node running on [PulseChain](www.pulsechain.com) Mainnet. Since it is a fork of ETH 2.0, all the same methods and scripts can be modified to work for setting up validators on the Ethereum side as well. **This script works on both your own hardware as well as cloud servers.**
 
 **Please read ALL the instructions as they will explain and tell you how to run these scripts and the caveats.**
 
@@ -137,7 +137,7 @@ The script automates a roughly estimated ~85% of what it takes to get the valida
 $ sudo apt install -y python3-pip
 $ git clone https://gitlab.com/pulsechaincom/staking-deposit-cli.git
 $ cd staking-deposit-cli && pip3 install -r requirements.txt && sudo python3 setup.py install
-$ ./deposit.sh new-mnemonic --chain=pulsechain-testnet-v4 --eth1_withdrawal_address=0x... (ENTER THE CORRECT WALLET ADDRESS TO WITHDRAWAL YOUR FUNDS)
+$ ./deposit.sh new-mnemonic --chain=pulsechain --eth1_withdrawal_address=0x... (ENTER THE CORRECT WALLET ADDRESS TO WITHDRAWAL YOUR FUNDS)
 ```
 
 Note: it is **VERY IMPORTANT** that you use a withdrawal wallet address that you have access to and is SECURE for a long time. Otherwise you may lose all your deposit funds.
@@ -149,7 +149,7 @@ $ sudo chown -R node:node /home/node/validator_keys
 $ sudo -u node bash
 
 (as node user)
-$ /opt/lighthouse/lighthouse/lh account validator import --directory ~/validator_keys --network=pulsechain_testnet_v4
+$ /opt/lighthouse/lighthouse/lh account validator import --directory ~/validator_keys --network=pulsechain
 
 enter password to import validator(s)
 
@@ -196,7 +196,7 @@ $ journalctl -u lighthouse-validator.service
 
 **Once the blockchain clients are synced, you can make your 32m tPLS deposit (per validator)**
 
-You can have multiple on one machine. The deposit is made @ https://launchpad.v4.testnet.pulsechain.com to get your validator activated and participating on the network.
+You can have multiple on one machine. The deposit is made @ https://launchpad.pulsechain.com to get your validator activated and participating on the network.
 
 If you do the deposit before the clients are fully synced and ready to go, then you risk penalities as your validator would join the network, but due to not being synced, unable to participate in validator duties (until it's fully synced).
 
@@ -548,7 +548,7 @@ There are **full withdrawals** and partial withdrawals. This section will focus 
 
 ## Overview
 
-**If you set a withdrawal address** when generating your validator keys, you can check on the [launchpad withdrawal](https://launchpad.v4.testnet.pulsechain.com/en/withdrawals) page to verify withdrawals are enabled and then exit your validator (see process below).
+**If you set a withdrawal address** when generating your validator keys, you can check on the [launchpad withdrawal](https://launchpad.pulsechain.com/en/withdrawals) page to verify withdrawals are enabled and then exit your validator (see process below).
 
 **If you didn't set a withdrawal address** when generating your validator keys, you need to "upgrade your keys" (generate BLSToExecution JSON) using the staking deposit client and broadcast it via the Launchpad, **which as of now is unavailable**. Will update with further instructions as this feature to support the scenario becomes available. Then, you can exit your validator from the network.
 
@@ -569,7 +569,7 @@ $ ./deposit.sh generate-bls-to-execution-change
 
 English
 
-pulsechain-testnet-v4
+pulsechain
 
 (Enter seed words)
 
@@ -599,7 +599,7 @@ You can broadcast the change using your Lighthouse client (for the specific vali
 ```
 $ sudo -u node bash
 
-$ /opt/lighthouse/lighthouse/lh account validator exit --network pulsechain_testnet_v4 --keystore ~/.lighthouse/pulsechain_testnet_v4/validators/0x…(the validator public key you want to exit)/keystore-(specific for your setup)...json
+$ /opt/lighthouse/lighthouse/lh account validator exit --network pulsechain --keystore ~/.lighthouse/pulsechain/validators/0x…(the validator public key you want to exit)/keystore-(specific for your setup)...json
 
 Enter the keystore password
 
@@ -611,7 +611,7 @@ Enter the exit phrase described @ https://lighthouse-book.sigmaprime.io/voluntar
 
 "Voluntary exit has been accepted into the beacon chain, but not yet finalized. Finalization may take several minutes or longer. Before finalization there is a low probability that the exit may be reverted."
 
-https://beacon.v4.testnet.pulsechain.com/validator/0x...
+https://beacon.pulsechain.com/validator/0x...
 ```
 
 And you can see it’s going from Active to Exit (pulsing green).
@@ -703,17 +703,17 @@ The setup script has no dependencies on the number of validators you run, it sim
 Check out the Adding more validators guide @ CoinCashew.
 - https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-iii-tips/adding-a-new-validator-to-an-existing-setup
 
-Let's say you have generated your keys for 1 validator and want to add 2 more. It would look something like this for pulsechain testnet V4.
+Let's say you have generated your keys for 1 validator and want to add 2 more. It would look something like this for pulsechain.
 
 ```
-$ ./deposit.sh existing-mnemonic --validator_start_index 1 --num_validators 2 --chain pulsechain-testnet-v4 --eth1_withdrawal_address 0x..(MAKE SURE YOU WILL ALWAYS HAVE ACCESS TO THIS WALLET)
+$ ./deposit.sh existing-mnemonic --validator_start_index 1 --num_validators 2 --chain pulsechain --eth1_withdrawal_address 0x..(MAKE SURE YOU WILL ALWAYS HAVE ACCESS TO THIS WALLET)
 ```
 
 * **How can I see the stats on my validator(s)?**
 
-Look at your deposit JSON file to get the list of your validator(s) public keys, then check https://beacon.v4.testnet.pulsechain.com/validator/ + your validator's public key which each one that you want to check the stats on.
+Look at your deposit JSON file to get the list of your validator(s) public keys, then check https://beacon.pulsechain.com/validator/ + your validator's public key which each one that you want to check the stats on.
 
-For example this validator's stats: https://beacon.v4.testnet.pulsechain.com/validator/8001503cd43190b01aaa444d966a41ddb95c140e4910bb00ad638a4c020bc3a070612f318e3372109f33e40e7c268b0b
+For example this validator's stats: https://beacon.pulsechain.com/validator/8001503cd43190b01aaa444d966a41ddb95c140e4910bb00ad638a4c020bc3a070612f318e3372109f33e40e7c268b0b
 
 You can also setup Monitoring with Grafana and Prometheus (see guidance in above sections).
 
