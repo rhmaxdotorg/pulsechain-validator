@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #
-# PulseChain Testnet Validator Node Setup Script for Ubuntu Linux
+# PulseChain Validator Node Setup Script for Ubuntu Linux
 #
 # Description
-# - Installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean Ubuntu OS
-# for getting a PulseChain Testnet (V4) Validator Node setup and running.
+# Installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh,
+# clean Ubuntu OS for getting a PulseChain Mainnet Validator Node setup and running.
 #
 # Usage
-# $ ./pulsechain-testnet-validator-setup.sh [0x...YOUR PULSECHAIN FEE ADDRESS] [12.89...YOUR SERVER IP ADDRESS]
+# $ ./pulsechain-validator-setup.sh [0x...YOUR PULSECHAIN FEE ADDRESS] [12.89...YOUR SERVER IP ADDRESS]
 #
 # Command line options
 # - PULSECHAIN FEE ADDRESS is the FEE_RECIPIENT value for --suggested-fee-recipient to a wallet address you want
@@ -16,7 +16,7 @@
 # - SERVER_IP_ADDRESS to your validator server's IP address
 #
 # Environment
-# - Tested on Ubuntu 22.04 (on Amazon AWS EC2 /w M2.2Xlarge VM) running as a non-root user (ubuntu) with sudo privileges
+# - Tested on Ubuntu 22.04 running as a non-root user with sudo privileges
 #
 # Notes
 # *IMPORTANT* things to do AFTER RUNNING THIS SCRIPT to complete the node setup
@@ -37,12 +37,11 @@
 
 # general config
 NODE_USER="node"
-
 APT_PACKAGES="build-essential cmake clang git wget jq protobuf-compiler"
 
 # chain flags
-GETH_CHAIN="pulsechain-testnet-v4"
-LIGHTHOUSE_CHAIN="pulsechain_testnet_v4"
+GETH_CHAIN="pulsechain"
+LIGHTHOUSE_CHAIN="pulsechain"
 
 # geth config
 GETH_DIR="/opt/geth"
@@ -62,7 +61,7 @@ LIGHTHOUSE_REPO="https://gitlab.com/pulsechaincom/lighthouse-pulse.git"
 LIGHTHOUSE_REPO_NAME="lighthouse-pulse"
 
 LIGHTHOUSE_PORT=9000
-LIGHTHOUSE_CHECKPOINT_URL="https://checkpoint.v4.testnet.pulsechain.com"
+LIGHTHOUSE_CHECKPOINT_URL="https://checkpoint.pulsechain.com"
 
 ################################################################
 
@@ -81,7 +80,7 @@ fi
 FEE_RECIPIENT=$1
 SERVER_IP_ADDRESS=$2
 
-echo -e "PulseChain TESTNET V4 Validator Setup\n"
+echo -e "PulseChain Validator Setup\n"
 echo -e "Note: this is a HELPER SCRIPT (some steps still need completed manually, see notes after script is finished)\n"
 echo -e "* it could take around 30 minutes to complete -- depending mostly on bandwidth and server specs *\n"
 
@@ -98,11 +97,6 @@ sudo apt-get install -y $APT_PACKAGES
 sudo snap install --classic go
 
 echo "export PATH=$PATH:/snap/bin" >> ~/.bashrc
-
-# straight from rustup.rs website /w auto accept default option "-y"
-#sudo -u node bash -c "cd \$HOME && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
-#curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-#source "$HOME/.cargo/env"
 
 echo -e "\nstep 2: adding node user, install rust and generate client secrets"
 
@@ -134,7 +128,7 @@ sudo -u $NODE_USER make
 export PATH=$PATH:$GETH_DIR/build/bin
 
 # geth data directory
-mkdir -p $GETH_DATA
+sudo -u $NODE_USER mkdir -p $GETH_DATA
 sudo chown -R $NODE_USER:$NODE_USER $GETH_DIR
 
 sudo tee /etc/systemd/system/geth.service > /dev/null <<EOT
@@ -186,7 +180,7 @@ cd $LIGHTHOUSE_DIR
 sudo -u $NODE_USER bash -c "source \$HOME/.cargo/env && make"
 
 # setup lighthouse beacon data, validator data and wallet directories
-sudo mkdir -p $LIGHTHOUSE_VALIDATOR_DATA
+sudo -u $NODE_USER mkdir -p $LIGHTHOUSE_VALIDATOR_DATA
 sudo chown -R $NODE_USER:$NODE_USER $LIGHTHOUSE_DIR
 
 # make symbolic link to lighthouse (make service binary in ExecStart nicer)
@@ -261,8 +255,8 @@ sudo ufw allow 9000/udp
 echo -e "\nAlmost done! Follow these next steps (as described in the notes) to finish setup and be the best validator you can be :)\n"
 
 echo -e "- Generate validator keys with deposit tool ON A SECURE, DIFFERENT MACHINE\n"
-echo -e "- Import them into lighthouse via 'lighthouse account validator import --directory ~/validator_keys --network=pulsechain_testnet_v4' AS THE NODE USER\n"
+echo -e "- Import them into lighthouse via 'lighthouse account validator import --directory ~/validator_keys --network=pulsechain' AS THE NODE USER\n"
 echo -e "- Start the validator client via 'sudo systemctl start lighthouse-validator'\n"
-echo -e "- WAIT UNTIL YOUR CLIENTS ARE SYNCED and then make your 32m tPLS deposit on the launchpad @ https://launchpad.v4.testnet.pulsechain.com\n"
+echo -e "- WAIT UNTIL YOUR CLIENTS ARE SYNCED and then make your 32m PLS deposit on the launchpad @ https://launchpad.pulsechain.com\n"
 
 echo -e "See any errors? Check permissions, missing packages or debug client failures with 'journalctl -u [service name].service' (eg. lighthouse-beacon.service)\n"
