@@ -140,6 +140,10 @@ $ cd staking-deposit-cli && pip3 install -r requirements.txt && sudo python3 set
 $ ./deposit.sh new-mnemonic --chain=pulsechain --eth1_withdrawal_address=0x... (ENTER THE CORRECT WALLET ADDRESS TO WITHDRAWAL YOUR FUNDS)
 ```
 
+If you get an error after running the first command, saying that it can't find python3-pip (such as when you're booting from USB to run Ubuntu OS), you can  update the apt config and that should fix it.
+
+`sudo add-apt-repository universe && sudo apt update`
+
 Note: it is **VERY IMPORTANT** that you use a withdrawal wallet address that you have access to and is SECURE for a long time. Otherwise you may lose all your deposit funds.
 
 **Then follow the instructions from there, copy them over to the validator and import into lighthouse AS THE NODE USER (not the 'ubuntu' user on ec2).**
