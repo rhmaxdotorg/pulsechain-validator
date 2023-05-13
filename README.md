@@ -6,7 +6,7 @@ This will help automate your setup of a validator node running on [PulseChain](w
 
 **Please read ALL the instructions as they will explain and tell you how to run these scripts and the caveats.**
 
-To download these scripts on your server, you can `git clone https://github.com/rhmaxdotorg/pulsechain-validator.git`.
+To download these scripts on your server, you need [git](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-22-04) and then you can do `git clone https://github.com/rhmaxdotorg/pulsechain-validator.git`.
 
 After you download the code, you may need to `chmod +x *.sh` to make all the scripts executable and able to run on the system.
 
