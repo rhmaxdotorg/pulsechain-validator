@@ -102,9 +102,7 @@ $ ./pulsechain-validator-setup.sh [0x...YOUR NETWORK FEE ADDRESS] [12.89...YOUR 
 
 - **SERVER_IP_ADDRESS** to your validator server's IP address
 
-Note: you may get prompted throughout the process to hit [Enter] for OK and continue the process
-
-For example when running Ubuntu on AWS EC2 cloud service, you can expect to hit OK on kernel upgrade notice, [Enter] or "1" to continue Rust install process and so on.
+Note: you may get prompted throughout the process to hit [Enter] for OK and continue the process at least once, so it's not meant to be a completely unattended install, but it could be depending on your environment setup.
 
 **If you encounter errors running the script and want to run the script again, use the [Reset the Validator](https://github.com/rhmaxdotorg/pulsechain-validator/blob/main/README.md#reset-validator-script) BEFORE running it over and over again.**
 
@@ -118,7 +116,7 @@ The consensus on the **minimum recommended requirements** to run a validator see
 
 Could you get by with an old PC under your desk with a $50 battery backup? Maybe, but that would not be *recommended*. I'd rather not skimp on hardware for things that I would plan to run for years and pay for the peace of mind of not worrying about what I'm going to do if X fails one day, wishing I'd started with stronger foundations. If you try and do it right the first time, you might save a lot of time and headache.
 
-It's recommended you have new hardware that meets or exceeds the minimum recommended requirements to give yourself the chance to have the best experience being a validator. There's also the PulseChain validator hardware store you can check out for more ready-to-go options at https://www.validatorstore.com.
+It's **recommended you have new hardware that meets or exceeds the minimum recommended requirements to give yourself the chance to have the best experience being a validator**. There's also the PulseChain validator hardware store you can check out for more ready-to-go options at https://www.validatorstore.com.
 
 # After running the script
 
@@ -153,6 +151,7 @@ $ sudo chown -R node:node /home/node/validator_keys
 $ sudo -u node bash
 
 (as node user)
+$ cd ~
 $ /opt/lighthouse/lighthouse/lh account validator import --directory ~/validator_keys --network=pulsechain
 
 enter password to import validator(s)
