@@ -732,9 +732,18 @@ Are your clients fully synced? They must be synced, talking to each other and ta
 
 * **How much does it cost to be a validator?**
 
-Depends on if you're using your own hardware or the cloud. For example, you could build or buy your own hardware for initial cost of around $2k and then pay for electricity it uses from running 24/7 each month. Or you can rent a server in the Amazon AWS cloud for an estimated $300-$500 per month. Both ways have advantages and disadvantages.
+Depends on if you're using your own hardware or the cloud. For example, you could build or buy your own hardware for initial cost of $1k-$2k and then pay for electricity it uses from running 24/7 each month. Or you can rent a server in the Amazon AWS cloud for an (estimated) few hundred dollars per month. Both ways have advantages and disadvantages.
 
-* Where can I find additional help on PulseChain dev stuff and being a validator?
+* **My validator's effectiveness is 100%. Why do I see negative amounts or penalities?**
+
+You could getting wrong votes from time to time or otherwise which is just a natural part of participating in the system. Also, you could be seeing this because it's withdrawaling rewards in batches automatically to your withdrawal address.
+
+References
+- https://www.reddit.com/r/ethstaker/comments/khgdgf/why_do_i_get_a_negative_reward_for_a_normal/
+- https://kb.beaconcha.in/rewards-and-penalties
+- https://ethereum.org/en/staking/withdrawals/
+
+* **Where can I find additional help on PulseChain dev stuff and being a validator?**
 
 - https://t.me/PulseDev
 - https://t.me/GammaDevOpsChat
@@ -775,3 +784,4 @@ Depends on if you're using your own hardware or the cloud. For example, you coul
 - https://someresat.medium.com/guide-to-staking-on-ethereum-ubuntu-prysm-581fb1969460
 - https://www.blocknative.com/blog/ethereum-validator-lighthouse-geth
 - https://www.youtube.com/watch?v=hHtvCGlPz-o
+- https://kb.beaconcha.in/rewards-and-penalties
