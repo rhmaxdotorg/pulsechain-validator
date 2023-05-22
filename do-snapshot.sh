@@ -70,4 +70,7 @@ sudo chown -R $USER:$USER $LIGHTHOUSE_SNAPSHOT
 mv $GETH_SNAPSHOT $LANDING_DIR
 mv $LIGHTHOUSE_SNAPSHOT $LANDING_DIR
 
+# start client services
+sudo systemctl start geth lighthouse-beacon lighthouse-validator
+
 echo -e "\nProcess is complete"
