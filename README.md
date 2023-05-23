@@ -25,7 +25,7 @@ Scripts and guidance available include...
 - Withdrawals and exiting the network
 - Snapshot synced blockchain data and server backups
 
-The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean Ubuntu OS for getting a PulseChain Testnet (V4) Validator Node setup and running with **Geth (go-pulse)** and **Lighthouse** clients.
+The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean Ubuntu OS for getting a PulseChain Mainnet Validator Node setup and running with **Geth (go-pulse)** and **Lighthouse** clients.
 
 Clients are running on the same machine and not in docker containers (such as the method other scripts use). There are advantages and disadvantages to containerizing the clients vs running them on the host OS. You can also automate deployments with Terraform on AWS, however the scripts are meant to make it pretty easy to spin up and tear down new validator machines once you have the hardware up with access to a fresh install of Ubuntu Linux.
 
@@ -83,6 +83,9 @@ Table of Contents
 
 # Walkthrough
 Check out these videos for further explanations and code walkthroughs.
+- [30 minute walkthrough](https://www.youtube.com/watch?v=cLsTqTwxMko)
+
+More videos
 - https://www.youtube.com/watch?v=6-ePJXAUfdg
 - https://www.youtube.com/watch?v=X0TnkLt4E3w
 - https://www.youtube.com/watch?v=QqcDs8llyyw
