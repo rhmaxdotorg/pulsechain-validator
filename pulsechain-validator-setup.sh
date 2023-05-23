@@ -55,7 +55,6 @@ JWT_SECRET_DIR="/var/lib/jwt"
 # lighthouse config
 LIGHTHOUSE_DIR="/opt/lighthouse"
 LIGHTHOUSE_BEACON_DATA="/opt/lighthouse/data/beacon"
-LIGHTHOUSE_VALIDATOR_DATA="/opt/lighthouse/data/validator"
 
 LIGHTHOUSE_REPO="https://gitlab.com/pulsechaincom/lighthouse-pulse.git"
 LIGHTHOUSE_REPO_NAME="lighthouse-pulse"
@@ -179,8 +178,6 @@ sudo chown -R $NODE_USER:$NODE_USER $LIGHTHOUSE_DIR
 cd $LIGHTHOUSE_DIR
 sudo -u $NODE_USER bash -c "source \$HOME/.cargo/env && make"
 
-# setup lighthouse beacon data, validator data and wallet directories
-sudo -u $NODE_USER mkdir -p $LIGHTHOUSE_VALIDATOR_DATA
 sudo chown -R $NODE_USER:$NODE_USER $LIGHTHOUSE_DIR
 
 # make symbolic link to lighthouse (make service binary in ExecStart nicer)
