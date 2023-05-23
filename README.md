@@ -1,6 +1,6 @@
 # PulseChain Validator Node Setup Scripts
 
-![pls-testnet-validator-htop](https://user-images.githubusercontent.com/100790377/229965674-75593b5a-3fa6-44fe-8f47-fc25e9d3ce21.png)
+![image](https://github.com/rhmaxdotorg/pulsechain-validator/assets/100790377/20867b6a-00cb-46af-98da-19c1fbb76d8b)
 
 This will help automate your setup of a validator node running on [PulseChain](www.pulsechain.com) Mainnet. Since it is a fork of ETH 2.0, all the same methods and scripts can be modified to work for setting up validators on the Ethereum side as well. **This script works on both your own hardware as well as cloud servers.**
 
@@ -24,6 +24,7 @@ Scripts and guidance available include...
 - Enabling local RPC for Metamask
 - Withdrawals and exiting the network
 - Snapshot synced blockchain data and server backups
+- Reset the validator and monitoring setup (in case you need to start over)
 
 The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean Ubuntu OS for getting a PulseChain Mainnet Validator Node setup and running with **Geth (go-pulse)** and **Lighthouse** clients.
 
@@ -306,6 +307,8 @@ $ journalctl -u geth.service
 $ journalctl -u lighthouse-beacon.service
 $ journalctl -u lighthouse-validator.service -f (with -f to get the latest logs OR without it get the beginning logs)
 ```
+
+You can also run the `htop` command to check the CPU and memory usage of your validator server.
 
 # Reset Validator Script
 This helper script deletes all your validator data so you can try the setup again if you want a fresh install or feel like you made an error.
