@@ -749,6 +749,15 @@ References
 - https://kb.beaconcha.in/rewards-and-penalties
 - https://ethereum.org/en/staking/withdrawals/
 
+* **Is there any maintenance involved in keeping the validator running smoothly?**
+
+There's only a couple maintenance items that can be completed manually (or by running the supporting scripts in the repo) or setup to run automatically with a cronjob, for example.
+
+- Pruning geth (quarterly or bi-yearly so you don't fill up the disk space)
+- Keeping the clients up to date (eg. if RH announces new parameters on the network, you'll want to update the clients)
+
+Again, there are scripts in the repo that make this easy.
+
 * **Where can I find additional help on PulseChain dev stuff and being a validator?**
 
 - https://t.me/PulseDev
