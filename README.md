@@ -797,6 +797,15 @@ LIGHTHOUSE_CHECKPOINT_URL=$LIGHTHOUSE_MAINNET_CHECKPOINT_URL
 #LIGHTHOUSE_CHECKPOINT_URL=$LIGHTHOUSE_TESTNET_CHECKPOINT_URL
 ```
 
+So, to run testnet instead of mainnet, the testnet options should be enabled and look something like this.
+
+```
+GETH_CHAIN=$GETH_TESTNET_CHAIN
+LIGHTHOUSE_CHAIN=$LIGHTHOUSE_TESTNET_CHAIN
+
+LIGHTHOUSE_CHECKPOINT_URL=$LIGHTHOUSE_TESTNET_CHECKPOINT_URL
+```
+
 ## Where can I find additional help on PulseChain dev stuff and being a validator?
 
 - https://t.me/PulseDev
