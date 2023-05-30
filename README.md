@@ -124,7 +124,14 @@ It's **recommended you have new hardware that meets or exceeds the minimum recom
 
 # After running the script
 
-The script automates a roughly estimated ~85% of what it takes to get the validator configured, but there's still a few manual steps you need to do to complete the setup: generate your keys in a secure environment, copy and import them on your validator server and once your clients are fully synced, make the deposit to activate your validator on the network.
+The script automates a roughly estimated ~85% of what it takes to get the validator configured, but there's still a few manual steps you need to do to complete the setup: generate your keys in a secure environment, copy and import them on your validator server and **once your clients are fully synced**, make the deposit to activate your validator on the network.
+
+**Steps 1-4**
+
+1) Generate your keys (on another, secure machine)
+2) Copy and import your keys on the validator
+3) Start the validator client
+4) Make your deposit(s)
 
 **Environment and hardware options for key generation**
 * **Live CD** or **bootable USB** such as [Rufus](https://rufus.ie) that you boot and use (all ephemeral, in-memory, disposable filesystem), recommended as a more secure option
@@ -693,21 +700,21 @@ You now have a new server with a hard disk volume based on the snapshot of the o
 
 # FAQ
 
-* **What server specs do you need to be a validator?**
+## What server specs do you need to be a validator?
 
 Specs and preferences vary between who you talk to, but at least 32gb ram and a beefy i7 or server-based processor and 2TB SSD hard disk. In the cloud, this roughly translates into a M2.2XLarge EC2 instance + 2TB disk.
 
-* **How long does it take to sync the blockchain clients?**
+## How long does it take to sync the blockchain clients?
 
 It depends on your bandwidth, server specs and the if the network is running smoothly, but you should expect anywhere from 24 - 96hrs for a validator node to sync. Then 12-36hrs afterwards for your validator to be activated and added to the network. So it can take 2-3 days for the full process.
 
-* **Can I run more than (1) validator on a single server?**
+## Can I run more than (1) validator on a single server?
 
 Yes, you can run as many validators as you want on your server. Only caveat being that if you plan to run 100+, you may want to double the specs (at least memory) on your hardware to account for any additional resource usage. If you plan on running 1 or 10 or even 50, the minimum recommended hardware specs will probably work.
 
 The setup script has no dependencies on the number of validators you run, it simply installs the clients and when you generate your validator keys with the staking deposit tool, there you choose the specific number you want to run. It could be 1, 5, 10 or 100. Then, when you import your keys to Lighthouse, you will import each key and it will configure the client to run that number of validators.
 
-* **I want to add more validators to my server.**
+## I want to add more validators to my server.
 
 Check out the Adding more validators guide @ CoinCashew.
 - https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-iii-tips/adding-a-new-validator-to-an-existing-setup
@@ -718,7 +725,7 @@ Let's say you have generated your keys for 1 validator and want to add 2 more. I
 $ ./deposit.sh existing-mnemonic --validator_start_index 1 --num_validators 2 --chain pulsechain --eth1_withdrawal_address 0x..(MAKE SURE YOU WILL ALWAYS HAVE ACCESS TO THIS WALLET)
 ```
 
-* **How can I see the stats on my validator(s)?**
+## How can I see the stats on my validator(s)?
 
 Look at your deposit JSON file to get the list of your validator(s) public keys, then check https://beacon.pulsechain.com/validator/ + your validator's public key which each one that you want to check the stats on.
 
@@ -726,7 +733,7 @@ For example this validator's stats: https://beacon.pulsechain.com/validator/8001
 
 You can also setup Monitoring with Grafana and Prometheus (see guidance in above sections).
 
-* **What if my validator stops working?**
+## What if my validator stops working?
 
 Did your server's IP address change? If so, update lighthouse beacon service file @ /etc/systemd/system/lighthouse-beacon.service or use the **update-fee-ip-addr.sh** script to update both the fee address + server IP address.
 
@@ -736,11 +743,11 @@ What is your status on the beacon explorer? Active, Pending, Exited or something
 
 Are your clients fully synced? They must be synced, talking to each other and talking to the network for the validator to work properly.
 
-* **How much does it cost to be a validator?**
+## How much does it cost to be a validator?
 
 Depends on if you're using your own hardware or the cloud. For example, you could build or buy your own hardware for initial cost of $1k-$2k and then pay for electricity it uses from running 24/7 each month. Or you can rent a server in the Amazon AWS cloud for an (estimated) few hundred dollars per month. Both ways have advantages and disadvantages.
 
-* **My validator's effectiveness is 100%. Why do I see negative amounts or penalities?**
+## My validator's effectiveness is 100%. Why do I see negative amounts or penalities?
 
 You could getting wrong votes from time to time or otherwise which is just a natural part of participating in the system. Also, you could be seeing this because it's withdrawaling rewards in batches automatically to your withdrawal address.
 
@@ -749,7 +756,7 @@ References
 - https://kb.beaconcha.in/rewards-and-penalties
 - https://ethereum.org/en/staking/withdrawals/
 
-* **Is there any maintenance involved in keeping the validator running smoothly?**
+## Is there any maintenance involved in keeping the validator running smoothly?
 
 There's only a couple maintenance items that can be completed manually (or by running the supporting scripts in the repo) or setup to run automatically with a cronjob, for example.
 
@@ -758,7 +765,26 @@ There's only a couple maintenance items that can be completed manually (or by ru
 
 Again, there are scripts in the repo that make this easy.
 
-* **Where can I find additional help on PulseChain dev stuff and being a validator?**
+## Can I use the script to set up a Testnet validator?
+
+Yes, by default the script will use mainnet settings, however if you edit the script and comment out mainnet and uncomment the testnet parameters, you can run a testnet v4 validator.
+
+```
+# chain flags
+GETH_MAINNET_CHAIN="pulsechain"
+LIGHTHOUSE_MAINNET_CHAIN="pulsechain"
+
+GETH_TESTNET_CHAIN="pulsechain-testnet-v4"
+LIGHTHOUSE_TESTNET_CHAIN="pulsechain_testnet_v4"
+
+# default=mainnet, comment/uncomment to switch to testnet
+GETH_CHAIN=$GETH_MAINNET_CHAIN
+LIGHTHOUSE_CHAIN=$LIGHTHOUSE_MAINNET_CHAIN
+#GETH_CHAIN=$GETH_TESTNET_CHAIN
+#LIGHTHOUSE_CHAIN=$LIGHTHOUSE_TESTNET_CHAIN
+```
+
+## Where can I find additional help on PulseChain dev stuff and being a validator?
 
 - https://t.me/PulseDev
 - https://t.me/GammaDevOpsChat
