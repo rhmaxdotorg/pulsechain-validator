@@ -769,6 +769,8 @@ Again, there are scripts in the repo that make this easy.
 
 Yes, by default the script will use mainnet settings, however if you edit the script and comment out mainnet and uncomment the testnet parameters, you can run a testnet v4 validator.
 
+First, change the client chain flags.
+
 ```
 # chain flags
 GETH_MAINNET_CHAIN="pulsechain"
@@ -782,6 +784,17 @@ GETH_CHAIN=$GETH_MAINNET_CHAIN
 LIGHTHOUSE_CHAIN=$LIGHTHOUSE_MAINNET_CHAIN
 #GETH_CHAIN=$GETH_TESTNET_CHAIN
 #LIGHTHOUSE_CHAIN=$LIGHTHOUSE_TESTNET_CHAIN
+```
+
+Then, change the checkpoint URL.
+
+```
+# checkpoint urls
+LIGHTHOUSE_MAINNET_CHECKPOINT_URL="https://checkpoint.pulsechain.com"
+LIGHTHOUSE_TESTNET_CHECKPOINT_URL="https://checkpoint.v4.testnet.pulsechain.com"
+
+LIGHTHOUSE_CHECKPOINT_URL=$LIGHTHOUSE_MAINNET_CHECKPOINT_URL
+#LIGHTHOUSE_CHECKPOINT_URL=$LIGHTHOUSE_TESTNET_CHECKPOINT_URL
 ```
 
 ## Where can I find additional help on PulseChain dev stuff and being a validator?
