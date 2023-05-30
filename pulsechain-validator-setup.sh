@@ -40,8 +40,17 @@ NODE_USER="node"
 APT_PACKAGES="build-essential cmake clang curl git wget jq protobuf-compiler"
 
 # chain flags
-GETH_CHAIN="pulsechain"
-LIGHTHOUSE_CHAIN="pulsechain"
+GETH_MAINNET_CHAIN="pulsechain"
+LIGHTHOUSE_MAINNET_CHAIN="pulsechain"
+
+GETH_TESTNET_CHAIN="pulsechain-testnet-v4"
+LIGHTHOUSE_TESTNET_CHAIN="pulsechain_testnet_v4"
+
+# default=mainnet, comment/uncomment to switch to testnet
+GETH_CHAIN=$GETH_MAINNET_CHAIN
+LIGHTHOUSE_CHAIN=$LIGHTHOUSE_MAINNET_CHAIN
+#GETH_CHAIN=$GETH_TESTNET_CHAIN
+#LIGHTHOUSE_CHAIN=$LIGHTHOUSE_TESTNET_CHAIN
 
 # geth config
 GETH_DIR="/opt/geth"
@@ -60,7 +69,13 @@ LIGHTHOUSE_REPO="https://gitlab.com/pulsechaincom/lighthouse-pulse.git"
 LIGHTHOUSE_REPO_NAME="lighthouse-pulse"
 
 LIGHTHOUSE_PORT=9000
-LIGHTHOUSE_CHECKPOINT_URL="https://checkpoint.pulsechain.com"
+
+# checkpoint urls
+LIGHTHOUSE_MAINNET_CHECKPOINT_URL="https://checkpoint.pulsechain.com"
+LIGHTHOUSE_TESTNET_CHECKPOINT_URL="https://checkpoint.v4.testnet.pulsechain.com"
+
+LIGHTHOUSE_CHECKPOINT_URL=$LIGHTHOUSE_MAINNET_CHECKPOINT_URL
+#LIGHTHOUSE_CHECKPOINT_URL=$LIGHTHOUSE_TESTNET_CHECKPOINT_URL
 
 ################################################################
 
@@ -80,7 +95,7 @@ FEE_RECIPIENT=$1
 SERVER_IP_ADDRESS=$2
 
 echo -e "PulseChain Validator Setup\n"
-echo -e "Note: this is a HELPER SCRIPT (some steps still need completed manually, see notes after script is finished)\n"
+echo -e "Note: this script automates most of the process with the remaining steps described on the README (After Running This Script section)\n"
 echo -e "* it could take around 30 minutes to complete -- depending mostly on bandwidth and server specs *\n"
 
 read -p "Hit [Enter] to continue"
