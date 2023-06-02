@@ -373,7 +373,7 @@ Now you can use your own node for transactions on the network that your validato
 
 # Snapshot Helper Script
 
-Takes a snapshot of blockchain data on a fully synced validator so it can be copied over and used to bootstrap a new validator. Clients must be stopped until the snapshot completes, afterwards they will be restarted so the validator can resume normal operation.
+Takes a backup snapshot of blockchain data on a fully synced validator so it can be copied over and used to bootstrap a new validator. Clients must be stopped until the snapshot completes, afterwards they will be restarted so the validator can resume normal operation.
 
 After running the script, copy the geth.tar.xz and lighthouse.tar.xz (compressed blockchain data, kinda like ZIP files) over to the new validator server (see scp demo below OR use a USB stick).
 
@@ -665,11 +665,32 @@ References
 - https://www.youtube.com/watch?v=RwwU3P9n3uo
 
 # Backups
+You can do various types of backups.
+
+- Full server backup
+- Blockchain data backup
+- Snapshot of the entire disk (cloud)
+
+**For the full server backup**, see the Home section below.
+
+**For blockchain data backup only**, check out the Snapshot helper script and guidance.
+
+**For snapshotting your disk on AWS cloud server**, see the Cloud section below.
 
 ## Home
 You can use various tools on Linux to make scheduled backups to another disk OR another server.
 
-References
+Most use rsync, cron jobs or programs like Timeshift to automate the process.
+
+**Using Timeshift to backup the server** (eg. on a 1TB or 2TB big USB or external hard drive)
+- https://www.youtube.com/watch?v=QE0lyWodWdU
+- https://teejeetech.com/timeshift/
+- https://linuxtechlab.com/backup-ubuntu-systems-using-timeshift/
+- https://dev.to/rahedmir/how-to-use-timeshift-from-command-line-in-linux-1l9b
+- https://github.com/linuxmint/timeshift/issues/150
+- https://linuxhint.com/timeshift_linux_mint_usb/
+
+Further Guides and References
 - https://helpdeskgeek.com/linux-tips/5-ways-to-automate-a-file-backup-in-linux/
 - https://www.howtogeek.com/135533/how-to-use-rsync-to-backup-your-data-on-linux/
 - https://averagelinuxuser.com/automatically-backup-linux/
