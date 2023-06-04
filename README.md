@@ -508,6 +508,10 @@ You can also setup **email alerts** on Grafana. See guide at the link below.
 
 # Security
 
+![PLS ETH Validator Security Flowchart (1)](https://github.com/rhmaxdotorg/pulsechain-validator/assets/100790377/352d9225-d762-4b7a-b2a2-54e7baa24b91)
+
+**Network Security**
+
 If running a validator in the cloud, there's already isolation away from your home network and the devices connected to it. However, if running a validator on your home network, the game is to keep attackers off of your home network. This is much easier when you're not inviting the public to connect to your server that sits on your network at home, but with validators, you're naturally exposing infrastructure running on your own network, which may be the same one you connect your personal devices to as well.
 
 Recommended that if running a validator at home, you isolate it from everything else on your home network using another router into the mix, cascading routers or using VLANs and other kinds of network isolation or "guest" networks.
