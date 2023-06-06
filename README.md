@@ -626,6 +626,8 @@ Now your bls_to_execution_change JSON file is in the newly created **bls_to_exec
 
 ## Exiting
 
+Note: this was tested on Testnet V4 but has not been rigorously tested on PulseChain mainnet. See references for more info.
+
 You can broadcast the change using your Lighthouse client (for the specific validator you want to exit and initiate withdrawal).
 
 ```
