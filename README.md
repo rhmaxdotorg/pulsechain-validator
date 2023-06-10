@@ -790,10 +790,17 @@ Depends on if you're using your own hardware or the cloud. For example, you coul
 
 You could getting wrong votes from time to time or otherwise which is just a natural part of participating in the system. Also, you could be seeing this because it's withdrawaling rewards in batches automatically to your withdrawal address.
 
+Also, you can learn more about the different kinds of validator rewards [here](https://blog.metrika.co/validators-or-value-takers-e71f46047437).
+
+- Attestation Rewards
+- Proposal Rewards
+- Sync-committee Rewards
+
 References
 - https://www.reddit.com/r/ethstaker/comments/khgdgf/why_do_i_get_a_negative_reward_for_a_normal/
 - https://kb.beaconcha.in/rewards-and-penalties
 - https://ethereum.org/en/staking/withdrawals/
+- https://blog.metrika.co/validators-or-value-takers-e71f46047437
 
 ## Is there any maintenance involved in keeping the validator running smoothly?
 
