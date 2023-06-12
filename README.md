@@ -1,14 +1,18 @@
-# PulseChain Validator Node Setup Scripts
+# PulseChain Validator Automated Setup Scripts
 
 ![image](https://github.com/rhmaxdotorg/pulsechain-validator/assets/100790377/20867b6a-00cb-46af-98da-19c1fbb76d8b)
 
-This will help automate your setup of a validator node running on [PulseChain](www.pulsechain.com) Mainnet. Since it is a fork of ETH 2.0, all the same methods and scripts can be modified to work for setting up validators on the Ethereum side as well. **This script works on both your own hardware as well as cloud servers.**
+Welcome! The community writes code to help people see the power of blockchains, understand true DeFi and support amazing networks like [PulseChain](www.pulsechain.com). 
 
-**Please read ALL the instructions as they will explain and tell you how to run these scripts and the caveats.**
+These scripts will help automate your setup of a validator node running on the [PulseChain](www.pulsechain.com) Mainnet. Since it is a fork of ETH 2.0, most all of the methods and guidance can easily be re-worked for setting up validators on the Ethereum side as well. **These scripts work on both your own hardware as well as cloud servers.**
+
+**Please read ALL the instructions as they will explain and tell you how to run the scripts and any caveats.**
 
 To download these scripts on your server, you need [git](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-22-04) and then you can do `git clone https://github.com/rhmaxdotorg/pulsechain-validator.git`.
 
 After you download the code, you may need to `chmod +x *.sh` to make all the scripts executable and able to run on the system.
+
+**To simply install the validator software**, use [pulsechain-validator-setup.sh](https://github.com/rhmaxdotorg/pulsechain-validator/blob/main/pulsechain-validator-setup.sh). All the other scripts are just extra bells and whistles to support more features and maintenance.
 
 **Once you’re finished running the setup script, go to [AFTER RUNNING THE SCRIPT](#after-running-the-script) section to complete the process and get your validator on the network.**
 
