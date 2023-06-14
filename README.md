@@ -84,6 +84,7 @@ Table of Contents
 * [Backups](#backups)
    * [Home](#home)
    * [Cloud](#cloud)
+* [Uptime Monitoring](#uptime-monitoring)
 * [FAQ](#faq)
    * [What server specs do you need to be a validator?](#what-server-specs-do-you-need-to-be-a-validator)
    * [How long does it take to sync the blockchain clients?](#how-long-does-it-take-to-sync-the-blockchain-clients)
@@ -740,6 +741,51 @@ It will be in Pending status for a while before the process completes (could be 
 - Now start the new instance
 
 You now have a new server with a hard disk volume based on the snapshot of the other server, yay!
+
+# Uptime Monitoring
+
+There are many ways to get uptime monitoring alerts for your validator, some more complex and invasive than others. You can setup a mail server and detect outage condition X or Y, probably even monitor Grafana for alerts. There are pros and cons using your validator server to do this vs leveraging external services.
+
+One light-weight way to get alerts if your validator "goes offline" is to use an external service to simply check and see if at least (1) condition has been met for a properly functioning validator server. In this example, we're using [UptimeRobot](https://www.uptimerobot.com) and alerting if our server fails to meet a condition such as the Geth client on port 30303 is unreachable.
+
+This will catch "validator is down" scenarios such as...
+- Entire server is offline
+- Network problem that has taken server effectively offline
+- Geth client problem that is preventing your validator from working properly
+
+- Sign up @ www.uptimerobot.com
+- Add New Monitor
+
+Friendly Name: Validator 30303
+IP: [validator IP address]
+Port: Custom Port
+Port: 30303
+URL: ping
+
+- Select Alert Contacts to Notify
+- Select your sign-up email (or add a new one)
+- Click Create Monitor
+
+See the “Monitor Created” notification in green
+
+Go to monitor detail
+
+- Create status page
+
+Friendly name: Validator 30303
++ On the validator 30303 monitor to add it
+Save
+
+Click on the eye icon to see your public status page
+The URL will look something like [https://stats.uptimerobot.com/XYZ369abc5555](https://stats.uptimerobot.com/XYZ369abc5555).
+
+**Testing notification setup**
+
+1) WAIT 24-36hrs before testing for outage alerts, service may not pick up outages or be very effective prior to 24-36hrs period AFTER setting up alerts for your validator
+2) “Send test notification” to try it out and see what it sends to your inbox
+3) Or “sudo systemctl stop geth” and see what it does with a real outage (NOTE: this may cause some penalties to your validator and affect uptime % stats obviously, but should be minimal)
+
+Now if your validator goes offline and meets the conditions we're checking for (port 30303 is reachable), you should get an email from UptimeRobot and also see updates on the UptimeRobot dashboard and status page.
 
 # FAQ
 
