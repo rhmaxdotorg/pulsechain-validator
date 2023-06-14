@@ -748,13 +748,14 @@ There are many ways to get uptime monitoring alerts for your validator, some mor
 
 One light-weight way to get alerts if your validator "goes offline" is to use an external service to simply check and see if at least (1) condition has been met for a properly functioning validator server. In this example, we're using [UptimeRobot](https://www.uptimerobot.com) and alerting if our server fails to meet a condition such as the Geth client on port 30303 is unreachable.
 
-This will catch "validator is down" scenarios such as...
+**This will catch "validator is down" scenarios** such as...
 - Entire server is offline
 - Network problem that has taken server effectively offline
 - Geth client problem that is preventing your validator from working properly
 
-- Sign up @ www.uptimerobot.com
-- Add New Monitor
+Be aware that this isn't meant to catch all of them. However, it should work for common downtime situations such as hardware failures, server crashes or networking issues.
+
+First, you'll need to sign up @ www.uptimerobot.com and then on the dashboard, choose Add New Monitor.
 
 Friendly Name: Validator 30303
 IP: [validator IP address]
