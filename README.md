@@ -132,6 +132,8 @@ Just make sure you know what you're doing and manually edit the reset script to 
 # Environment
 Tested on **Ubuntu 22.04** Linux running as a non-root user with sudo privileges.
 
+Desktop or Server edition works, however Desktop edition is recommended as it provides a GUI and is easier to navigate for beginners. **LTS** (long term support) versions are often more stable, which is better for servers and things you want to know are well tested and reliable.
+
 # Hardware
 The consensus on the **minimum recommended requirements** to run a validator seem to be **32gb RAM, 2TB disk and plenty of processing power (quadcore, xeon/ryzen, 4-8 vCPUs and such)**. These can come in the form of buying or building your own server and paying an upfront cost, utilities and maintenance OR renting a server from a VPS/cloud provider such as **Amazon AWS (M2.2Xlarge server)** and paying monthly to use their platform and resources. Both have advantages and disadvantages as well as varying time, monetary and management costs.
 
