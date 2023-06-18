@@ -507,7 +507,8 @@ You can also setup **email alerts** on Grafana. See guide at the link below.
 
 # Community Guides, Scripts and Dashboards
 - https://www.gammadevops.com/p/validator-setup
-- https://gitlab.com/davidfeder/validatorscript/-/blob/64f37685908a78c5337f8d3dc951f7f01f251697/PulseChain_V4_Script.txt
+- https://gitlab.com/davidfeder/validatorscript/-/tree/main
+- https://hodldog.notion.site/PulseChain-Mainnet-Node-Validator-Guide-390243a66f3449a9a2425db25370ad89
 - https://www.hexpulse.info/docs/node-setup.html
 - https://togosh.medium.com/pulsechain-validator-setup-guide-70edae00b344
 - https://github.com/tdslaine/install_pulse_node
@@ -947,3 +948,4 @@ LIGHTHOUSE_CHECKPOINT_URL=$LIGHTHOUSE_TESTNET_CHECKPOINT_URL
 - https://www.blocknative.com/blog/ethereum-validator-lighthouse-geth
 - https://www.youtube.com/watch?v=hHtvCGlPz-o
 - https://kb.beaconcha.in/rewards-and-penalties
+- https://hodldog.notion.site/PulseChain-Mainnet-Node-Validator-Guide-390243a66f3449a9a2425db25370ad89
