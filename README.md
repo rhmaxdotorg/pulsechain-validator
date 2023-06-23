@@ -40,6 +40,8 @@ You can run **pulsechain-validator-setup.sh** to setup your validator clients an
 
 Note: the pulsechain validator setup script doesn't install monitoring/metrics packages, however a script to do that is provided. It would need to run the validator setup script AND THEN run the monitoring-setup.sh script provided. Do not run the monitoring script before installing your validator clients. See details in the [Grafana or Prometheus](https://github.com/rhmaxdotorg/pulsechain-validator#setting-up-monitoring-with-prometheus-and-grafana) section.
 
+Also **check out the introductory blog post** on [Becoming a PulseChain Validator](https://rhmax.org/blog/become-a-pulsechain-validator) for a simple breakdown of how the process works as well as the detailed [setup walkthrough video](https://www.youtube.com/watch?v=cLsTqTwxMko).
+
 Table of Contents
 =================
 
