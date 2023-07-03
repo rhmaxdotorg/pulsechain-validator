@@ -39,7 +39,7 @@ sudo -u $NODE_USER bash -c "cd \$HOME && git config --global pull.rebase true"
 
 # fix perms and make sure rust is properly installed in the environment
 #sudo -u node bash -c "cd \$HOME && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
-sudo -u $NODE_USER $NODE_USER -c "cd \$HOME && source \$HOME/.cargo/env && rustup install stable && rustup default stable"
+sudo -u $NODE_USER bash -c "cd \$HOME && source \$HOME/.cargo/env && rustup install stable && rustup default stable"
 sudo chown -R $NODE_USER:$NODE_USER /home/$NODE_USER/.cargo
 
 echo -e "\nStep 2: Pull updates and rebuild clients\n"
