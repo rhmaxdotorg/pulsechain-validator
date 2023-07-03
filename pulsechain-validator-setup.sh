@@ -39,6 +39,8 @@
 NODE_USER="node"
 APT_PACKAGES="build-essential cmake clang curl git wget jq protobuf-compiler"
 
+shopt -s dotglob
+
 # chain flags
 GETH_MAINNET_CHAIN="pulsechain"
 LIGHTHOUSE_MAINNET_CHAIN="pulsechain"
