@@ -353,10 +353,20 @@ Be careful! It deletes and resets things, so read the code and make sure you und
 Just some nice-to-haves if you're using the AWS Cloud for your validator server.
 
 # Client Update Script
-
 It stops the client services, pulls updates from Gitlab, rebuilds the clients and starts the services back again. Only supports Geth and Lighthouse.
 
-Note: **validator will be offline for likely 1 hour while the updates are taking place**, so before you run this script, make sure you understand and are OK with that.
+**Important Notice**
+If you used the setup script and **you made a new validator within the first 6-7 weeks of PulseChain, prior to early July 2023, the update script will not work for your server.** It requires a *quick rebuild* of the validator with new changes in the setup script before it can properly upgrade the clients. See this [post](https://github.com/rhmaxdotorg/pulsechain-validator/issues/22#issuecomment-1619364208) which has the guidance for going through the process.
+
+Running the script is as simple as `./update-client.sh`. If you get a message to modify the script to make sure you understand the process, because **the validator will be offline for likely 1 hour while the updates are taking place**, make sure you understand and are OK with that. This is just a precaution to make sure you understand what you're doing before running the script. If all is good, you can do the following.
+
+```
+pico reset-validator.sh
+```
+
+and change `line 6` from `I_KNOW_WHAT_I_AM_DOING=false` to `I_KNOW_WHAT_I_AM_DOING=true`, then `ctrl+x` to exit, it will ask you to save so say `y` and `Enter` to save the changes.
+
+And then `./update-client.sh` to start the process.
 
 # Fee Recipient and IP Address Update Script
 
