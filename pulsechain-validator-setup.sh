@@ -135,7 +135,7 @@ git clone $GETH_REPO
 sleep 0.5 # ugh, wait
 sudo mkdir -p $GETH_DIR
 sudo mv $GETH_REPO_NAME/* $GETH_DIR
-#rm -rf $GETH_REPO_NAME
+rm -rf $GETH_REPO_NAME
 sudo chown -R $NODE_USER:$NODE_USER $GETH_DIR
 cd $GETH_DIR
 sudo -u $NODE_USER make
@@ -190,7 +190,7 @@ git clone $LIGHTHOUSE_REPO
 sleep 0.5 # ugh, wait
 sudo mkdir -p $LIGHTHOUSE_DIR
 sudo mv $LIGHTHOUSE_REPO_NAME/* $LIGHTHOUSE_DIR
-#rm -rf $LIGHTHOUSE_REPO_NAME
+rm -rf $LIGHTHOUSE_REPO_NAME
 sudo chown -R $NODE_USER:$NODE_USER $LIGHTHOUSE_DIR
 cd $LIGHTHOUSE_DIR
 sudo -u $NODE_USER bash -c "source \$HOME/.cargo/env && make"
