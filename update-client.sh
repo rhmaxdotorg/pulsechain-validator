@@ -18,9 +18,9 @@ function sigint() {
     exit 1
 }
 
-# config
-GETH_REPO="https://gitlab.com/pulsechaincom/go-pulse.git"
-LIGHTHOUSE_REPO="https://gitlab.com/pulsechaincom/lighthouse-pulse.git"
+# client repos for reference
+#GETH_REPO="https://gitlab.com/pulsechaincom/go-pulse.git"
+#LIGHTHOUSE_REPO="https://gitlab.com/pulsechaincom/lighthouse-pulse.git"
 
 echo -e "ARE YOU SURE YOU WANT TO GO OFFLINE TO STOP, UPDATE AND RESTART PULSECHAIN CLIENTS ON THE VALIDATOR?\n"
 echo -e "* it could take 30 - 60 minutes to complete -- depending mostly on bandwidth and server specs *\n"
