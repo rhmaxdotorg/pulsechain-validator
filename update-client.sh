@@ -29,8 +29,9 @@ read -p "Hit [Enter] to Continue OR Ctrl+C to Cancel"
 
 echo -e "\nStep 1: Stop PulseChain clients (Geth and Lighthouse)"
 
-# stop client services
-sudo systemctl stop geth lighthouse-beacon lighthouse-validator
+# Commented out this part, let's continue validating! once we have pulled the latest changes and 
+# built the latest binaries we will gracefully restart the processes to run the latest changes
+# sudo systemctl stop geth lighthouse-beacon lighthouse-validator
 
 # update git config
 sudo -u $NODE_USER bash -c "cd \$HOME && git config --global user.name client"
@@ -53,7 +54,7 @@ sudo -u $NODE_USER bash -c "cd \$HOME && source \$HOME/.cargo/env && cd /opt/lig
 
 echo -e "\nStep 3: Starting PulseChain clients"
 
-# start updated services
-sudo systemctl start geth lighthouse-beacon lighthouse-validator
+# restart updated services to gracefully stop "old" binaries and start the newly built ones
+sudo systemctl restart geth lighthouse-beacon lighthouse-validator
 
 echo -e "\nProcess is complete"
