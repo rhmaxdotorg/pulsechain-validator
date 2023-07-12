@@ -356,7 +356,7 @@ Just some nice-to-haves if you're using the AWS Cloud for your validator server.
 It stops the client services, pulls updates from Gitlab, rebuilds the clients and starts the services back again. Only supports Geth and Lighthouse.
 
 **Important Notice**
-If you used the setup script and **you made a new validator within the first 6-7 weeks of PulseChain, prior to early July 2023, the update script will not work for your server.** It requires a *quick rebuild* of the validator with new changes in the setup script before it can properly upgrade the clients. See this [post](https://github.com/rhmaxdotorg/pulsechain-validator/issues/22#issuecomment-1619364208) which has the guidance for going through the process.
+If you used the setup script and **you made a new validator within the first 6-7 weeks of PulseChain, prior to early July 2023, the update script will not work for your server.** It requires either a *quick rebuild* of the validator with new changes in the setup script OR git environment update before it can properly upgrade the clients. See this [post](https://github.com/rhmaxdotorg/pulsechain-validator/issues/22#issuecomment-1619364208) which has the guidance for going through the process.
 
 Running the script is as simple as `./update-client.sh`. If you get a message to modify the script to make sure you understand the process, because **the validator will be offline for likely 1 hour while the updates are taking place**, make sure you understand and are OK with that. This is just a precaution to make sure you understand what you're doing before running the script. If all is good, you can do the following.
 
@@ -399,6 +399,8 @@ Now you can use your own node for transactions on the network that your validato
 # Snapshot Helper Script
 
 Takes a backup snapshot of blockchain data on a fully synced validator so it can be copied over and used to bootstrap a new validator. Clients must be stopped until the snapshot completes, afterwards they will be restarted so the validator can resume normal operation.
+
+**It's recommended to use get up to speed on "resumable terminals"** such as [tmux](https://linuxize.com/post/getting-started-with-tmux/) and use it when you're doing long-running operations such as snapshots. This mitigates unnecessary failures such as a disconnection from the server, causing the process to be interrupted, and requiring a re-run of the script.
 
 After running the script, copy the geth.tar.xz and lighthouse.tar.xz (compressed blockchain data, kinda like ZIP files) over to the new validator server (see scp demo below OR use a USB stick).
 
@@ -967,3 +969,4 @@ LIGHTHOUSE_CHECKPOINT_URL=$LIGHTHOUSE_TESTNET_CHECKPOINT_URL
 - https://www.youtube.com/watch?v=hHtvCGlPz-o
 - https://kb.beaconcha.in/rewards-and-penalties
 - https://hodldog.notion.site/PulseChain-Mainnet-Node-Validator-Guide-390243a66f3449a9a2425db25370ad89
+- https://mirror.xyz/0xc8F1e4820b1C97043701969A870580aAbE1Ac771/-kB_7s0xaqF08Y5s0cD9eSqz8GHgvBxiFUJZq3lpvdE
