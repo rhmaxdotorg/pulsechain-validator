@@ -37,7 +37,7 @@
 
 # general config
 NODE_USER="node"
-APT_PACKAGES="build-essential cmake clang curl git wget jq protobuf-compiler snap"
+APT_PACKAGES="build-essential cmake clang curl git wget jq protobuf-compiler snapd"
 
 shopt -s dotglob
 
