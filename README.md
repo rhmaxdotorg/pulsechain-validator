@@ -2,13 +2,15 @@
 
 ![image](https://github.com/rhmaxdotorg/pulsechain-validator/assets/100790377/20867b6a-00cb-46af-98da-19c1fbb76d8b)
 
-Welcome! The community writes code to help people see the power of blockchains, understand true DeFi and support amazing networks like [PulseChain](www.pulsechain.com). 
+Welcome!
+
+The community writes code to help people see the power of blockchains, understand true DeFi and support amazing networks like [PulseChain](www.pulsechain.com). 
 
 These scripts will help automate your setup of a validator node running on the [PulseChain](www.pulsechain.com) Mainnet. Since it is a fork of ETH 2.0, most all of the methods and guidance can easily be re-worked for setting up validators on the Ethereum side as well. **These scripts work on both your own hardware as well as cloud servers.**
 
-**Please read ALL the instructions as they will explain and tell you how to run the scripts and any caveats.**
-
 **Setting up and running a validator server requires basic knowledge of Linux command line** which you can learn [here](https://www.youtube.com/playlist?list=PLS1QulWo1RIb9WVQGJ_vh-RQusbZgO_As).
+
+**Please read ALL the instructions as they will explain and tell you how to run the scripts and any caveats.**
 
 To download these scripts on your server, you need [git](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-22-04) and then you can do `git clone https://github.com/rhmaxdotorg/pulsechain-validator.git`.
 
@@ -32,9 +34,9 @@ Scripts and guidance available include...
 - Snapshot synced blockchain data and server backups
 - Reset the validator and monitoring setup (in case you need to start over)
 
-The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean Ubuntu OS for getting a PulseChain Mainnet Validator Node setup and running with **Geth (go-pulse)** and **Lighthouse** clients.
+The setup script installs pre-reqs, golang, rust, go-pulse (geth fork) and lighthouse on a fresh, clean **Ubuntu Linux** OS for getting a PulseChain Mainnet Validator Node setup and running with **Geth (go-pulse)** and **Lighthouse** clients.
 
-Clients are running on the same machine and not in docker containers (such as the method other scripts use). There are advantages and disadvantages to containerizing the clients vs running them on the host OS. You can also automate deployments with Terraform on AWS, however the scripts are meant to make it pretty easy to spin up and tear down new validator machines once you have the hardware up with access to a fresh install of Ubuntu Linux.
+Clients are running on the same machine and not in docker containers (such as the method other scripts use). There are advantages and disadvantages to containerizing the clients vs running them on the host OS. You can also automate deployments with Terraform on AWS along with many other software packages. However, these scripts are meant to make it pretty easy to spin up and tear down new validator machines once you have the hardware up with access to a fresh install of Ubuntu Linux and try to make the process as seamless as possible.
 
 There are other helper scripts that do various things, check the notes for each one specifically for more info.
 
