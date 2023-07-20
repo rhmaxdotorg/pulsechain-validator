@@ -22,7 +22,7 @@ After you download the code, you may need to `chmod +x *.sh` to make all the scr
 
 # Description
 
-Scripts and guidance available include...
+**Scripts and guidance available include...**
 - PulseChain Validator setup (~85% entire process automated)
 - Use the staking deposit client
 - Grafana and Prometheus monitoring setup
@@ -141,7 +141,7 @@ Tested on **Ubuntu 22.04** Linux running as a non-root user with sudo privileges
 Desktop or Server edition works, however Desktop edition is recommended as it provides a GUI and is easier to navigate for beginners. **LTS** (long term support) versions are often more stable, which is better for servers and things you want to know are well tested and reliable.
 
 # Hardware
-The consensus on the **minimum recommended requirements** to run a validator seem to be **32gb RAM, 2TB disk and plenty of processing power (quadcore, xeon/ryzen, 4-8 vCPUs and such)**. These can come in the form of buying or building your own server and paying an upfront cost, utilities and maintenance OR renting a server from a VPS/cloud provider such as **Amazon AWS (M2.2Xlarge server)** and paying monthly to use their platform and resources. Both have advantages and disadvantages as well as varying time, monetary and management costs.
+The consensus on the **minimum recommended requirements** to run a validator seem to be **32gb RAM, 2TB disk and plenty of processing power (quadcore, xeon/ryzen, 4-8 vCPUs and such)**. These can come in the form of buying or building your own server and paying an upfront cost, utilities and maintenance OR renting a server from a VPS/cloud provider such as **Amazon AWS (M2.2Xlarge server)** or **Digital Ocean 32GB Droplet** and paying monthly to use their platform and resources. Both have advantages and disadvantages as well as varying time, monetary and management costs.
 
 Could you get by with an old PC under your desk with a $50 battery backup? Maybe, but that would not be *recommended*. I'd rather not skimp on hardware for things that I would plan to run for years and pay for the peace of mind of not worrying about what I'm going to do if X fails one day, wishing I'd started with stronger foundations. If you try and do it right the first time, you might save a lot of time and headache.
 
@@ -239,11 +239,11 @@ $ journalctl -u lighthouse-validator.service
 
 **Once the blockchain clients are synced, you can make your 32m tPLS deposit (per validator)**
 
-You can have multiple on one machine. The deposit is made @ https://launchpad.pulsechain.com to get your validator activated and participating on the network.
+You can have multiple on one machine. The deposit is made @ [https://launchpad.pulsechain.com](https://launchpad.pulsechain.com) to get your validator activated and participating on the network.
 
 If you do the deposit before the clients are fully synced and ready to go, then you risk penalities as your validator would join the network, but due to not being synced, unable to participate in validator duties (until it's fully synced).
 
-Now let's get validating! @rhmaximalist
+Now let's get validating! [@rhmaximalist](https://www.twitter.com/rhmaximalist]
 
 # Debugging
 
@@ -372,7 +372,13 @@ And then `./update-client.sh` to start the process.
 
 # Fee Recipient and IP Address Update Script
 
-This one allows you to update the network fee recipient and server IP address for Lighthouse. These were specified during the initial PulseChain validator setup, however both of them may change for you over time, so the script allows you to easily update them and restart the clients.
+This one allows you to update the network fee recipient and server IP address for Lighthouse.
+
+These were specified during the initial PulseChain validator setup, however both of them may change for you over time, so the script allows you to easily update them and restart the clients.
+
+```
+$ ./update-fee-ip-addr.sh [0x...YOUR NETWORK FEE ADDRESS] [12.89...YOUR SERVER IP ADDRESS]
+```
 
 # RPC Interface Script
 
