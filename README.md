@@ -72,6 +72,7 @@ Table of Contents
 * [Snapshot Helper Script](#snapshot-helper-script)
 * [Prune Geth Helper Script](#prune-geth-helper-script)
 * [AWS Cloud Setup](#aws-cloud-setup)
+* [Digital Ocean Cloud Setup](#digital-ocean-cloud-setup)
 * [Staking Deposit Client Walkthrough](#staking-deposit-client-walkthrough)
 * [Details for all PulseChain clients (/w Ethereum Testnet notes)](#details-for-all-pulsechain-clients-w-ethereum-testnet-notes)
 * [Setting up monitoring with Prometheus and Grafana](#setting-up-monitoring-with-prometheus-and-grafana)
@@ -455,6 +456,11 @@ References
 * [How to run a cloud server on AWS](https://docs.google.com/document/d/1eW0SDT8IvZrla7gywK32Rl3QaQtVoiOu5OaVhUKIDg8/edit)
 
 AWS also offers a [free tier](https://aws.amazon.com/free/free-tier-faqs/) option that allows you to spin up Linux VMs for free for a certain period of time, so you could use that for quick and easy tiny VMs running Ubuntu Linux. They are not beefy enough to be a validator, so that's not an option, but they are fine for small tasks and learning. You just need to sign up for an account and follow the instructions in the above document, except choose Free Tier options instead of the validator hardware configuration as described.
+
+# Digital Ocean Cloud Setup
+* [How to run a cloud server on Digital Ocean](https://docs.google.com/document/d/1m41lIQxY1GSCJCNG7j54z655gw2hwGB5tgKIF973Kb0/edit)
+
+DO seems to be a lot cheaper per month to run validator servers vs AWS which is why many people may choose it as a cloud provider rather than AWS.
 
 # Staking Deposit Client Walkthrough
 
