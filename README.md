@@ -185,9 +185,10 @@ Note: it is **VERY IMPORTANT** that you use a withdrawal wallet address that you
 
 If you are setting this up on a home server, you can copy the validator keys onto a USB drive and then plug the USB drive into the validator when you're ready to copy. If logged in to the validator server locally and using the Desktop, after plugging in the drive you can open a window to view files and folders on the drive and see the *validator_keys* folder. If you open another window that shows the *Home* directory, you can drag (or right click and copy) the *validator_keys* folder from the USB drive to the *Home* directory.
 
-Once you have copied the *validator_keys* folder into the *Home* directory (for the user you're logged in as, we're not using the node user for import operations yet), these are the next commands to get through the process.
+Once you have copied the *validator_keys* folder into the *Home* directory (for the user you're logged in as, which may be the *ubuntu* user or otherwise, as we're not using the *node* user for import operations yet), these are the next commands to get through the process.
 
 ```
+$ sudo cp -R /home/ubuntu/validator_keys /home/node/validator_keys
 $ sudo chown -R node:node /home/node/validator_keys
 $ sudo -u node bash
 
