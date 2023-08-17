@@ -253,8 +253,11 @@ Now let's get validating! [@rhmaximalist](https://www.twitter.com/rhmaximalist]
 
 ### Geth
 ```
-$ curl -s http://localhost:8545 -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":67}' | jq
+curl -s http://localhost:8545 -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":67}' | jq
+```    
 
+**You should see a similar output below  from the command above**    
+```
 {
   "jsonrpc": "2.0",
   "id": 67,
@@ -269,13 +272,18 @@ $ curl -s http://localhost:8545 -H "Content-Type: application/json" --data '{"js
 So you can compare the current with the highest to see how far you are from being fully sync’d. Or is result=false, you are sync'd.
 
 ```
-$ curl -s http://localhost:8545 -H "Content-Type: application/json" --data "{\"jsonrpc\":\"2.0\",\"method\":\"eth_syncing\",\"params\":[],\"id\":67}" | jq
+curl -s http://localhost:8545 -H "Content-Type: application/json" --data "{\"jsonrpc\":\"2.0\",\"method\":\"eth_syncing\",\"params\":[],\"id\":67}" | jq
+```    
+
+**You should see a similar output below  from the command above**    
+```
 {
   "jsonrpc": "2.0",
   "id": 67,
   "result": false
 }
 ```
+
 ### Lighthouse
 ```
 $ curl -s http://localhost:5052/lighthouse/ui/health | jq
