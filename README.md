@@ -102,6 +102,7 @@ Table of Contents
    * [How much does it cost to be a validator?](#how-much-does-it-cost-to-be-a-validator)
    * [My validator's effectiveness is 100%. Why do I see negative amounts or penalities?](#my-validators-effectiveness-is-100-why-do-i-see-negative-amounts-or-penalities)
    * [Is there any maintenance involved in keeping the validator running smoothly?](#is-there-any-maintenance-involved-in-keeping-the-validator-running-smoothly)
+   * [What kind of internet connection do I need to validate?](#what-kind-of-internet-connection-do-i-need-to-validate)
    * [Can I use the script to set up a Testnet validator?](#can-i-use-the-script-to-set-up-a-testnet-validator)
    * [Where can I find additional help on PulseChain dev stuff and being a validator?](#where-can-i-find-additional-help-on-pulsechain-dev-stuff-and-being-a-validator)
 * [Additional Resources and References](#additional-resources-and-references)
@@ -910,6 +911,11 @@ There's only a couple maintenance items that can be completed manually (or by ru
 - Keeping the clients up to date (eg. if RH announces new parameters on the network, you'll want to update the clients)
 
 Again, there are scripts in the repo that make this easy.
+
+## What kind of internet connection do I need to validate?
+This could depend on the number of validators, but generally speaking 50mbps seems to be fine for most cases, eg. 1-10 validators.
+
+10+ or 100+ validators may benefit from 100mbps+ connection, but its always better to have too fast of a connection vs too slow. Gigabit is great if available and practical for situation.
 
 ## Can I use the script to set up a Testnet validator?
 
