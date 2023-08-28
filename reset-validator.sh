@@ -7,6 +7,7 @@ I_KNOW_WHAT_I_AM_DOING=false # CHANGE ME ONLY IF YOU TRULY UNDERSTAND
 
 if [ "$I_KNOW_WHAT_I_AM_DOING" = false ]; then
     echo "Make sure you understand what this script does, then flip I_KNOW_WHAT_I_AM_DOING to true if you want to run it"
+    echo "If you want to delete the blockchain then flip REMOVE_BLOCKCHAIN_DATA to true"
     exit 1
 fi
 
