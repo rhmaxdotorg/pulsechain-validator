@@ -961,7 +961,7 @@ LIGHTHOUSE_CHECKPOINT_URL=$LIGHTHOUSE_TESTNET_CHECKPOINT_URL
 ## Where can I find additional help on PulseChain dev stuff and being a validator?
 
 - https://t.me/PulseDev
-- https://t.me/GammaDevOpsChat
+- https://t.me/g4mm4ioChat
 
 # Additional Resources and References
 - https://gitlab.com/pulsechaincom
