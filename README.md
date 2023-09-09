@@ -384,6 +384,19 @@ and change `line 6` from `I_KNOW_WHAT_I_AM_DOING=false` to `I_KNOW_WHAT_I_AM_DOI
 
 And then `./update-client.sh` to start the process.
 
+Once the process completes, you can verify the updated version of Geth and Lighthouse with these commands (respectively).
+
+```
+$ /opt/geth/build/bin/geth version
+Geth
+Version: 3.0.1-pulse-stable
+```
+
+```
+$ sudo -u node bash -c "/opt/lighthouse/lighthouse/lh --version"
+Lighthouse Lighthouse-Pulse/v2.4.0-2b37ea4
+```
+
 # Fee Recipient and IP Address Update Script
 
 This one allows you to update the network fee recipient and server IP address for Lighthouse.
