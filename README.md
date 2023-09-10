@@ -507,6 +507,7 @@ After running the monitoring setup script, you must finish the configuration at 
 
 The standard config assumes you are not sharing the validator server with other people (local user accounts). Otherwise, it’s recommended for security reasons to set up further authentication on the monitoring services. TL;DR you should be the only one with remote access to your validator server, so ensure your keys and passwords are safe and do not share them with anyone for any reason.
 
+**If you are accessing your validator on the cloud or remote server** (not logged into a monitor connected to the validator at home)
 You can setup grafana for secure access externally as opposed to the less secure way of forwarding port 3000 on the firewall and open it up to the world, which could put your server at risk next time Grafana has a security bug that anyone interested enough can exploit.
 
 ```
@@ -515,7 +516,12 @@ ssh -i key.pem -N ubuntu@validator-server-IP -L 8080:localhost:3000
 
 Then open a browser window on your computer and login to grafana yourself without exposing it externally to the world. Magic, huh!
 
-Go to http://localhost:8080 and login with admin/admin (as the initial username/password). It will then ask you to set a new password, make it a good one.
+Go to `http://localhost:8080` and login with admin/admin (as the initial username/password). It will then ask you to set a new password, make it a good one.
+
+**If you logged into it with a monitor connected to the validator** (not accessing your validator from remote location)
+Then you don't need to forward any ports or use SSH as you can open a browser on the validator (**don't use it for generally surfing the internet**, only for specific purposes like checking metrics) and go to `http://localhost:3030` (not 8080) and with the same default login credentials of admin/admin, then set a new strong password.
+
+Now to continue the monitoring setup...
 
 In the lower left bar area, click the gear box -> Data Sources -> Add Data Source.
 - Select Prometheus
