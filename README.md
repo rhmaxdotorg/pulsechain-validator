@@ -49,63 +49,64 @@ Also **check out the introductory blog post** on [Becoming a PulseChain Validato
 Table of Contents
 =================
 
-* [PulseChain Validator Node Setup Scripts](#pulsechain-validator-node-setup-scripts)
-* [Description](#description)
-* [Table of Contents](#table-of-contents)
-* [Walkthrough](#walkthrough)
-* [Usage](#usage)
-   * [Command line options](#command-line-options)
-* [Environment](#environment)
-* [Hardware](#hardware)
-* [After running the script](#after-running-the-script)
-* [Debugging](#debugging)
-   * [Check the Blockchain Sync Progress](#check-the-blockchain-sync-progress)
-      * [Geth](#geth)
-      * [Lighthouse](#lighthouse)
-   * [Look at Client Service Status](#look-at-client-service-status)
-   * [Look at client debug logs](#look-at-client-debug-logs)
-* [Reset Validator Script](#reset-validator-script)
-* [New Server Helper Script](#new-server-helper-script)
-* [Client Update Script](#client-update-script)
-* [Fee Recipient and IP Address Update Script](#fee-recipient-and-ip-address-update-script)
-* [RPC Interface Script](#rpc-interface-script)
-* [Snapshot Helper Script](#snapshot-helper-script)
-* [Prune Geth Helper Script](#prune-geth-helper-script)
-* [AWS Cloud Setup](#aws-cloud-setup)
-* [Digital Ocean Cloud Setup](#digital-ocean-cloud-setup)
-* [Staking Deposit Client Walkthrough](#staking-deposit-client-walkthrough)
-* [Details for all PulseChain clients (/w Ethereum Testnet notes)](#details-for-all-pulsechain-clients-w-ethereum-testnet-notes)
-* [Setting up monitoring with Prometheus and Grafana](#setting-up-monitoring-with-prometheus-and-grafana)
-   * [Web UI setup](#web-ui-setup)
-* [Community Guides, Scripts and Dashboards](#community-guides-scripts-and-dashboards)
-* [Security](#security)
-* [Networking](#networking)
-   * [Server](#server)
-   * [Home Router](#home-router)
-   * [AWS Cloud](#aws-cloud)
-* [Graffiti](#graffiti)
-* [Withdrawals](#withdrawals)
-   * [Overview](#overview)
-   * [Withdrawal Keys](#withdrawal-keys)
-   * [Exiting](#exiting)
-* [Backups](#backups)
-   * [Home](#home)
-   * [Cloud](#cloud)
-* [Uptime Monitoring](#uptime-monitoring)
-* [FAQ](#faq)
-   * [What server specs do you need to be a validator?](#what-server-specs-do-you-need-to-be-a-validator)
-   * [How long does it take to sync the blockchain clients?](#how-long-does-it-take-to-sync-the-blockchain-clients)
-   * [Can I run more than (1) validator on a single server?](#can-i-run-more-than-1-validator-on-a-single-server)
-   * [I want to add more validators to my server.](#i-want-to-add-more-validators-to-my-server)
-   * [How can I see the stats on my validator(s)?](#how-can-i-see-the-stats-on-my-validators)
-   * [What if my validator stops working?](#what-if-my-validator-stops-working)
-   * [How much does it cost to be a validator?](#how-much-does-it-cost-to-be-a-validator)
-   * [My validator's effectiveness is 100%. Why do I see negative amounts or penalities?](#my-validators-effectiveness-is-100-why-do-i-see-negative-amounts-or-penalities)
-   * [Is there any maintenance involved in keeping the validator running smoothly?](#is-there-any-maintenance-involved-in-keeping-the-validator-running-smoothly)
-   * [What kind of internet connection do I need to validate?](#what-kind-of-internet-connection-do-i-need-to-validate)
-   * [Can I use the script to set up a Testnet validator?](#can-i-use-the-script-to-set-up-a-testnet-validator)
-   * [Where can I find additional help on PulseChain dev stuff and being a validator?](#where-can-i-find-additional-help-on-pulsechain-dev-stuff-and-being-a-validator)
-* [Additional Resources and References](#additional-resources-and-references)
+- [PulseChain Validator Automated Setup Scripts](#pulsechain-validator-automated-setup-scripts)
+- [Description](#description)
+- [Table of Contents](#table-of-contents)
+- [Walkthrough](#walkthrough)
+- [Usage](#usage)
+  - [Command line options](#command-line-options)
+- [Environment](#environment)
+- [Hardware](#hardware)
+- [After running the script](#after-running-the-script)
+- [Debugging](#debugging)
+  - [Check the Blockchain Sync Progress](#check-the-blockchain-sync-progress)
+    - [Geth](#geth)
+    - [Lighthouse](#lighthouse)
+  - [Look at Client Service Status](#look-at-client-service-status)
+  - [Look at client debug logs](#look-at-client-debug-logs)
+- [Reset Validator Script](#reset-validator-script)
+- [New Server Helper Script](#new-server-helper-script)
+- [Client Update Script](#client-update-script)
+  - [Backup clients helper](#backup-clients-helper)
+- [Fee Recipient and IP Address Update Script](#fee-recipient-and-ip-address-update-script)
+- [RPC Interface Script](#rpc-interface-script)
+- [Snapshot Helper Script](#snapshot-helper-script)
+- [Prune Geth Helper Script](#prune-geth-helper-script)
+- [AWS Cloud Setup](#aws-cloud-setup)
+- [Digital Ocean Cloud Setup](#digital-ocean-cloud-setup)
+- [Staking Deposit Client Walkthrough](#staking-deposit-client-walkthrough)
+- [Details for all PulseChain clients (/w Ethereum Testnet notes)](#details-for-all-pulsechain-clients-w-ethereum-testnet-notes)
+- [Setting up monitoring with Prometheus and Grafana](#setting-up-monitoring-with-prometheus-and-grafana)
+  - [Web UI setup](#web-ui-setup)
+- [Community Guides, Scripts and Dashboards](#community-guides-scripts-and-dashboards)
+- [Security](#security)
+- [Networking](#networking)
+  - [Server](#server)
+  - [Home Router](#home-router)
+  - [AWS Cloud](#aws-cloud)
+- [Graffiti](#graffiti)
+- [Withdrawals](#withdrawals)
+  - [Overview](#overview)
+  - [Withdrawal Keys](#withdrawal-keys)
+  - [Exiting](#exiting)
+- [Backups](#backups)
+  - [Home](#home)
+  - [Cloud](#cloud)
+- [Uptime Monitoring](#uptime-monitoring)
+- [FAQ](#faq)
+  - [What server specs do you need to be a validator?](#what-server-specs-do-you-need-to-be-a-validator)
+  - [How long does it take to sync the blockchain clients?](#how-long-does-it-take-to-sync-the-blockchain-clients)
+  - [Can I run more than (1) validator on a single server?](#can-i-run-more-than-1-validator-on-a-single-server)
+  - [I want to add more validators to my server.](#i-want-to-add-more-validators-to-my-server)
+  - [How can I see the stats on my validator(s)?](#how-can-i-see-the-stats-on-my-validators)
+  - [What if my validator stops working?](#what-if-my-validator-stops-working)
+  - [How much does it cost to be a validator?](#how-much-does-it-cost-to-be-a-validator)
+  - [My validator's effectiveness is 100%. Why do I see negative amounts or penalities?](#my-validators-effectiveness-is-100-why-do-i-see-negative-amounts-or-penalities)
+  - [Is there any maintenance involved in keeping the validator running smoothly?](#is-there-any-maintenance-involved-in-keeping-the-validator-running-smoothly)
+  - [What kind of internet connection do I need to validate?](#what-kind-of-internet-connection-do-i-need-to-validate)
+  - [Can I use the script to set up a Testnet validator?](#can-i-use-the-script-to-set-up-a-testnet-validator)
+  - [Where can I find additional help on PulseChain dev stuff and being a validator?](#where-can-i-find-additional-help-on-pulsechain-dev-stuff-and-being-a-validator)
+- [Additional Resources and References](#additional-resources-and-references)
 
 # Walkthrough
 Check out these videos for further explanations and code walkthroughs.
@@ -369,10 +370,12 @@ Be careful! It deletes and resets things, so read the code and make sure you und
 Just some nice-to-haves if you're using the AWS Cloud for your validator server.
 
 # Client Update Script
-It stops the client services, pulls updates from Gitlab, rebuilds the clients and starts the services back again. Only supports Geth and Lighthouse.
+It pulls updates from Gitlab, rebuilds the clients and restarts the services back again. Only supports Geth and Lighthouse.
 
 **Important Notice**
 If you used the setup script and **you made a new validator within the first 6-7 weeks of PulseChain, prior to early July 2023, the update script will not work for your server.** It requires either a *quick rebuild* of the validator with new changes in the setup script OR git environment update before it can properly upgrade the clients. See this [post](https://github.com/rhmaxdotorg/pulsechain-validator/issues/22#issuecomment-1619364208) which has the guidance for going through the process.
+
+**Update:** If you would like to backup/restore the current clients as a safety measure, see the section below **Backup clients helper** before running the update script
 
 Running the script is as simple as `./update-client.sh`. If you get a message to modify the script to make sure you understand the process, because **the validator will be offline for likely 1 hour while the updates are taking place**, make sure you understand and are OK with that. This is just a precaution to make sure you understand what you're doing before running the script. If all is good, you can do the following.
 
@@ -396,6 +399,16 @@ Version: 3.0.1-pulse-stable
 $ sudo -u node bash -c "/opt/lighthouse/lighthouse/lh --version"
 Lighthouse Lighthouse-Pulse/v2.4.0-2b37ea4
 ```
+
+## Backup clients helper
+Optionally, the script `backup-clients-helper.sh` can be run with either option `[backup | restore]` and it should be run **before** the `update-client.sh` script, if performing the `backup` or after an update in case the new binaries are not working properly by running it with the `restore` parameter.
+
+- `backup`: Will copy the currently running Geth and Lighthouse binaries into a backup folder in the node's user `$HOME` home directory. This option is intended to be run before running the update script which pulls and builds the latest clients
+- `restore` Will replace the newly built binaries with the ones backed up (previous versions)
+
+**Rollbacks**
+- `backup`: To rollback running this command simply remove the backed up binaries or the whole folder `sudo -u node bash -c "rm -rf /home/node/backup"` (Run as node user)
+- `restore`: To rollback and run again the latest clients, the best thing to do is to re-run the `update-client.sh` script again
 
 # Fee Recipient and IP Address Update Script
 
