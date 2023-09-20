@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #
-# PulseChain client backup helper, this script will backup the clients before performing an update or restore the backed up clients to perform a rollback in case the new clients do not work
-# ############
+# PulseChain client backup helper, this script will backup the clients before performing an
+# update or restore the backed up clients to perform a rollback in case the new clients do not work
+#
 
 set -eo pipefail
-
 
 NODE_USER="node"
 
@@ -15,7 +15,6 @@ GETH_BACKUP="$BACKUP_FOLDER/geth"
 
 GETH_BIN_PATH="/opt/geth/build/bin/geth"
 LIGHTHOUSE_BIN_PATH="/home/node/.cargo/bin/lighthouse"
-
 
 backup () {
     echo "Backing up binaries..."
@@ -45,6 +44,7 @@ restore () {
     read -p "Hit [Enter] to Continue OR Ctrl+C to Cancel"
     
     echo "Restoring binaries..."
+    
     # Using mv here to avoid having the same versions duplicated in storage and causing confusion
     sudo -u $NODE_USER bash -c "mv $GETH_BACKUP $GETH_BIN_PATH"
     sudo -u $NODE_USER bash -c "mv $LIGHTHOUSE_BACKUP $LIGHTHOUSE_BIN_PATH"
@@ -54,7 +54,6 @@ restore () {
 
     echo "Successfully restored backup versions"
 }
-
 
 case $1 in
     "backup")
