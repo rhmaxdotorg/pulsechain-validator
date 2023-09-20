@@ -400,8 +400,8 @@ $ sudo -u node bash -c "/opt/lighthouse/lighthouse/lh --version"
 Lighthouse Lighthouse-Pulse/v2.4.0-2b37ea4
 ```
 
-## Backup clients helper
-Optionally, the script `backup-clients-helper.sh` can be run with either option `[backup | restore]` and it should be run **before** the `update-client.sh` script, if performing the `backup` or after an update in case the new binaries are not working properly by running it with the `restore` parameter.
+## Backup Client
+Optionally, the script `backup-clients.sh` can be run with either option `[backup | restore]` and it should be run **before** the `update-client.sh` script, if performing the `backup` or after an update in case the new binaries are not working properly by running it with the `restore` parameter.
 
 - `backup`: Will copy the currently running Geth and Lighthouse binaries into a backup folder in the node's user `$HOME` home directory. This option is intended to be run before running the update script which pulls and builds the latest clients
 - `restore` Will replace the newly built binaries with the ones backed up (previous versions)
