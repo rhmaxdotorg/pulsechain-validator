@@ -6,7 +6,7 @@ Welcome!
 
 The community writes code to help people see the power of blockchains, understand true DeFi and support amazing networks like [PulseChain](www.pulsechain.com). 
 
-These scripts will help automate your setup of a validator node running on the [PulseChain](www.pulsechain.com) Mainnet. Since it is a fork of ETH 2.0, most all of the methods and guidance can easily be re-worked for setting up validators on the Ethereum side as well. **These scripts work on both your own hardware as well as cloud servers.**
+These scripts will help automate your setup of a validator node running on the [PulseChain](www.pulsechain.com) Mainnet. Since it is a fork of [Ethereum](ethereum.org) 2.0, most all of the methods and guidance can easily be re-worked for setting up validators on the Ethereum side as well. **These scripts work on both your own hardware as well as cloud servers.**
 
 **Setting up and running a validator server requires basic knowledge of Linux command line** which you can learn [here](https://www.youtube.com/playlist?list=PLS1QulWo1RIb9WVQGJ_vh-RQusbZgO_As).
 
@@ -42,7 +42,7 @@ There are other helper scripts that do various things, check the notes for each 
 
 You can run **pulsechain-validator-setup.sh** to setup your validator clients and **monitoring-setup.sh** afterwards to install the graphs and monitoring software.
 
-Note: the pulsechain validator setup script doesn't install monitoring/metrics packages, however a script to do that is provided. It would need to run the validator setup script AND THEN run the monitoring-setup.sh script provided. Do not run the monitoring script before installing your validator clients. See details in the [Grafana or Prometheus](https://github.com/rhmaxdotorg/pulsechain-validator#setting-up-monitoring-with-prometheus-and-grafana) section.
+Note: the pulsechain validator setup script doesn't install monitoring/metrics packages, however a script to do that is provided. It would need to **run the validator setup script AND THEN run the monitoring-setup.sh script provided**. Do not run the monitoring script before installing your validator clients. See details in the [Grafana or Prometheus](https://github.com/rhmaxdotorg/pulsechain-validator#setting-up-monitoring-with-prometheus-and-grafana) section.
 
 Also **check out the introductory blog post** on [Becoming a PulseChain Validator](https://rhmax.org/blog/become-a-pulsechain-validator) for a simple breakdown of how the process works as well as the detailed [setup walkthrough video](https://www.youtube.com/watch?v=cLsTqTwxMko).
 
@@ -546,27 +546,7 @@ Use your mouse cursor to hover over the Dashboards icon (upper left bar area, 4 
 - Select Import
 - Upload each JSON dashboard
 
-Geth
-- Download it @ https://gist.githubusercontent.com/karalabe/e7ca79abdec54755ceae09c08bd090cd/raw/3a400ab90f9402f2233280afd086cb9d6aac2111/dashboard.json to import
-- Name: Geth
-- Datasource: Prometheus (default)
-- Click Import
-- Click Save button (and confirm Save) in upper right toolbar
-- Repeat for next dashboard
-
-Lighthouse VC
-- Download it @ https://raw.githubusercontent.com/sigp/lighthouse-metrics/master/dashboards/ValidatorClient.json to import
-- Name: Lighthouse VC
-- Datasource: Prometheus (default)
-(same steps as previous)
-
-Lighthouse Beacon
-- Download it @ https://raw.githubusercontent.com/sigp/lighthouse-metrics/master/dashboards/Summary.json to import
-- Name: Lighthouse Beacon
-- Datasource: Prometheus (default)
-(same steps as previous)
-
-There's also this ETH forked Dashboard for PulseChain @ https://github.com/raskitoma/pulse-staking-dashboard which has really good stats!
+This [Staking Dashboard](https://github.com/raskitoma/pulse-staking-dashboard) was forked from the Ethereum-based one for PulseChain and has really good stats!
 
 **Staking Dashboard** (one of the best ones)
 - Download it @ https://raw.githubusercontent.com/raskitoma/pulse-staking-dashboard/main/Yoldark_ETH_staking_dashboard.json to import
@@ -574,7 +554,29 @@ There's also this ETH forked Dashboard for PulseChain @ https://github.com/raski
 - Datasource: Prometheus (default)
 (same steps as previous)
 
-Now you can browse the Dashboards and see various stats and data!
+There are also Dashboards for client stats, such as...
+
+**Geth**
+- Download it @ https://gist.githubusercontent.com/karalabe/e7ca79abdec54755ceae09c08bd090cd/raw/3a400ab90f9402f2233280afd086cb9d6aac2111/dashboard.json to import
+- Name: Geth
+- Datasource: Prometheus (default)
+- Click Import
+- Click Save button (and confirm Save) in upper right toolbar
+- Repeat for next dashboard
+
+**Lighthouse VC**
+- Download it @ https://raw.githubusercontent.com/sigp/lighthouse-metrics/master/dashboards/ValidatorClient.json to import
+- Name: Lighthouse VC
+- Datasource: Prometheus (default)
+(same steps as previous)
+
+**Lighthouse Beacon**
+- Download it @ https://raw.githubusercontent.com/sigp/lighthouse-metrics/master/dashboards/Summary.json to import
+- Name: Lighthouse Beacon
+- Datasource: Prometheus (default)
+(same steps as previous)
+
+**Now you can browse the Dashboards and see various stats and data!**
 
 Also see the guides below for additional help (scripts were mostly based on those instructions)
 - https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/monitoring-your-validator-with-grafana-and-prometheus
@@ -594,6 +596,8 @@ You can also setup **email alerts** on Grafana. See guide at the link below.
 - https://github.com/raskitoma/pulse-staking-dashboard
 
 # Security
+
+Basic Security Model for PulseChain/Ethereum Validator
 
 ![PLS ETH Validator Security Flowchart (1)](https://github.com/rhmaxdotorg/pulsechain-validator/assets/100790377/352d9225-d762-4b7a-b2a2-54e7baa24b91)
 
