@@ -901,6 +901,8 @@ Let's say you have generated your keys for 1 validator and want to add 2 more. I
 $ ./deposit.sh existing-mnemonic --validator_start_index 1 --num_validators 2 --chain pulsechain --eth1_withdrawal_address 0x..(MAKE SURE YOU WILL ALWAYS HAVE ACCESS TO THIS WALLET)
 ```
 
+You can also check out instructions [here](https://gitlab.com/davidfeder/validatorscript/-/blob/main/PulseChain_MainNet_Add_Wallets.txt?ref_type=heads).
+
 ## How can I see the stats on my validator(s)?
 
 Look at your deposit JSON file to get the list of your validator(s) public keys, then check https://beacon.pulsechain.com/validator/ + your validator's public key which each one that you want to check the stats on.
