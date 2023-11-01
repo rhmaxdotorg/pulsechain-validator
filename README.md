@@ -84,6 +84,7 @@ Table of Contents
   - [Server](#server)
   - [Home Router](#home-router)
   - [AWS Cloud](#aws-cloud)
+  - [Digital Ocean](#digital-ocean)
 - [Graffiti](#graffiti)
 - [Withdrawals](#withdrawals)
   - [Overview](#overview)
@@ -642,7 +643,10 @@ This depends on your router device and model, so you'll need to research how to 
 - TCP port 22 (SSH) is your remote access to the server in the cloud (it’s enabled by default)
 - For Erigon (or Geth), we need to open up TCP ports 30303 and 42069
 - For Prysm (or Lighthouse), we need to open up TCP ports 9000 and 13000 as well as UDP port 12000
-- All with Source=0.0.0.0/24 or Anywhere (unless you want to restrict SSH access to your specific IP range, but that's out of scope here)
+- All with Source=0.0.0.0/24 or Anywhere OR for extra security, you can restrict SSH access to your specific IP range / block, such as `XX.YY.0.0/16` (replace XX.YY with first two numbers of your public IP address, assuming you only plan to access the server from that location)
+
+## Digital Ocean
+Analogous to AWS cloud network settings and IP restrictions as you need appropriate.
 
 # Graffiti
 
