@@ -248,7 +248,7 @@ You can have multiple on one machine. The deposit is made @ [https://launchpad.p
 
 If you do the deposit before the clients are fully synced and ready to go, then you risk penalities as your validator would join the network, but due to not being synced, unable to participate in validator duties (until it's fully synced).
 
-Now let's get validating! [@rhmaximalist](https://www.twitter.com/rhmaximalist]
+Now let's get validating! [@rhmaximalist](https://www.twitter.com/rhmaximalist)
 
 # Debugging
 In general, if you happen to be stuck syncing at N% or even at 100% but not sure why you're not seeing the validator make attestations, sometimes a reboot can help. You might even see "Error during attestation routine" or "Error updating deposit contract cache" in the logs and notice your validator isn't making attestations. You can try rebooting the server itself if restarting services doesn't work, which might take more then once even in a day or so time period.
