@@ -622,7 +622,7 @@ References
 - https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/guide-or-security-best-practices-for-a-eth2-validator-beaconchain-node
 
 # Networking
-There are ports that need to be exposed to the Internet for your validator to operate, specially for Geth and Lighthouse it's TCP/UDP ports 30303 and 9000 respectively. There are two common ways to control the firewall on your network: the Linux server and the network (such as your router or gateway to the Internet).
+There are ports that need to be exposed to the Internet for your validator to operate, specially for Geth and Lighthouse it's TCP/UDP **ports 30303 and 9000** respectively. There are two common ways to control the firewall on your network: the Linux server and the network (such as your router or gateway to the Internet).
 
 ## Server
 On the Linux server, you can open ports like this (as seen in the code).
