@@ -26,7 +26,7 @@ After you download the code, you may need to `chmod +x *.sh` to make all the scr
 - PulseChain Validator setup (~85% entire process automated)
 - Use the staking deposit client
 - Grafana and Prometheus monitoring setup
-- Setting up an AWS cloud server
+- Setting up a Digital Ocean or AWS cloud server
 - Updating your client versions to the latest
 - Updating your fee recipient and IP address
 - Enabling local RPC for Metamask
@@ -242,7 +242,7 @@ $ journalctl -u lighthouse-beacon.service (with -f to get the latest logs OR wit
 $ journalctl -u lighthouse-validator.service
 ```
 
-**Once the blockchain clients are synced, you can make your 32m tPLS deposit (per validator)**
+**Once the blockchain clients are synced, you can make your 32m PLS deposit (per validator)**
 
 You can have multiple on one machine. The deposit is made @ [https://launchpad.pulsechain.com](https://launchpad.pulsechain.com) to get your validator activated and participating on the network.
 
@@ -368,7 +368,7 @@ This helper script deletes all your validator data so you can try the setup agai
 Be careful! It deletes and resets things, so read the code and make sure you understand what it does before using it.
 
 # New Server Helper Script
-Just some nice-to-haves if you're using the AWS Cloud for your validator server.
+Just some nice-to-haves if you're using Digital Ocean or AWS Cloud for your validator server.
 
 # Client Update Script
 It pulls updates from Gitlab, rebuilds the clients and restarts the services back again. Only supports Geth and Lighthouse.
