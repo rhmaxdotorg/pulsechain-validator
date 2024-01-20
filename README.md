@@ -122,6 +122,7 @@ More videos
 - https://www.youtube.com/results?search_query=rhmax+validator+ama
 
 **How validators work**
+- https://www.youtube.com/watch?v=8X5yBAdUthw
 - https://twitter.com/rhmaximalist/status/1747444294452121643
 
 **Profitability**
