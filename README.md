@@ -134,6 +134,8 @@ More videos
 $ ./pulsechain-validator-setup.sh [0x...YOUR NETWORK FEE ADDRESS] [12.89...YOUR SERVER IP ADDRESS]
 ```
 
+**Note: run the script with only the fee address and IP address, without the brackets (they are just included above for demonstration purposes).**
+
 ## Command line options
 
 - **NETWORK FEE ADDRESS** is the FEE_RECIPIENT value for --suggested-fee-recipient to a wallet address you want to recieve priority fees from users whenever your validator proposes a new block (else it goes to the burn address)
@@ -141,6 +143,8 @@ $ ./pulsechain-validator-setup.sh [0x...YOUR NETWORK FEE ADDRESS] [12.89...YOUR 
 - **SERVER_IP_ADDRESS** to your validator server's IP address
 
 Note: you may get prompted throughout the process to hit [Enter] for OK and continue the process at least once, so it's not meant to be a completely unattended install, but it could be depending on your environment setup.
+
+**Note: You can use choose to use either the same wallet or two different wallets for your fee address and withdrawal address. Some people might like their fees going to a hot wallet and withdrawals to a cold wallet, which in case they would use two different wallets.**
 
 **If you encounter errors running the script and want to run the script again, use the [Reset the Validator](https://github.com/rhmaxdotorg/pulsechain-validator/blob/main/README.md#reset-validator-script) BEFORE running it over and over again.**
 
@@ -185,11 +189,13 @@ $ cd staking-deposit-cli && pip3 install -r requirements.txt && sudo python3 set
 $ ./deposit.sh new-mnemonic --chain=pulsechain --eth1_withdrawal_address=0x... (ENTER THE CORRECT WALLET ADDRESS TO WITHDRAWAL YOUR FUNDS)
 ```
 
-If you get an error after running the first command, saying that it can't find python3-pip (such as when you're booting from USB to run Ubuntu OS), you can  update the apt config and that should fix it.
+If you get an error after running the first command, saying that it can't find python3-pip (such as when you're booting from USB to run Ubuntu OS), you can update the apt config and that should fix it.
 
 `sudo add-apt-repository universe && sudo apt update`
 
-Note: it is **VERY IMPORTANT** that you use a withdrawal wallet address that you have access to and is SECURE for a long time. Otherwise you may lose all your deposit funds.
+It is **VERY IMPORTANT** that you use a withdrawal wallet address that you have access to and is SECURE for a long time. Otherwise you may lose all your deposit funds.
+
+**Note: You can use choose to use either the same wallet or two different wallets for your fee address and withdrawal address. Some people might like their fees going to a hot wallet and withdrawals to a cold wallet, which in case they would use two different wallets.**
 
 **Then follow the instructions from there, copy them over to the validator and import into lighthouse AS THE NODE USER (not the 'ubuntu' user on ec2) as described below.**
 
