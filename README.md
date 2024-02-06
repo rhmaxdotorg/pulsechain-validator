@@ -16,7 +16,7 @@ To download these scripts on your server, you need [git](https://www.digitalocea
 
 After you download the code, you may need to `chmod +x *.sh` to make all the scripts executable and able to run on the system.
 
-**To simply install the validator software**, use [pulsechain-validator-setup.sh](https://github.com/rhmaxdotorg/pulsechain-validator/blob/main/pulsechain-validator-setup.sh). All the other scripts are just extra bells and whistles to support more features and maintenance.
+**To simply install the validator software**, use [pulsechain-validator-setup.sh](https://github.com/rhmaxdotorg/pulsechain-validator/blob/main/pulsechain-validator-setup.sh). All the other scripts are just extra bells and whistles to support more features and maintenance. See this [video](https://www.youtube.com/watch?v=MSdf74CjF10) for a quick demo of how to run the script.
 
 **Once you’re finished running the setup script, go to [AFTER RUNNING THE SCRIPT](#after-running-the-script) section to complete the process and get your validator on the network.**
 
