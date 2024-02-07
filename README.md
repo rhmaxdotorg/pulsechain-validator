@@ -106,6 +106,7 @@ Table of Contents
   - [Is there any maintenance involved in keeping the validator running smoothly?](#is-there-any-maintenance-involved-in-keeping-the-validator-running-smoothly)
   - [What kind of internet connection do I need to validate?](#what-kind-of-internet-connection-do-i-need-to-validate)
   - [Can I use the script to set up a Testnet validator?](#can-i-use-the-script-to-set-up-a-testnet-validator)
+  - [I just can't figure this stuff out. Help?](#i-just-cant-figure-this-stuff-out-help)
   - [Where can I find additional help on PulseChain dev stuff and being a validator?](#where-can-i-find-additional-help-on-pulsechain-dev-stuff-and-being-a-validator)
 - [Additional Resources and References](#additional-resources-and-references)
 
@@ -1012,6 +1013,9 @@ LIGHTHOUSE_CHAIN=$LIGHTHOUSE_TESTNET_CHAIN
 
 LIGHTHOUSE_CHECKPOINT_URL=$LIGHTHOUSE_TESTNET_CHECKPOINT_URL
 ```
+## I just can't figure this stuff out. Help?
+
+Binge the [Validator Playlist](http://tinyurl.com/ValidatorPlaylist). It covers just about every question and scenario you could run into during setup and understanding operation.
 
 ## Where can I find additional help on PulseChain dev stuff and being a validator?
 
@@ -1057,3 +1061,4 @@ LIGHTHOUSE_CHECKPOINT_URL=$LIGHTHOUSE_TESTNET_CHECKPOINT_URL
 - https://kb.beaconcha.in/rewards-and-penalties
 - https://hodldog.notion.site/PulseChain-Mainnet-Node-Validator-Guide-390243a66f3449a9a2425db25370ad89
 - https://mirror.xyz/0xc8F1e4820b1C97043701969A870580aAbE1Ac771/-kB_7s0xaqF08Y5s0cD9eSqz8GHgvBxiFUJZq3lpvdE
+- http://tinyurl.com/ValidatorPlaylist
