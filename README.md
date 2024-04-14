@@ -20,6 +20,8 @@ After you download the code, you may need to `chmod +x *.sh` to make all the scr
 
 **Once you’re finished running the setup script, go to [AFTER RUNNING THE SCRIPT](#after-running-the-script) section to complete the process and get your validator on the network.**
 
+Check out the [FAQ](#faq) or binge the [75+ validator videos](https://www.youtube.com/playlist?list=PLziGfhOdD9GByIivZJMh17mg6wfF-AgFC) that will probably answer any questions you have about how validators work, setup process, maintenance and more.
+
 # Description
 
 **Scripts and guidance available include...**
