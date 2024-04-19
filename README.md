@@ -264,6 +264,8 @@ You can have multiple on one machine. The deposit is made @ [https://launchpad.p
 
 If you do the deposit before the clients are fully synced and ready to go, then you risk penalities as your validator would join the network, but due to not being synced, unable to participate in validator duties (until it's fully synced).
 
+Once on the network, you check use [Beacon Explorer](https://beacon.pulsechain.com) to check for Active/Inactive status, Effectiveness and Rewards. See this [post](https://twitter.com/rhmaximalist/status/1781324036217454683) for how to view stats for validators.
+
 Now let's get validating! [@rhmaximalist](https://www.twitter.com/rhmaximalist)
 
 # Debugging
