@@ -970,7 +970,7 @@ There's only a couple maintenance items that can be completed manually (or by ru
 - Pruning geth (quarterly or bi-yearly so you don't fill up the disk space)
 - Keeping the clients up to date (eg. if RH announces new parameters on the network, you'll want to update the clients)
 
-Again, there are scripts in the repo that make this easy.
+Again, there are scripts in the repo that make this easy. Check this [tweet](https://twitter.com/rhmaximalist/status/1782624967198466461) for information on pruning the validator.
 
 ## What kind of internet connection do I need to validate?
 This could depend on the number of validators, but generally speaking 50mbps seems to be fine for most cases, eg. 1-10 validators.
