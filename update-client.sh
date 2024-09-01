@@ -44,12 +44,16 @@ sudo chown -R $NODE_USER:$NODE_USER /home/$NODE_USER/.cargo
 
 echo -e "\nStep 2: Pull updates and rebuild clients\n"
 
+# ensure we're sticking with go v1.22 and reset lighthouse (so cargo update goes smoothly)
+sudo snap refresh --channel=1.22/stable --classic go
+sudo -u $NODE_USER bash -c "source \$HOME/.cargo/env && cd /opt/lighthouse && git reset --hard origin/master"
+
 # pull updates from official repos for geth
 sudo -u $NODE_USER bash -c "cd /opt/geth && git pull && make"
 
 # pull updates from official repos for lighthouse
 sudo -u $NODE_USER bash -c "cd \$HOME && source \$HOME/.cargo/env && rustup default stable"
-sudo -u $NODE_USER bash -c "cd \$HOME && source \$HOME/.cargo/env && cd /opt/lighthouse && git pull && make"
+sudo -u $NODE_USER bash -c "cd \$HOME && source \$HOME/.cargo/env && cd /opt/lighthouse && git pull && cargo update && make"
 
 echo -e "\nStep 3: Restarting PulseChain clients"
 
