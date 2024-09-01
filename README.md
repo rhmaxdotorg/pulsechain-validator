@@ -613,6 +613,7 @@ You can also setup **email alerts** on Grafana. See guide at the link below.
 - https://togosh.medium.com/pulsechain-validator-setup-guide-70edae00b344
 - https://github.com/tdslaine/install_pulse_node
 - https://github.com/raskitoma/pulse-staking-dashboard
+- https://github.com/PierreBrunetot/PulsechainConkyDashboard
 
 # Security
 
