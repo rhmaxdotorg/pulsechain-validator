@@ -2,6 +2,8 @@
 
 ![image](https://github.com/rhmaxdotorg/pulsechain-validator/assets/100790377/20867b6a-00cb-46af-98da-19c1fbb76d8b)
 
+**⚠️ PulseChain now has many community guides, scripts, managed and liquid staking services. There are no longer plans to actively update and support this repo, thank you for all the support.**
+
 Welcome!
 
 The community writes code to help people see the power of blockchains, understand true DeFi and support amazing networks like [PulseChain](www.pulsechain.com).
