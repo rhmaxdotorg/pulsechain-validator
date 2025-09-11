@@ -4,7 +4,9 @@
 
 Welcome!
 
-The community writes code to help people see the power of blockchains, understand true DeFi and support amazing networks like [PulseChain](www.pulsechain.com). 
+The community writes code to help people see the power of blockchains, understand true DeFi and support amazing networks like [PulseChain](www.pulsechain.com).
+
+If you've ever ran a validator on Ethereum, many of the concepts and setup should look familar as PulseChain is a fork of Ethereum launched in May 2023.
 
 These scripts will help automate your setup of a validator node running on the [PulseChain](www.pulsechain.com) Mainnet. Since it is a fork of [Ethereum](ethereum.org) 2.0, most all of the methods and guidance can easily be re-worked for setting up validators on the Ethereum side as well. **These scripts work on both your own hardware as well as cloud servers.**
 
